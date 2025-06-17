@@ -58,5 +58,5 @@
 ---
 
 ### 我的 GitHub 狀態：
-![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=chase5ws&row=1&column=1&margin-w=30&margin-h=30)
+![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=chase5ws&row=1&column=1)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact)
