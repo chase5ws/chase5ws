@@ -1,5 +1,3 @@
-
-
 ### 👋 Hi, I'm Chase yang!  
 
 🎓 I graduated from the Department of Information Management at National Yunlin University of Science and Technology.  
@@ -16,7 +14,7 @@
 📄 Learn about my experiences on [LinkedIn](https://www.linkedin.com/in/chase5ws/)
 
 ---
-🧰  My toolbox
+### 🧰  My toolbox
 <div style="display: flex; align-items: center; gap: 12px;">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="40" alt="googlecloud logo" />
@@ -33,12 +31,12 @@
 </div>
 
 ---
-🎖️  Rank
+### 🎖️  Rank
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&theme=juicyfresh)](https://github.com/chase5ws/github-profile-trophy)
 
 
-📊 Stats
+### 📊 Stats
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight)
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight)
