@@ -1,11 +1,11 @@
-### 👋 Hi, I'm Boyang!
+### 👋 Hi, I'm Chase yang!
 ---
 
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
 🚀 **Skilled** in 0-to-1 product development, B2C operations, and cross-department coordination.  
 
-💻 *"Code is like humor. When you have to explain it, it’s bad. 😂"*
+💻 *"Code is like humor. When you have to explain it, it’s bad."* 😂
 
 
 ### 👨‍💻 Projects & Experiences
