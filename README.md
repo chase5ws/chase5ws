@@ -2,13 +2,14 @@
 ### 來自台灣的熱情前端開發人員  
 
 ![Profile Views](https://komarev.com/ghpvc/?username=chase5ws&label=Profile%20views&color=0e75b6&style=flat)  
-![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=chase5ws&row=1&margin-w=15&margin-h=15)
+![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=chase5ws&row=1&column=1&margin-w=15&margin-h=15)
 
-- 👨‍💻 我的所有項目可以在 [GitHub](https://github.com/chase5ws) 找到  📄 了解我的經歷：[LinkedIn](https://www.linkedin.com/in/chase5ws/)  
+- 👨‍💻 我的所有項目可以在 [GitHub](https://github.com/chase5ws) 找到  
+- 📄 了解我的經歷：[LinkedIn](https://www.linkedin.com/in/chase5ws/)  
 
 ---
 
-### 聯繫我：
+### 聯繫與工具：
 <p align="left">
   <a href="https://linkedin.com/in/chase5ws" target="blank">
     <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="20" width="20" />
@@ -19,7 +20,6 @@
   </a>
 </p>
 
-### 語言與工具：
 <p align="left"> 
   <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="40" height="40" /> 
@@ -50,11 +50,11 @@
 ---
 
 ### 支援我：
-[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/chase5ws)  
+<a href="https://www.buymeacoffee.com/chase5ws" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="150" alt="Buy Me a Coffee" />
+</a>
 
 ---
 
 ### 我的 GitHub 狀態：
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact)  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&locale=en)  
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=chase5ws)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact)
