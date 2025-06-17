@@ -3,7 +3,7 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=chase5ws&label=Profile%20views&color=0e75b6&style=flat)  
 
-[![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=chase5ws)](https://github.com/ryo-ma/github-profile-trophy)
+
 
 - 👨‍💻 我的所有項目可以在 [GitHub](https://github.com/chase5ws) 找到  
 - 📄 了解我的經歷：[LinkedIn](https://www.linkedin.com/in/chase5ws/)  
