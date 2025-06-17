@@ -1,4 +1,4 @@
-### 👋 Hi, I'm Chase yang!
+### 👋 Hi, I'm Boyang!
 ---
 
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
@@ -8,14 +8,14 @@
 💻 *"Code is like humor. When you have to explain it, it’s bad."* 😂
 
 
-### 👨‍💻 Projects & Experiences
+## 👨‍💻 Projects & Experiences
 ---
 
 - All of my projects can be found on **[GitHub](https://github.com/chase5ws)**.  
 - Learn more about my experience on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**.
 
 
-### 🧰 My Toolbox
+## 🧰 My Toolbox
 ---
 
 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
@@ -33,12 +33,12 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" height="40" alt="rstudio logo" />
 </div>
 
-### 🎖️ Rank
+## 🎖️ Rank
 ---
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&theme=juicyfresh)](https://github.com/chase5ws/github-profile-trophy)
 
-### 📊 Stats
+## 📊 Stats
 ---
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight)  
