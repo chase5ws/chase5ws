@@ -1,5 +1,19 @@
-- 👨‍💻 我的所有項目可以在 [GitHub](https://github.com/chase5ws) 找到  
-- 📄 了解我的經歷：[LinkedIn](https://www.linkedin.com/in/chase5ws/) 
+
+
+### 👋 Hi, I'm Chase yang!  
+
+🎓 I graduated from the Department of Information Management at National Yunlin University of Science and Technology.  
+
+💼 Throughout my career, I have taken on roles such as IT Engineer, Project Manager (PM), Operations Manager (OM), and briefly served as a Software Product Project Team Lead at an American company.  
+
+🚀 I specialize in product development from 0 to 1 and B2C operations, with strong skills in cross-departmental coordination and integration.  
+
+💻"Code is like humor.😂When you have to explain it, it’s bad."
+
+---
+
+👨‍💻 All of my projects can be found on [GitHub](https://github.com/chase5ws)  
+📄 Learn about my experiences on [LinkedIn](https://www.linkedin.com/in/chase5ws/)
 
 ---
 🧰  My toolbox
@@ -26,4 +40,5 @@
 
 📊 Stats
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=dark)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight)
