@@ -1,4 +1,4 @@
-## 👋 Hi, I'm Boyang!
+# 👋 Hi, I'm Boyang!
 
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
@@ -7,13 +7,13 @@
 💻 *"Code is like humor. When you have to explain it, it’s bad."* 😂
 
 
-### 👨‍💻 Projects & Experiences
+## 👨‍💻 Projects & Experiences
 
 - All of my projects can be found on **[GitHub](https://github.com/chase5ws)**.  
 - Learn more about my experience on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**.
 
 
-### 🧰 My Toolbox
+## 🧰 My Toolbox
 
 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo" />
@@ -31,12 +31,12 @@
 </div>
 
 
-### 🎖️ Rank
+## 🎖️ Rank
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&theme=juicyfresh)](https://github.com/chase5ws/github-profile-trophy)
 
 
-### 📊 Stats
+## 📊 Stats
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight)  
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight)
