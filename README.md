@@ -1,4 +1,4 @@
-# 👋 Hi, I'm Boyang!
+# 👋 Hi, I'm Chase yang!
 
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
@@ -38,5 +38,7 @@
 
 ## 📊 Stats
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight)
+<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+  <img src="https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight" alt="GitHub Stats" style="width: 49%;" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight" alt="Top Languages" style="width: 49%;" />
+</div>
