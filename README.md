@@ -33,4 +33,4 @@
 📊  Stats
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact)
-[![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&title=Experience,Commits&theme=flat)](https://github.com/chase5ws/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&title=Experience,Commits)](https://github.com/chase5ws/github-profile-trophy)
