@@ -38,7 +38,12 @@
 
 ## 📊 Stats
 
-<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <img src="https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight" alt="GitHub Stats" style="width: 49%;" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight" alt="Top Languages" style="width: 49%;" />
+<div style="display: flex; align-items: stretch; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; border: 1px solid #444; border-radius: 8px; background-color: #1e1e2f;">
+    <img src="https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight" alt="GitHub Stats" style="width: 100%; height: 100%; object-fit: contain;" />
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px; border: 1px solid #444; border-radius: 8px; background-color: #1e1e2f;">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight" alt="Top Languages" style="width: 100%; height: 100%; object-fit: contain;" />
+  </div>
 </div>
+
