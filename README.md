@@ -1,7 +1,7 @@
 - 👨‍💻 我的所有項目可以在 [GitHub](https://github.com/chase5ws) 找到  
 - 📄 了解我的經歷：[LinkedIn](https://www.linkedin.com/in/chase5ws/) 
 
-
+---
 🧰  My toolbox
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
@@ -29,8 +29,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" height="40" alt="rstudio logo"  />
 </div>
 
-
-
+---
 📊  Stats
 [![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&title=Experience,Commits&row=2&column=2&margin-w=10&margin-h=20)](https://github.com/chase5ws/github-profile-trophy)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact)
