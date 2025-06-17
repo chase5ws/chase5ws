@@ -1,4 +1,4 @@
-# 嗨 👋，我是 Chase Yang  
+# Hi 👋，I am Chase Yang  
 ### 來自台灣的熱情前端開發人員  
 
 ![Profile Views](https://komarev.com/ghpvc/?username=chase5ws&label=Profile%20views&color=0e75b6&style=flat)  
