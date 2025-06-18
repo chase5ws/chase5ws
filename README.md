@@ -2,7 +2,7 @@
 
 
 
-# 👋 little bit about me
+## ✏️little bit about me
 
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
