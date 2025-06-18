@@ -3,7 +3,7 @@
 
 ## ✏️little bit about me
 
-👉 "An IT cool kid who also rides a superbike. 💻🏍️🔥"
+### 👉 "An IT cool kid who also rides a superbike. 💻🏍️🔥"
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
 🚀 **Skilled** in 0-to-1 product development, B2C operations, and cross-department coordination.  
