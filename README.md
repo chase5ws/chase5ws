@@ -1,7 +1,4 @@
-![Superbike GIF](https://media.giphy.com/media/Jwn2WHFtPqoU3xXi1G/giphy.gif)
-
-
-
+![Superbike GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHcyam5ncXc2NjNhbDI4dWQ2djd0YXY2MnpldnM0bmJ6eWR3MWE3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DEDj4i8IE3RSIUfUGm/giphy.gif)
 
 ## ✏️little bit about me
 
