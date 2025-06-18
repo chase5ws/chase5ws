@@ -1,9 +1,7 @@
 <div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://media.giphy.com/media/UhAhfPyySoJsT0mIvR/giphy.gif" alt="GIF 圖片 1" style="height: 200px;">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" alt="GIF 圖片 2" style="height: 200px;">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGpod2QzMWRobjBla2g0aDJkdjNicnZ2YWhvOGpqNWZpaDNkbXJsYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fanY585azfVC1VyHvF/giphy.gif" alt="GIF 圖片 1" style="height: 200px;">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" alt="GIF 圖片 2" style="width: 300px; height: auto;">
 </div>
-
-
 
 ## ✏️little bit about me
 
