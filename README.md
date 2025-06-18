@@ -1,3 +1,5 @@
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWRicjF4Zmdua3NqNGZzc2QyMXcyMHZkZDVpNDJ5Y3Bhd3EyMW9qbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/tWiMRIlkwko6x2bnUv/giphy.gif" alt="GIF 圖片" style="height: 200px;">
+
 <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" width="300"/>
 
 
