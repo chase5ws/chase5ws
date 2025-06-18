@@ -47,5 +47,3 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=chase5ws&show_icons=true&locale=en&layout=compact&theme=tokyonight" alt="Top Languages" style="height: 150px;" />
   <img src="https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight" alt="GitHub Stats" style="height: 150px;" />
 </div>
-
-
