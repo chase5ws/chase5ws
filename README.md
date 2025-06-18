@@ -1,4 +1,5 @@
-![Superbike GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHcyam5ncXc2NjNhbDI4dWQ2djd0YXY2MnpldnM0bmJ6eWR3MWE3cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DEDj4i8IE3RSIUfUGm/giphy.gif)
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" width="200"/>
+
 
 ## ✏️little bit about me
 
