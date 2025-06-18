@@ -1,5 +1,8 @@
-<img src="https://media.giphy.com/media/UhAhfPyySoJsT0mIvR/giphy.gif" alt="GIF 圖片" style="height: 200px;">
-<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" width="300"/>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img src="https://media.giphy.com/media/UhAhfPyySoJsT0mIvR/giphy.gif" alt="GIF 圖片 1" style="height: 200px;">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" alt="GIF 圖片 2" style="height: 200px;">
+</div>
+
 
 
 ## ✏️little bit about me
