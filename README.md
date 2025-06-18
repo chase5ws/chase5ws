@@ -1,5 +1,4 @@
 <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" width="300"/>
-![圖片描述](https://photos.app.goo.gl/MKxyDyP1X9Ewi6Gp7)
 
 
 ## ✏️little bit about me
