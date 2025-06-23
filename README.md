@@ -50,17 +50,17 @@
 </div>
 
 
-# 證照分類表格
+## ✅License(6/23/25)
 
 | **種類**                           | **公司**                              | **證照數量** |
 |------------------------------------|---------------------------------------|--------------|
-| 軟體工程 (Software Engineering)    | Walmart USA, Hewlett Packard Enterprise, JPMorgan Chase & Co, Electronic Arts, Blackbird Australia, Commonwealth Bank, Wells Fargo, Skyscanner, New York Jobs CEO Council, Standard Bank, Datacom | 11           |
-| 數據科學 (Data Science)            | British Airways, Lloyds Banking Group, Deloitte Australia, Tata Group | 4            |
-| 銷售 (Sales)                       | Red Bull                              | 1            |
-| 金融與市場 (Finance & Markets)     | HSBC, Bank of America, JPMorgan Chase, Standard Bank, New York Jobs CEO Council | 5            |
-| 管理與商業 (Management & Business) | Accenture UK, CBRE, Mastercard, Electronic Arts | 4            |
-| 法律 (Law)                         | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case | 4            |
-| 雲端技術與人工智慧 (Cloud & AI)    | Google Cloud Skills Boost             | 7            |
-| Google Ads 與分析 (Google Ads & Analytics) | Google Digital Academy (Skillshop) | 6            |
-| 綜合技能模擬 (General Skills Simulation) | JPMorgan Chase & Co, Standard Bank, New York Jobs CEO Council | 3            |
-| 品牌建設 (Brand Building)          | BCLP                                  | 1            |
+| Software Engineering    | Walmart USA, Hewlett Packard Enterprise, JPMorgan Chase & Co, Electronic Arts, Blackbird Australia, Commonwealth Bank, Wells Fargo, Skyscanner, New York Jobs CEO Council, Standard Bank, Datacom | 11           |
+| Data Science            | British Airways, Lloyds Banking Group, Deloitte Australia, Tata Group | 4            |
+| Sales                       | Red Bull                              | 1            |
+| Finance & Markets     | HSBC, Bank of America, JPMorgan Chase, Standard Bank, New York Jobs CEO Council | 5            |
+| Management & Business | Accenture UK, CBRE, Mastercard, Electronic Arts | 4            |
+|  Law                         | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case | 4            |
+| Cloud & AI    | Google Cloud Skills Boost             | 7            |
+| GGoogle Ads & Analytics | Google Digital Academy (Skillshop) | 6            |
+| General Skills Simulation | JPMorgan Chase & Co, Standard Bank, New York Jobs CEO Council | 3            |
+| Brand Building          | BCLP                                  | 1            |
