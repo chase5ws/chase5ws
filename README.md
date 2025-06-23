@@ -61,8 +61,7 @@
 | Data Science                       | British Airways, Lloyds Banking Group, Deloitte Australia, Tata Group                            | 4            |
 | Management & Business              | Accenture UK, CBRE, Mastercard, Electronic Arts                                                  | 4            |
 | Law                                | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case                  | 4            |
-| General Skills Simulation          | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation) | 3            |
-| Brand Building                     | BCLP                                                                                            | 1            |
-| Sales                              | Red Bull                                                                                         | 1            |
+| General Skills Simulation          | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
+
 
 
