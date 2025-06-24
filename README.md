@@ -40,6 +40,9 @@
 </div>
 
 
+我覺得r跟solidy的樣式不好看\，幫我換一下
+
+
 ## 🎖️ Rank
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&theme=juicyfresh)](https://github.com/chase5ws/github-profile-trophy)
