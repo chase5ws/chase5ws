@@ -64,8 +64,6 @@
 | **Law**                            | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case                  | 4            |
 | **General Skills Simulation**      | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
 
----
-
 # 🕵️ Organizations
 
 | **Organization**                      | **Role**                          | **Start Date**     | **Official Website**                                                                 |
