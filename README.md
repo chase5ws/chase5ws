@@ -51,7 +51,7 @@
 </div>
 
 
-## ✅ Certifications (📂[View](./certificate))
+# ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
 | **Type**                           | **Company**                                                                                          | **Number** |
 |------------------------------------|---------------------------------------------------------------------------------------------------|--------------|
@@ -65,6 +65,21 @@
 | **General Skills Simulation**      | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
 
 ---
+
+# 🕵️ Organizations
+
+| **Organization**                      | **Role**                          | **Start Date**     | **Official Website**                                                                 |
+|---------------------------------------|------------------------------------|--------------------|-------------------------------------------------------------------------------------|
+| **LINE Developers**                   | Developer                         | 2025年7月          | [Visit](https://developers.line.biz/en/)                                           |
+| **Linux Foundation Membership**       | Member                            | 2025年7月          | [Visit](https://www.linuxfoundation.org/)                                          |
+| **Firebase Studio Developer Community** | Developer                            | 2025年6月          | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
+| **Google Cloud & NVIDIA Community**   | Member                            | 2025年6月          | [Visit](https://developers.google.com/community/nvidia)                            |
+| **Google Cloud Innovators**           | Innovators                            | 2025年6月          | [Visit](https://cloud.google.com/innovators?hl=zh-tw)                              |
+| **Google Maps Platform Innovators**   | Innovators                            | 2025年6月          | [Visit](https://developers.google.com/maps/innovators)                             |
+| **GitHub Developer Groups**           | Developer                            | 2025年5月          | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
+| **Google Developer Groups**           | Developer                            | 2025年5月          | [Visit](https://developers.google.com/program)                                     |
+
+
 
 
 
