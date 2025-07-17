@@ -71,7 +71,7 @@
 - National Taiwan University (NTU) – Front-end Development & Fundamental Web Design  
 - Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
 
----
+
 
 # 🏢 Organizations
 
@@ -87,7 +87,7 @@
 | **GitHub Developer Groups**                      | Member         | May 2025 – Present    | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
 | **Google Developer Groups**                      | Member         | May 2025 – Present    | [Visit](https://developers.google.com/program)                                        |
 
----
+
 
 ## Microsoft (MSA) Minecraft Student Ambassador
 
