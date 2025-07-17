@@ -64,7 +64,16 @@
 | **Law**                            | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case                  | 4            |
 | **General Skills Simulation**      | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
 
-# 🕵️ Organizations
+# 📚 Courses
+
+- Google Cloud Skills Boost Workshop – Diamond League Badge  
+- Google Digital Talent Exploration Program – Certificate of Completion: Digital Marketing  
+- National Taiwan University (NTU) – Front-end Development & Fundamental Web Design  
+- Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
+
+---
+
+# 🏢 Organizations
 
 | **Organization**                                 | **Role**       | **Start Date**        | **Official Website**                                                                 |
 |--------------------------------------------------|----------------|-----------------------|---------------------------------------------------------------------------------------|
@@ -96,14 +105,6 @@
 - Pedagogy  
 - Teacher Professional Learning  
 
----
-
-# 📚 Courses
-
-- Google Cloud Skills Boost Workshop – Diamond League Badge  
-- Google Digital Talent Exploration Program – Certificate of Completion: Digital Marketing  
-- National Taiwan University (NTU) – Front-end Development & Fundamental Web Design  
-- Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
 
 
 
