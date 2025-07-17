@@ -66,16 +66,45 @@
 
 # 🕵️ Organizations
 
-| **Organization**                      | **Role**                          | **Start Date**     | **Official Website**                                                                 |
-|---------------------------------------|------------------------------------|--------------------|-------------------------------------------------------------------------------------|
-| **LINE Developers**                   | Developer                         | 2025年7月          | [Visit](https://developers.line.biz/en/)                                           |
-| **Linux Foundation Membership**       | Member                            | 2025年7月          | [Visit](https://www.linuxfoundation.org/)                                          |
-| **Firebase Studio Developer Community** | Developer                            | 2025年6月          | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
-| **Google Cloud & NVIDIA Community**   | Member                            | 2025年6月          | [Visit](https://developers.google.com/community/nvidia)                            |
-| **Google Cloud Innovators**           | Innovators                            | 2025年6月          | [Visit](https://cloud.google.com/innovators?hl=zh-tw)                              |
-| **Google Maps Platform Innovators**   | Innovators                            | 2025年6月          | [Visit](https://developers.google.com/maps/innovators)                             |
-| **GitHub Developer Groups**           | Developer                            | 2025年5月          | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
-| **Google Developer Groups**           | Developer                            | 2025年5月          | [Visit](https://developers.google.com/program)                                     |
+| **Organization**                                   | **Role**       | **Start Date**      | **Official Website**                                                                 |
+|----------------------------------------------------|----------------|---------------------|-------------------------------------------------------------------------------------|
+| **LINE Developers**                                | Developer      | 2025年7月 - 現在    | [Visit](https://developers.line.biz/en/)                                            |
+| **Linux Foundation Membership**                    | Member         | 2025年7月 - 現在    | [Visit](https://www.linuxfoundation.org/)                                           |
+| **Microsoft (MSA) Minecraft Student Ambassador**   | Educator       | 2025年7月 - 現在    | [Visit](https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/) |
+| **Firebase Studio Developer Community**            | Member         | 2025年6月 - 現在    | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
+| **Google Cloud & NVIDIA Community**                | Member         | 2025年6月 - 現在    | [Visit](https://developers.google.com/community/nvidia)                             |
+| **Google Cloud Innovators**                        | Innovator      | 2025年6月 - 現在    | [Visit](https://cloud.google.com/innovators?hl=zh-tw)                               |
+| **Google Maps Platform Innovators**                | Innovator      | 2025年6月 - 現在    | [Visit](https://developers.google.com/maps/innovators)                              |
+| **GitHub Developer Groups**                        | Member         | 2025年5月 - 現在    | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
+| **Google Developer Groups**                        | Member         | 2025年5月 - 現在    | [Visit](https://developers.google.com/program)                                      |
+
+---
+
+## Microsoft (MSA) Minecraft Student Ambassador
+
+- **Role:** UNESCO/ISTE Educators
+- **期間:** 2025年7月 - 現在
+- **官方網站:** https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/
+
+**ISTE Standards for Educators:**  
+- Educator - Designer  
+- Educator - Facilitator  
+- Educator - Collaborator  
+
+**UNESCO Standards for Educators:**  
+- Application of Digital skills  
+- Pedagogy  
+- Teacher Professional Learning  
+
+---
+
+# 📚 課程
+
+- Google Cloud Skills Boost 谷歌雲端工作坊 - Diamond League 鑽石徽章
+- Google 數位人才探索計畫 - Certificate of Completion Digital Marketing 數位行銷學程
+- NTU 台灣大學 - Front-end development 網頁設計基礎班
+- Taiwan IEA 台灣資教協會 - Minecraft : Education 師訓班
+
 
 
 
