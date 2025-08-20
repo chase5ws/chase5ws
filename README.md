@@ -38,10 +38,6 @@
   <img src="https://img.icons8.com/?size=100&id=HOpiPSjPWNNd&format=png&color=000000" alt="solidity logo" height="40px" width="40px" />
 </div>
 
-## 🎖️ Rank
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=chase5ws&theme=juicyfresh)](https://github.com/chase5ws/github-profile-trophy)
-
 
 ## 📊 Stats
 
