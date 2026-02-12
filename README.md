@@ -1,10 +1,8 @@
-## ✏️little bit about me
+## 👨‍💻little bit about me
 
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
 🚀 **Skilled** in 0-to-1 product development, B2C operations, and cross-department coordination.  
-
-## 👨‍💻 Projects & Experiences
 
 - All of my projects can be found on **[GitHub](https://github.com/chase5ws)**.  
 - Learn more about my experience on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**.
