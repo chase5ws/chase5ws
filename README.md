@@ -45,13 +45,13 @@
 
 ## ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
-| Category               | Link to Details                          |
-|------------------------|------------------------------------------|
-| Google Official Certifications | [Jump to Section](#google-official-certifications) |
-| Software Engineering   | [Jump to Section](#software-engineering) |
-| Data Analytics         | [Jump to Section](#data-analytics)       |
-| Project Management     | [Jump to Section](#project-management)   |
-| Business Skills        | [Jump to Section](#business-skills)      |
+| Category                     | Brief Description                                                                 | Link to Details                          |
+|------------------------------|----------------------------------------------------------------------------------|------------------------------------------|
+| Google Official Certifications | Google Cloud, Gemini, Ads, Analytics, and Digital Marketing certifications       | [Jump to Section](#google-official-certifications) |
+| Software Engineering         | Job simulations from Walmart, HPE, JPMorgan, EA, and other tech/finance firms    | [Jump to Section](#software-engineering) |
+| Data Analytics               | Data science and analytics simulations with airlines, banks, and consulting firms| [Jump to Section](#data-analytics)       |
+| Project Management           | Product management, strategy consulting, and advisory simulations                 | [Jump to Section](#project-management)   |
+| Business Skills              | Finance, legal, sales, and brand-building simulations across global industries    | [Jump to Section](#business-skills)      |
 
 ---
 
