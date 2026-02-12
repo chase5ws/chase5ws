@@ -29,7 +29,7 @@
   <img src="https://img.icons8.com/?size=100&id=HOpiPSjPWNNd&format=png&color=000000" alt="solidity logo" height="40px" width="40px" />
 </div>
 
-# 📚 Courses
+## 📚 Courses
 
 - Google Cloud Skills Boost Workshop – Diamond League Badge  
 - Google Digital Talent Exploration Program – Certificate of Completion: Digital Marketing  
@@ -37,15 +37,15 @@
 - Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
 
 
-# 🏢 Organizations
+## 🏢 Organizations
 
 | **Organization**                                 | **Role**       | **Start Date**        | **Official Website**                                                                 |
 |--------------------------------------------------|----------------|-----------------------|---------------------------------------------------------------------------------------|
-| **LINE Developers**                              | Developer      | July 2025 – Present   | [Visit](https://developers.line.biz/en/)                                              |
-| **Microsoft (MSA) Minecraft Student Ambassador** | Educator       | July 2025 – Present   | [Visit](https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/) |
-| **Firebase Studio Developer Community**          | Member         | June 2025 – Present   | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
-| **Google Cloud & NVIDIA Community**              | Member         | June 2025 – Present   | [Visit](https://developers.google.com/community/nvidia)                               |
-| **GitHub Developer Groups**                      | Member         | May 2025 – Present    | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
+| **LINE Developers**                              | Developer      | 2025 – Present   | [Visit](https://developers.line.biz/en/)                                              |
+| **Microsoft (MSA) Minecraft Student Ambassador** | Educator       | 2025 – Present   | [Visit](https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/) |
+| **Firebase Studio Developer Community**          | Member         | 2025 – Present   | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
+| **Google Cloud & NVIDIA Community**              | Member         | 2025 – Present   | [Visit](https://developers.google.com/community/nvidia)                               |
+| **GitHub Developer Groups**                      | Member         | 2025 – Present   | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
 
 
 
