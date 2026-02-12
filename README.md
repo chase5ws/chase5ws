@@ -1,7 +1,3 @@
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3BsdGVrd2F1enA1bmtnaGJudjF6cTJkeDczNTF3NG15cTJoZXBsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ZxkIpml8oaFji4IRpz/giphy.gif" alt="GIF 圖片 2" style="width: 300px; height: auto;">
-</div>
-
 ## ✏️little bit about me
 
 
