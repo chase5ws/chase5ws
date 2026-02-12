@@ -1,36 +1,42 @@
-## 👨‍💻About me
+## 👨‍💻 About Me
 
-🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
-💼 **Experienced** in roles such as Software Engineer, PM and MIS.  
-🚀 **Skilled** in 0-to-1 product development, B2C operations, and cross-department coordination.  
-- All of my projects can be found on **[GitHub](https://github.com/chase5ws)**.  
-- Learn more about my experience on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**. 
+🎓 **Education**: National Yunlin University of Science and Technology, B.S. in Information Management.  
+💼 **Professional Experience**: IT Engineer, Project Manager, Operations Manager, Software Team Lead.  
+🚀 **Core Competencies**: 0-to-1 product development, B2C operations, and cross-department coordination.  
+
+- Explore my projects on **[GitHub](https://github.com/chase5ws)**.  
+- Connect with me on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**.
 
 ## 🧰 My Toolbox
 
+### Languages & Frameworks
 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="vscode logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="canva logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="java logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="cplusplus logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="csharp logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html5 logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3 logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="matlab logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-plain.svg" alt="rstudio logo" height="40px" width="40px" />
-  <img src="https://img.icons8.com/?size=100&id=HOpiPSjPWNNd&format=png&color=000000" alt="solidity logo" height="40px" width="40px" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python logo" height="40px" width="40px" title="Python (Data Analysis & Automation)"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="java logo" height="40px" width="40px" title="Java (Enterprise Development)"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="cplusplus logo" height="40px" width="40px" title="C++ (System Programming)"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="csharp logo" height="40px" width="40px" title="C# (.NET Development)"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript logo" height="40px" width="40px" title="JavaScript (Front-end & Back-end)"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html5 logo" height="40px" width="40px" title="HTML5"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3 logo" height="40px" width="40px" title="CSS3"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-plain.svg" alt="rstudio logo" height="40px" width="40px" title="R (Statistical Analysis)"/>
+  <img src="https://img.icons8.com/?size=100&id=HOpiPSjPWNNd&format=png&color=000000" alt="solidity logo" height="40px" width="40px" title="Solidity (Smart Contracts)"/>
 </div>
 
-## 📚 Courses
+### Tools & Platforms
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="vscode logo" height="40px" width="40px" title="VS Code"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="canva logo" height="40px" width="40px" title="Canva"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="matlab logo" height="40px" width="40px" title="MATLAB"/>
+</div>
 
-- Google Cloud Skills Boost Workshop – Diamond League Badge  
-- Google Digital Talent Exploration Program – Google Cloud & Digital Marketing  
-- National Taiwan University (NTU) – Front-end Development & Fundamental Web Design  
-- Taiwan Information Education Association (IEA) – Microsoft Minecraft: Education Main Teacher
+## 📚 Key Courses & Training
 
-## ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
+- **Google Cloud Skills Boost Workshop** – Diamond League Badge (Cloud Infrastructure & AI)
+- **Google Digital Talent Exploration Program** – Google Cloud & Digital Marketing
+- **National Taiwan University (NTU)** – Front-end Development & Fundamental Web Design (HTML, CSS, JavaScript)
+- **Taiwan Information Education Association (IEA)** – Microsoft Minecraft: Education Main Teacher
+
+## ✅ Certifications (📂[View on LinkedIn](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
 | Category                     | Brief Description                                                                 | Link to Details                          |
 |------------------------------|----------------------------------------------------------------------------------|------------------------------------------|
@@ -97,6 +103,3 @@
 - Red Bull – Sales
 - BCLP – Brand Building
 - White & Case, Clifford Chance, Latham & Watkins, Arnold Bloch Leibler – Legal & Business Communication
-
-
-
