@@ -45,6 +45,16 @@
 
 ## ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
+| Category               | Link to Details                          |
+|------------------------|------------------------------------------|
+| Google Official Certifications | [Jump to Section](#google-official-certifications) |
+| Software Engineering   | [Jump to Section](#software-engineering) |
+| Data Analytics         | [Jump to Section](#data-analytics)       |
+| Project Management     | [Jump to Section](#project-management)   |
+| Business Skills        | [Jump to Section](#business-skills)      |
+
+---
+
 ### Google Official Certifications
 - Gemini Certified University Student (Google for Education)
 - Gemini Certified Educator (Google for Education)
