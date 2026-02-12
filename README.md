@@ -29,20 +29,6 @@
   <img src="https://img.icons8.com/?size=100&id=HOpiPSjPWNNd&format=png&color=000000" alt="solidity logo" height="40px" width="40px" />
 </div>
 
-
-# ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
-
-| **Type**                           | **Company**                                                                                          | **Number** |
-|------------------------------------|---------------------------------------------------------------------------------------------------|--------------|
-| **Software Engineering**           | Walmart USA, Hewlett Packard Enterprise, JPMorgan Chase & Co, Electronic Arts, Blackbird Australia, Commonwealth Bank, Wells Fargo, Skyscanner, New York Jobs CEO Council, Standard Bank, Datacom | 11           |
-| **Cloud & AI**                     | Google Cloud Skills Boost                                                                         | 7            |
-| **Google Ads & Analytics**         | Google Digital Academy (Skillshop)                                                               | 6            |
-| **Finance & Markets**              | HSBC, Bank of America, JPMorgan Chase, Standard Bank, New York Jobs CEO Council                  | 5            |
-| **Data Science**                   | British Airways, Lloyds Banking Group, Deloitte Australia, Tata Group                            | 4            |
-| **Management & Business**          | Accenture UK, CBRE, Mastercard, Electronic Arts                                                  | 4            |
-| **Law**                            | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case                  | 4            |
-| **General Skills Simulation**      | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
-
 # 📚 Courses
 
 - Google Cloud Skills Boost Workshop – Diamond League Badge  
@@ -64,7 +50,18 @@
 
 
 
+# ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
+| **Type**                           | **Company**                                                                                          | **Number** |
+|------------------------------------|---------------------------------------------------------------------------------------------------|--------------|
+| **Software Engineering**           | Walmart USA, Hewlett Packard Enterprise, JPMorgan Chase & Co, Electronic Arts, Blackbird Australia, Commonwealth Bank, Wells Fargo, Skyscanner, New York Jobs CEO Council, Standard Bank, Datacom | 11           |
+| **Cloud & AI**                     | Google Cloud Skills Boost                                                                         | 7            |
+| **Google Ads & Analytics**         | Google Digital Academy (Skillshop)                                                               | 6            |
+| **Finance & Markets**              | HSBC, Bank of America, JPMorgan Chase, Standard Bank, New York Jobs CEO Council                  | 5            |
+| **Data Science**                   | British Airways, Lloyds Banking Group, Deloitte Australia, Tata Group                            | 4            |
+| **Management & Business**          | Accenture UK, CBRE, Mastercard, Electronic Arts                                                  | 4            |
+| **Law**                            | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case                  | 4            |
+| **General Skills Simulation**      | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
 
 
 
