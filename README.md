@@ -9,8 +9,6 @@
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
 🚀 **Skilled** in 0-to-1 product development, B2C operations, and cross-department coordination.  
 
-💻 *"Code is like humor. When you have to explain it, it’s bad."* 😂
-
 
 ## 👨‍💻 Projects & Experiences
 
@@ -22,10 +20,7 @@
 
 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="vscode logo" height="40px" width="40px" />
-  <img src="https://img.icons8.com/?size=100&id=kTTt25v6Drpd&format=png&color=000000" alt="power automate logo" height="40px" width="40px" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="googlecloud logo" height="40px" width="40px" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="canva logo" height="40px" width="40px" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="chatgpt logo" height="40px" width="40px" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python logo" height="40px" width="40px" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="java logo" height="40px" width="40px" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="cplusplus logo" height="40px" width="40px" />
@@ -60,38 +55,15 @@
 - Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
 
 
-
 # 🏢 Organizations
 
 | **Organization**                                 | **Role**       | **Start Date**        | **Official Website**                                                                 |
 |--------------------------------------------------|----------------|-----------------------|---------------------------------------------------------------------------------------|
 | **LINE Developers**                              | Developer      | July 2025 – Present   | [Visit](https://developers.line.biz/en/)                                              |
-| **Linux Foundation Membership**                  | Member         | July 2025 – Present   | [Visit](https://www.linuxfoundation.org/)                                             |
 | **Microsoft (MSA) Minecraft Student Ambassador** | Educator       | July 2025 – Present   | [Visit](https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/) |
 | **Firebase Studio Developer Community**          | Member         | June 2025 – Present   | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
 | **Google Cloud & NVIDIA Community**              | Member         | June 2025 – Present   | [Visit](https://developers.google.com/community/nvidia)                               |
-| **Google Cloud Innovators**                      | Innovator      | June 2025 – Present   | [Visit](https://cloud.google.com/innovators?hl=zh-tw)                                 |
-| **Google Maps Platform Innovators**              | Innovator      | June 2025 – Present   | [Visit](https://developers.google.com/maps/innovators)                                |
 | **GitHub Developer Groups**                      | Member         | May 2025 – Present    | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
-| **Google Developer Groups**                      | Member         | May 2025 – Present    | [Visit](https://developers.google.com/program)                                        |
-
-
-
-## Microsoft (MSA) Minecraft Student Ambassador
-
-- **Role:** UNESCO/ISTE Educators  
-- **Duration:** July 2025 – Present  
-- **Official Website:** https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/
-
-**ISTE Standards for Educators:**  
-- Educator – Designer  
-- Educator – Facilitator  
-- Educator – Collaborator  
-
-**UNESCO Standards for Educators:**  
-- Application of Digital Skills  
-- Pedagogy  
-- Teacher Professional Learning  
 
 
 
