@@ -29,19 +29,9 @@
 ## 📚 Courses
 
 - Google Cloud Skills Boost Workshop – Diamond League Badge  
-- Google Digital Talent Exploration Program – Certificate of Completion: Digital Marketing  
+- Google Digital Talent Exploration Program – Google Cloud & Digital Marketing  
 - National Taiwan University (NTU) – Front-end Development & Fundamental Web Design  
-- Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
-
-## 🏢 Organizations
-
-| **Organization**                                 | **Role**       | **Start Date**        | **Official Website**                                                                 |
-|--------------------------------------------------|----------------|-----------------------|---------------------------------------------------------------------------------------|
-| **LINE Developers**                              | Developer      | 2025 – Present   | [Visit](https://developers.line.biz/en/)                                              |
-| **Microsoft (MSA) Minecraft Student Ambassador** | Educator       | 2025 – Present   | [Visit](https://learn.microsoft.com/en-us/training/paths/minecraft-student-ambassador-program/) |
-| **Firebase Studio Developer Community**          | Member         | 2025 – Present   | [Visit](https://developers.google.com/profile/badges/community/firebasestudio/firebase-studio?hl=zh-tw) |
-| **Google Cloud & NVIDIA Community**              | Member         | 2025 – Present   | [Visit](https://developers.google.com/community/nvidia)                               |
-| **GitHub Developer Groups**                      | Member         | 2025 – Present   | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
+- Taiwan Information Education Association (IEA) – Microsoft Minecraft: Education Main Teacher
 
 ## ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
