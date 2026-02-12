@@ -45,16 +45,61 @@
 
 ## ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
-| **Type**                           | **Company**                                                                                          | **Number** |
-|------------------------------------|---------------------------------------------------------------------------------------------------|--------------|
-| **Software Engineering**           | Walmart USA, Hewlett Packard Enterprise, JPMorgan Chase & Co, Electronic Arts, Blackbird Australia, Commonwealth Bank, Wells Fargo, Skyscanner, New York Jobs CEO Council, Standard Bank, Datacom | 11           |
-| **Cloud & AI**                     | Google Cloud Skills Boost                                                                         | 7            |
-| **Google Ads & Analytics**         | Google Digital Academy (Skillshop)                                                               | 6            |
-| **Finance & Markets**              | HSBC, Bank of America, JPMorgan Chase, Standard Bank, New York Jobs CEO Council                  | 5            |
-| **Data Science**                   | British Airways, Lloyds Banking Group, Deloitte Australia, Tata Group                            | 4            |
-| **Management & Business**          | Accenture UK, CBRE, Mastercard, Electronic Arts                                                  | 4            |
-| **Law**                            | Arnold Bloch Leibler Australia, Clifford Chance, Latham & Watkins, White & Case                  | 4            |
-| **General Skills Simulation**      | JPMorgan Chase & Co (Financial Simulation), Standard Bank (Banking Simulation), New York Jobs CEO Council (Workplace Skills Simulation), BCLP (Brand Building), Red Bull (Sales) | 5            |
+### Google Official Certifications
+- Gemini Certified University Student (Google for Education)
+- Gemini Certified Educator (Google for Education)
+- Certificate of Completion Digital Marketing
+- Certificate of Completion Google Cloud
+- Google Cloud Skills Boost: Cloud Foundations, Networking & Security, Vertex AI, Gemini 1.0 Pro, Generative AI, LLM, Responsible AI, Image Generation, etc.
+- Google Ads (Search, Creative, Video) Certifications
+- Google Analytics Certification
+- AI-Powered Advertising Certification
+- Hour of Code (Minecraft Education Academy)
+
+---
+
+### Software Engineering
+- Walmart USA – Software Engineering
+- Hewlett Packard Enterprise – Software Engineering
+- JPMorgan Chase – Software Engineering
+- Electronic Arts – Software Engineering
+- Blackbird Australia – Software Engineering
+- Commonwealth Bank – Software Engineering
+- Wells Fargo – Software Engineering
+- Skyscanner – Software Engineering
+- New York Jobs CEO Council – Software Engineering
+- Standard Bank – Software Development
+- Datacom – Software Development, Automation, Cloud Introduction
+- AIG – Cybersecurity
+- AWS APAC – Solutions Architecture
+
+---
+
+### Data Analytics
+- British Airways – Data Science
+- Lloyds Banking Group – Data Science
+- Deloitte Australia – Data Analytics
+- Tata Group – Data Analytics
+
+---
+
+### Project Management
+- CBRE – Project Management
+- Electronic Arts – Product Management
+- Accenture UK – Strategy Consulting
+- Mastercard – Advisory & Consulting
+
+---
+
+### Business Skills
+- HSBC – Digital Business Services, Global Banking & Markets
+- Bank of America – Global Markets, Investment Banking
+- JPMorgan Chase – Quantitative Research, Investment Banking
+- Standard Bank – Global Markets Trading, Risk Management
+- New York Jobs CEO Council – Financial Analysis
+- Red Bull – Sales
+- BCLP – Brand Building
+- White & Case, Clifford Chance, Latham & Watkins, Arnold Bloch Leibler – Legal & Business Communication
 
 
 
