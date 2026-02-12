@@ -1,16 +1,13 @@
 ## ✏️little bit about me
 
-
 🎓 **Graduated** from National Yunlin University of Science and Technology, majoring in Information Management.  
 💼 **Experienced** in roles such as IT Engineer, PM, OM, and Software Team Lead.  
 🚀 **Skilled** in 0-to-1 product development, B2C operations, and cross-department coordination.  
-
 
 ## 👨‍💻 Projects & Experiences
 
 - All of my projects can be found on **[GitHub](https://github.com/chase5ws)**.  
 - Learn more about my experience on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**.
-
 
 ## 🧰 My Toolbox
 
@@ -36,7 +33,6 @@
 - National Taiwan University (NTU) – Front-end Development & Fundamental Web Design  
 - Taiwan Information Education Association (IEA) – Minecraft: Education Teacher Training  
 
-
 ## 🏢 Organizations
 
 | **Organization**                                 | **Role**       | **Start Date**        | **Official Website**                                                                 |
@@ -47,10 +43,7 @@
 | **Google Cloud & NVIDIA Community**              | Member         | 2025 – Present   | [Visit](https://developers.google.com/community/nvidia)                               |
 | **GitHub Developer Groups**                      | Member         | 2025 – Present   | [Visit](https://docs.github.com/en/get-started/exploring-integrations/github-developer-program) |
 
-
-
-
-# ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
+## ✅ Certifications (📂[View](https://www.linkedin.com/in/chase5ws/details/certifications/))
 
 | **Type**                           | **Company**                                                                                          | **Number** |
 |------------------------------------|---------------------------------------------------------------------------------------------------|--------------|
