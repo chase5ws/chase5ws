@@ -2,7 +2,7 @@
 
 🎓 **Education**: National Yunlin University of Science and Technology, B.B.A. in Information Management  
 💼 **Professional Experience**: IT Engineer, Project Manager, Operations Manager, Software Team Lead  
-📝Explore my projects on **[GitHub](https://github.com/chase5ws)** Connect with me on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**
+📝 Explore my projects on **[GitHub](https://github.com/chase5ws)** Connect with me on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**
 
 ## 🧰 My Toolbox
 <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
