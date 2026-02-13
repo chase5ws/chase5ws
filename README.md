@@ -20,14 +20,9 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css3 logo" height="40px" width="40px" title="CSS3"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-plain.svg" alt="rstudio logo" height="40px" width="40px" title="R (Statistical Analysis)"/>
   <img src="https://img.icons8.com/?size=100&id=HOpiPSjPWNNd&format=png&color=000000" alt="solidity logo" height="40px" width="40px" title="Solidity (Smart Contracts)"/>
-</div>
-
-### Tools & Platforms
-<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="vscode logo" height="40px" width="40px" title="VS Code"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="canva logo" height="40px" width="40px" title="Canva"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="matlab logo" height="40px" width="40px" title="MATLAB"/>
 </div>
+
 
 ## 📚 Key Courses & Training
 
