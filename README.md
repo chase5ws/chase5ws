@@ -1,8 +1,7 @@
 ## 👨‍💻 About Me
 
-🎓 **Education**: National Yunlin University of Science and Technology, B.B.A. in Information Management
-💼 **Professional Experience**: IT Engineer, Project Manager, Operations Manager, Software Team Lead
-🚀 **Core Competencies**: 0-to-1 product development, B2C operations, cross-department coordination
+🎓 **Education**: National Yunlin University of Science and Technology, B.B.A. in Information Management  
+💼 **Professional Experience**: IT Engineer, Project Manager, Operations Manager, Software Team Lead  
 
 Explore my projects on **[GitHub](https://github.com/chase5ws)**
 Connect with me on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**
