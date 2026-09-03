@@ -37,3 +37,4 @@
 - **National Taiwan University (NTU)** – Front-end Development & Web Design (HTML, CSS, JavaScript)
 
 👉 **[View Full List of Certifications on LinkedIn](https://www.linkedin.com/in/chase5ws/details/certifications/)**
+
