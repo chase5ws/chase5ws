@@ -3,7 +3,7 @@
 💼 **Professional Experience**: IT Engineer, Project Manager, Operations Manager, Software Team Lead
 📝 Explore my projects on **[GitHub](https://github.com/chase5ws)** | Connect with me on **[LinkedIn](https://www.linkedin.com/in/chase5ws/)**
 
----
+---sad
 
 ## 🚀 Featured Projects
 - 🔧 **[RFID Backend Upload Tool](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool)** - Python Tkinter desktop app for RFID access control & REST API backend sync.
