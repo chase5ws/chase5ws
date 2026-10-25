@@ -152,27 +152,6 @@ A 2D arcade game hand-written in x86 Assembly with Irvine32: game loop, collisio
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 
-## 📊 GitHub in numbers
-
-<div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=chase5ws&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chase5ws&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
-
-<img src="https://streak-stats.demolab.com?user=chase5ws&theme=tokyonight&hide_border=true" alt="GitHub streak" />
-
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=chase5ws&theme=tokyo-night&hide_border=true&area=true" alt="Contribution graph" />
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chase5ws/chase5ws/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chase5ws/chase5ws/output/github-snake.svg" />
-  <img alt="Snake eating my contribution graph" src="https://raw.githubusercontent.com/chase5ws/chase5ws/output/github-snake-dark.svg" />
-</picture>
-
-</div>
-
-<img src="./assets/divider.svg" width="100%" alt="" />
-
 ## 📜 Certifications
 
 | | Certification | Issuer | Year |
