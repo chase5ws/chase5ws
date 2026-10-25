@@ -1,0 +1,8 @@
+# Visual Studio cache
+.vs/
+
+# macOS
+.DS_Store
+
+# local scratch
+_to_delete/
