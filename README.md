@@ -3,6 +3,7 @@
 <img src="./assets/header.svg" alt="Chase Tseng — Software Engineer & IT Infrastructure Engineer" width="100%" />
 
 <a href="https://www.linkedin.com/in/chase5ws/"><img src="https://img.shields.io/badge/LinkedIn-chase5ws-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://chase5ws.github.io/chase5ws/"><img src="https://img.shields.io/badge/Website-chase5ws.github.io-2563C9?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" /></a>
 <a href="https://github.com/chase5ws?tab=repositories"><img src="https://img.shields.io/badge/Repos-explore-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositories" /></a>
 <a href="https://github.com/chase5ws?tab=followers"><img src="https://img.shields.io/github/followers/chase5ws?label=Followers&style=for-the-badge&logo=github&color=a78bfa&labelColor=181717" alt="Followers" /></a>
 <img src="https://komarev.com/ghpvc/?username=chase5ws&label=Profile%20views&color=22d3ee&style=for-the-badge" alt="Profile views" />
@@ -15,11 +16,12 @@
 
 ### 👋 Hi, I'm Chase
 
-**Software Engineer & IT Infrastructure Engineer** based in Hsinchu, Taiwan. I build **Python / C# automation tools and REST API integrations**, and I keep enterprise networks safe — **Active Directory, firewalls, endpoint security and zero-trust access**. Before that I founded a **3,000+ member Web3 community** and shipped Solidity smart contracts and Discord bots for it.
+**Infrastructure & Automation Engineer** based in Hsinchu, Taiwan. I build **Python / C# automation tools and REST API integrations**, and I keep enterprise networks safe — **Active Directory, firewalls, endpoint security and zero-trust access**. Before that I founded a **3,000+ member Web3 community** and shipped Solidity smart contracts and Discord bots for it.
 
 - 🔭 Currently: **IT @ Korrnell Hsinchu International Academy** — UniFi networks, ShareTech firewall blue-team defense, Apple MDM & Google Workspace, LINE Bot workflow automation
 - 🏭 Previously in the semiconductor supply chain: **Hoyi Tech** (Micron supplier) and **Forward-tek** (TSMC supplier, TWSE 7530)
 - 🎓 B.B.A. in Information Management, **National Yunlin University of Science and Technology** — graduation project 🥉 3rd place
+- 🎯 Now: building toward Cloud / DevOps and AI automation (GCP, Terraform, LLM + RAG)
 - ⚡ Fun fact: I once wrote a whole arcade shooter in **x86 Assembly**
 
 <img src="./assets/divider.svg" width="100%" alt="" />
@@ -28,20 +30,20 @@
 
 | | Role | Company | When |
 |:-:|---|---|---|
-| 🟢 | **IT** | Korrnell Hsinchu International Academy | Apr 2026 – now |
-| 🔵 | **Software Engineer** (also IT) | Hoyi Tech Co., Ltd · *Micron supplier* | Oct 2025 – Mar 2026 |
+| 🟢 | **IT Infrastructure Engineer** | Korrnell Hsinchu International Academy | Apr 2026 – now |
+| 🔵 | **Software Engineer** (Automation & IT) | Hoyi Tech Co., Ltd · *Micron supplier* | Oct 2025 – Mar 2026 |
 | 🔵 | **Teaching Assistant** — Python & Minecraft Education | Dayuan Elementary School | Oct 2025 – Dec 2025 |
-| 🔵 | **MIS IT Engineer** | Forward-tek · *TWSE 7530, TSMC supplier* | May 2025 – Aug 2025 |
+| 🔵 | **IT Systems Engineer** | Forward-tek · *TWSE 7530, TSMC supplier* | May 2025 – Aug 2025 |
 | 🪖 | Military service | Hsinchu Military Police | Dec 2024 – Apr 2025 |
 | 🟣 | **Product Manager** | Tagtoo · *Official Taiwan ad agency for REDnote* | Feb 2023 – Dec 2024 |
-| 🟣 | **Founder & Community Lead** | ASC Blockchain Community | Aug 2022 – Aug 2024 |
+| 🟣 | **Founder & Developer** | ASC Blockchain Community | Aug 2022 – Aug 2024 |
 | ⚪ | IT / Database Assistant | YunTech Library · Hukou Library · Fu Jen University | 2020 – 2023 |
 
 <details>
 <summary><b>🔍 Highlights — click to expand</b></summary>
 <br/>
 
-**Korrnell Hsinchu International Academy — IT**
+**Korrnell Hsinchu International Academy — IT Infrastructure Engineer**
 - Blue-team defense on UniFi enterprise networks and ShareTech firewalls: probe neutralization, script-based threat mitigation, geo-blocking
 - Apple MDM + Google Workspace administration with endpoint security and zero-trust data access
 - Integrated GOSUBAR LINE Bot APIs into internal workflows to cut communication overhead
@@ -51,7 +53,7 @@
 - Enforced TSMC Cybersecurity Assessment standards: AD least privilege, BitLocker, OneDrive DLP
 - Ran AD and mail servers, Fortinet firewalls and access-control systems, and kept topology docs current
 
-**Forward-tek — MIS IT Engineer**
+**Forward-tek — IT Systems Engineer**
 - Operated Digiwin ERP/EF systems and SQL databases under ISO 27001
 - Maintained AD, Fortinet, VMware and corporate mail; cross-department helpdesk
 

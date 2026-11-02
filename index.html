@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chase Tseng — Infrastructure & Automation Engineer</title>
+<meta name="description" content="Chase Tseng, infrastructure and automation engineer in Hsinchu, Taiwan. Python and REST API automation, Active Directory, firewalls, Google Cloud, and LLM-powered operations tooling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEF1F2;
+    --paper-2: #E2E7EA;
+    --ink: #14202E;
+    --muted: #556270;
+    --rule: #C5CDD3;
+    --steel: #2B3542;
+    --c-infra: #2563C9;
+    --c-auto: #C98E0E;
+    --c-sec: #2E8B57;
+    --c-cloud: #6D4FD8;
+    --measure: 68ch;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-variation-settings: "wdth" 100;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--c-infra); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  header.hero { padding: 72px 0 40px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+  h1 {
+    font-variation-settings: "wdth" 125;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+  }
+  .role {
+    font-variation-settings: "wdth" 112;
+    font-weight: 600;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    margin: 0 0 16px;
+  }
+  .lede { max-width: 56ch; color: var(--muted); margin: 0 0 24px; font-size: 1.125rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 11px 18px; border-radius: 6px;
+    font-weight: 600; text-decoration: none; border: 1.5px solid var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn:hover { text-decoration: none; background: var(--steel); color: var(--paper); border-color: var(--steel); }
+
+  /* Patch panel */
+  .panel-fig { margin: 0; }
+  .panel-fig svg { width: 100%; height: auto; display: block; }
+  .cable { fill: none; stroke-width: 7; stroke-linecap: round; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; font-size: 0.9375rem; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .sw { width: 22px; height: 6px; border-radius: 3px; display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .cable { stroke-dasharray: 600; stroke-dashoffset: 600; animation: plug 1.1s cubic-bezier(.3,.7,.2,1) forwards; }
+    .cable:nth-of-type(2) { animation-delay: .08s } .cable:nth-of-type(3) { animation-delay: .16s }
+    .cable:nth-of-type(4) { animation-delay: .24s } .cable:nth-of-type(5) { animation-delay: .32s }
+    .cable:nth-of-type(6) { animation-delay: .40s } .cable:nth-of-type(7) { animation-delay: .48s }
+    .cable:nth-of-type(8) { animation-delay: .56s }
+    @keyframes plug { to { stroke-dashoffset: 0; } }
+  }
+
+  /* Sections */
+  main section { padding: 48px 0; border-top: 1.5px solid var(--rule); }
+  h2 {
+    font-variation-settings: "wdth" 118;
+    font-weight: 750;
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+  .sec-intro { max-width: var(--measure); color: var(--muted); margin: -8px 0 28px; }
+
+  /* Roadmap: a real sequence, so it is numbered */
+  .road { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; grid-template-columns: 1fr; }
+  .road li { position: relative; padding: 0 0 24px 44px; }
+  .road li::before {
+    content: attr(data-n); position: absolute; left: 0; top: 0;
+    width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--ink);
+    display: grid; place-items: center; font-weight: 700; font-size: .875rem;
+  }
+  .road li.now::before { background: var(--c-cloud); border-color: var(--c-cloud); color: #fff; }
+  .road li:not(:last-child)::after { content: ""; position: absolute; left: 13.5px; top: 32px; bottom: 4px; width: 1.5px; background: var(--rule); }
+  .road h3 { margin: 0 0 2px; font-size: 1.125rem; }
+  .road .when { color: var(--muted); font-size: .9375rem; margin: 0 0 6px; }
+  .road p { margin: 0; max-width: var(--measure); }
+  .now-flag { font-size: .8125rem; font-weight: 700; color: var(--c-cloud); margin-left: 8px; }
+
+  /* Experience */
+  .jobs { list-style: none; margin: 0; padding: 0; }
+  .job { display: grid; grid-template-columns: 1fr; gap: 4px 32px; padding: 20px 0 20px 18px; border-left: 6px solid var(--c, var(--rule)); margin-bottom: 14px; background: linear-gradient(90deg, var(--paper-2), transparent 70%); }
+  .job h3 { margin: 0; font-size: 1.1875rem; font-variation-settings: "wdth" 108; }
+  .job .org { margin: 0; color: var(--ink); }
+  .job .dates { margin: 0; color: var(--muted); font-size: .9375rem; }
+  .job ul { margin: 8px 0 0; padding-left: 18px; max-width: var(--measure); }
+  .job li { margin: 4px 0; }
+  .infra { --c: var(--c-infra); } .auto { --c: var(--c-auto); } .sec { --c: var(--c-sec); } .cloud { --c: var(--c-cloud); } .plain { --c: var(--rule); }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1.5px solid var(--ink); }
+  .proj { padding: 20px 0; border-bottom: 1.5px solid var(--rule); display: grid; grid-template-columns: 10px 1fr; gap: 0 16px; }
+  .proj .bar { background: var(--c); border-radius: 3px; }
+  .proj h3 { margin: 0 0 4px; font-size: 1.125rem; }
+  .proj p { margin: 0 0 6px; max-width: var(--measure); }
+  .proj .stack { color: var(--muted); font-size: .9375rem; margin: 0; }
+  .proj.building h3 small { font-weight: 700; color: var(--c-cloud); font-size: .8125rem; margin-left: 8px; }
+
+  /* Certs + contact */
+  .certs { margin: 0; padding-left: 18px; columns: 1; max-width: 760px; }
+  .certs li { margin: 6px 0; break-inside: avoid; }
+  .contact p { max-width: var(--measure); }
+  footer { padding: 32px 0 56px; color: var(--muted); font-size: .9375rem; border-top: 1.5px solid var(--rule); }
+
+  @media (min-width: 860px) {
+    .hero-grid { grid-template-columns: 1.05fr 1fr; align-items: center; gap: 56px; }
+    .road { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .road li { padding: 44px 0 0 0; }
+    .road li::before { left: 0; top: 0; }
+    .road li:not(:last-child)::after { left: 36px; right: -16px; top: 13.5px; bottom: auto; width: auto; height: 1.5px; }
+    .job { grid-template-columns: 1fr 220px; }
+    .job .dates { grid-column: 2; grid-row: 1; text-align: right; }
+    .job .org { grid-column: 1; }
+    .job ul { grid-column: 1 / -1; }
+    .projects { grid-template-columns: 1fr 1fr; column-gap: 40px; }
+    .certs { columns: 2; column-gap: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Chase<br>Tseng</h1>
+      <p class="role">Infrastructure &amp; Automation Engineer, Hsinchu</p>
+      <p class="lede">I write the Python that runs IT operations, and I run the systems underneath it: Active Directory, firewalls, networks, and endpoints for semiconductor suppliers and schools. Now moving that work onto Google Cloud and LLM-powered tooling.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://www.linkedin.com/in/chase5ws/">View LinkedIn</a>
+        <a class="btn" href="https://github.com/chase5ws?tab=repositories">Browse GitHub</a>
+        <a class="btn" href="mailto:chase5ws@gmail.com">Email me</a>
+      </div>
+    </div>
+
+    <figure class="panel-fig" aria-label="Patch panel of Chase's stack: Python, REST APIs and PowerShell for automation; Active Directory and VMware for infrastructure; Fortinet and ISO 27001 for security; Google Cloud and LLM / RAG for cloud and AI.">
+      <svg viewBox="0 0 480 300" role="img" aria-hidden="true">
+        <!-- cables first so the panel sits over their ends -->
+        <path class="cable" stroke="var(--c-auto)"  d="M42 74 C42 160, 30 200, 20 300"/>
+        <path class="cable" stroke="var(--c-auto)"  d="M98 74 C98 170, 90 220, 92 300"/>
+        <path class="cable" stroke="var(--c-auto)"  d="M154 74 C154 180, 150 230, 160 300"/>
+        <path class="cable" stroke="var(--c-infra)" d="M210 74 C210 170, 220 230, 226 300"/>
+        <path class="cable" stroke="var(--c-infra)" d="M266 74 C266 180, 280 230, 292 300"/>
+        <path class="cable" stroke="var(--c-sec)"   d="M322 74 C322 170, 345 220, 356 300"/>
+        <path class="cable" stroke="var(--c-sec)"   d="M378 74 C378 170, 405 220, 418 300"/>
+        <path class="cable" stroke="var(--c-cloud)" d="M434 74 C434 160, 460 210, 474 300"/>
+        <!-- 1U panel -->
+        <rect x="6" y="20" width="468" height="64" rx="6" fill="var(--steel)"/>
+        <circle cx="16" cy="52" r="4" fill="var(--paper)" opacity=".5"/>
+        <circle cx="464" cy="52" r="4" fill="var(--paper)" opacity=".5"/>
+        <g fill="#141B24">
+          <rect x="28" y="38" width="28" height="24" rx="2"/><rect x="84" y="38" width="28" height="24" rx="2"/>
+          <rect x="140" y="38" width="28" height="24" rx="2"/><rect x="196" y="38" width="28" height="24" rx="2"/>
+          <rect x="252" y="38" width="28" height="24" rx="2"/><rect x="308" y="38" width="28" height="24" rx="2"/>
+          <rect x="364" y="38" width="28" height="24" rx="2"/><rect x="420" y="38" width="28" height="24" rx="2"/>
+        </g>
+        <g fill="var(--paper)" font-family="Archivo, sans-serif" font-size="9.5" font-weight="600" text-anchor="middle">
+          <text x="42" y="32">Python</text><text x="98" y="32">REST APIs</text>
+          <text x="154" y="32">PowerShell</text><text x="210" y="32">Active Dir.</text>
+          <text x="266" y="32">VMware</text><text x="322" y="32">Fortinet</text>
+          <text x="378" y="32">ISO 27001</text><text x="434" y="32">GCP / LLM</text>
+        </g>
+        <g fill="var(--paper)" opacity=".55" font-family="Archivo, sans-serif" font-size="8" text-anchor="middle">
+          <text x="42" y="76">1</text><text x="98" y="76">2</text><text x="154" y="76">3</text><text x="210" y="76">4</text>
+          <text x="266" y="76">5</text><text x="322" y="76">6</text><text x="378" y="76">7</text><text x="434" y="76">8</text>
+        </g>
+      </svg>
+      <figcaption class="legend">
+        <span><i class="sw" style="background:var(--c-auto)"></i>Automation</span>
+        <span><i class="sw" style="background:var(--c-infra)"></i>Infrastructure</span>
+        <span><i class="sw" style="background:var(--c-sec)"></i>Security</span>
+        <span><i class="sw" style="background:var(--c-cloud)"></i>Cloud &amp; AI</span>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="now" aria-labelledby="now-h">
+    <h2 id="now-h">What I'm building toward</h2>
+    <p class="sec-intro">A six-month plan from IT infrastructure to Cloud, DevOps, and AI automation engineering. Each phase ends with something shipped in public.</p>
+    <ol class="road">
+      <li class="now" data-n="1">
+        <h3>Cloud foundations <span class="now-flag">In progress</span></h3>
+        <p class="when">Nov – Dec 2026</p>
+        <p>Linux, Docker, GitHub Actions, and the Google Cloud Associate Cloud Engineer exam. Ships the IT Ops AI Assistant.</p>
+      </li>
+      <li data-n="2">
+        <h3>Infrastructure as code</h3>
+        <p class="when">Jan – Feb 2027</p>
+        <p>Terraform, GKE basics, and monitoring. Moves the ASC Discord bot onto Terraform-managed Google Cloud with CI/CD.</p>
+      </li>
+      <li data-n="3">
+        <h3>Next role</h3>
+        <p class="when">Mar – Apr 2027</p>
+        <p>Open to Cloud, DevOps, Platform, and AI Automation Engineer roles in Hsinchu, Taipei, or remote.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="work" aria-labelledby="work-h">
+    <h2 id="work-h">Experience</h2>
+    <ol class="jobs">
+      <li class="job infra">
+        <h3>IT Infrastructure Engineer</h3>
+        <p class="dates">Apr 2026 – now</p>
+        <p class="org">Korrnell Hsinchu International Academy</p>
+        <ul>
+          <li>Automated internal workflows by integrating LINE Bot APIs (GOSUBAR) with school systems.</li>
+          <li>Operate the UniFi network and ShareTech firewalls; wrote scripts and geo-blocking policies against probing and intrusion attempts.</li>
+          <li>Administer Apple MDM and Google Workspace with zero-trust access and endpoint security baselines.</li>
+        </ul>
+      </li>
+      <li class="job auto">
+        <h3>Software Engineer, Automation &amp; IT</h3>
+        <p class="dates">Oct 2025 – Mar 2026</p>
+        <p class="org">Hoyi Tech, Micron supplier</p>
+        <ul>
+          <li>Built a Python (Tkinter) RFID data-sync tool talking to a PHP REST API backend, replacing manual IPC configuration across production stations.</li>
+          <li>Implemented TSMC cybersecurity assessment controls: AD least-privilege groups, BitLocker, and OneDrive DLP.</li>
+          <li>Ran AD, mail, Fortinet firewall, and access-control systems; documented the network topology.</li>
+        </ul>
+      </li>
+      <li class="job sec">
+        <h3>IT Systems Engineer</h3>
+        <p class="dates">May 2025 – Aug 2025</p>
+        <p class="org">Forward-tek (TWSE 7530), TSMC supplier</p>
+        <ul>
+          <li>Maintained Digiwin ERP/EF and SQL databases under ISO 27001 controls.</li>
+          <li>Operated Active Directory, Fortinet firewalls, VMware virtualization, and the corporate mail server.</li>
+        </ul>
+      </li>
+      <li class="job plain">
+        <h3>Military service</h3>
+        <p class="dates">Dec 2024 – Apr 2025</p>
+        <p class="org">Military Police, Hsinchu</p>
+      </li>
+      <li class="job plain">
+        <h3>Product Manager</h3>
+        <p class="dates">Feb 2023 – Dec 2024</p>
+        <p class="org">Tagtoo, official Taiwan ad agency for REDnote</p>
+        <ul>
+          <li>Owned the MVP roadmap for a cashback product benchmarked against ShopBack.</li>
+          <li>Set up partner integrations with affiliate networks including KKday and iCHANNEL.</li>
+        </ul>
+      </li>
+      <li class="job auto">
+        <h3>Founder &amp; Developer</h3>
+        <p class="dates">Aug 2022 – Aug 2024</p>
+        <p class="org">ASC Blockchain Community</p>
+        <ul>
+          <li>Built Python Discord bots and Solidity smart contracts for a 3,000+ member Web3 community.</li>
+          <li>Ran 50+ technical and networking events.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-h">
+    <h2 id="proj-h">Projects</h2>
+    <div class="projects">
+      <article class="proj building cloud">
+        <span class="bar"></span>
+        <div>
+          <h3>IT Ops AI Assistant <small>Building now</small></h3>
+          <p>A LINE bot that answers IT questions from internal SOPs with retrieval-augmented generation, and opens a ticket when it can't.</p>
+          <p class="stack">Python, FastAPI, Gemini API, vector search, Docker, Cloud Run, GitHub Actions</p>
+        </div>
+      </article>
+      <article class="proj auto">
+        <span class="bar"></span>
+        <div>
+          <h3><a href="https://github.com/chase5ws/2026_tool_si_fetch-_api_tool">RFID Backend Upload Tool</a></h3>
+          <p>Guided desktop flow: configure IPC devices, parse users from Excel, bulk-sync to a PHP backend over REST.</p>
+          <p class="stack">Python, Tkinter, REST APIs</p>
+        </div>
+      </article>
+      <article class="proj auto">
+        <span class="bar"></span>
+        <div>
+          <h3><a href="https://github.com/chase5ws/2026_system_python_leave_application_form">Automated Leave Request System</a></h3>
+          <p>Employee lookup, date picking, and leave-duration math that exports ready-to-sign Excel forms.</p>
+          <p class="stack">Python, Excel automation</p>
+        </div>
+      </article>
+      <article class="proj auto">
+        <span class="bar"></span>
+        <div>
+          <h3><a href="https://github.com/chase5ws/2026_system_python_work_report_log">Timesheet Analytics</a></h3>
+          <p>Parses multi-sheet Excel work logs, applies weighted stats, and exports charts.</p>
+          <p class="stack">Python, pandas-style Excel processing</p>
+        </div>
+      </article>
+      <article class="proj auto">
+        <span class="bar"></span>
+        <div>
+          <h3><a href="https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract">NFT Whitelist Smart Contract</a></h3>
+          <p>Gas-optimized whitelist minting for ERC-721 and ERC-1155, live on Polygon for the AscCatSamurai collection.</p>
+          <p class="stack">Solidity 0.8.20, OpenZeppelin v5, Polygon</p>
+        </div>
+      </article>
+      <article class="proj auto">
+        <span class="bar"></span>
+        <div>
+          <h3><a href="https://github.com/chase5ws/2023_discord_python_auto_api_speaker">Trading Signals to Discord</a></h3>
+          <p>MACD and RSI strategies validated by ROI, Sharpe, and max drawdown, with real-time Discord webhook alerts.</p>
+          <p class="stack">Pine Script, Python, Discord API</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="certs" aria-labelledby="cert-h">
+    <h2 id="cert-h">Certifications</h2>
+    <ul class="certs">
+      <li>Gemini Certified Educator, Google for Education (2025)</li>
+      <li>Networking &amp; Security in Google Cloud, Google Cloud Skills Boost (2025)</li>
+      <li>Data, ML, and AI in Google Cloud, Google Cloud Skills Boost (2025)</li>
+      <li>Cloud Computing Fundamentals, Google Cloud Skills Boost (2025)</li>
+      <li>iThome Iron Man Competition, completion (2026)</li>
+      <li>B.B.A. Information Management, National Yunlin University of Science and Technology</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Get in touch</h2>
+    <p>Hiring for Cloud, DevOps, Platform, or AI automation work? Email <a href="mailto:chase5ws@gmail.com">chase5ws@gmail.com</a> or message me on <a href="https://www.linkedin.com/in/chase5ws/">LinkedIn</a>.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Built by hand as a static page and hosted on GitHub Pages. Source in <a href="https://github.com/chase5ws/chase5ws">chase5ws/chase5ws</a>.</div>
+</footer>
+
+</body>
+</html>
