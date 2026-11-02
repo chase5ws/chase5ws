@@ -10,6 +10,10 @@
 
 <br/><br/>
 
+<a href="https://chase5ws.github.io/chase5ws/"><img src="https://img.shields.io/badge/%E2%96%B6%20VISIT%20MY%20WEBSITE-chase5ws.github.io%2Fchase5ws-00E5FF?style=for-the-badge&logo=googlechrome&logoColor=00E5FF&labelColor=0A0F2C" alt="Visit my website" height="40" /></a>
+
+<br/><br/>
+
 <img src="./assets/terminal.svg" alt="whoami — Chase Tseng, IT @ Korrnell Hsinchu International Academy" width="720" />
 
 </div>
