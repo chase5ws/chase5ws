@@ -36,9 +36,7 @@
 |:-:|---|---|---|
 | 🟢 | **IT Infrastructure Engineer** | Korrnell Hsinchu International Academy | Apr 2026 – now |
 | 🔵 | **Software Engineer** (Automation & IT) | Hoyi Tech Co., Ltd · *Micron supplier* | Oct 2025 – Mar 2026 |
-| 🔵 | **Teaching Assistant** — Python & Minecraft Education | Dayuan Elementary School | Oct 2025 – Dec 2025 |
 | 🔵 | **IT Systems Engineer** | Forward-tek · *TWSE 7530, TSMC supplier* | May 2025 – Aug 2025 |
-| 🪖 | Military service | Hsinchu Military Police | Dec 2024 – Apr 2025 |
 | 🟣 | **Product Manager** | Tagtoo · *Official Taiwan ad agency for REDnote* | Feb 2023 – Dec 2024 |
 | 🟣 | **Founder & Developer** | ASC Blockchain Community | Aug 2022 – Aug 2024 |
 | ⚪ | IT / Database Assistant | YunTech Library · Hukou Library · Fu Jen University | 2020 – 2023 |
