@@ -21,7 +21,7 @@
   let pos = 0;               // fractional frame index
   let speed = BASE, target = BASE;
   let glow = 0, glowTarget = 0;
-  const GREY = [185, 194, 207], BLUE = [77, 163, 255];
+  const GREY = [96, 104, 116], BLUE = [42, 118, 210];
   let lean = { x: 0, y: 0 }, leanTarget = { x: 0, y: 0 };
   let down = false, lastX = 0, lastT = 0;
 
@@ -59,7 +59,7 @@
       pre.textContent = frames[Math.floor(pos)];
       const c = GREY.map((g, i) => Math.round(g + (BLUE[i] - g) * glow));
       pre.style.color = `rgb(${c.join(",")})`;
-      pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px rgba(77, 163, 255, ${(glow * 0.85).toFixed(2)})` : "none";
+      pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px rgba(42, 118, 210, ${(glow * 0.85).toFixed(2)})` : "none";
       pre.style.transform = `translate(-50%, -50%) translate(${(lean.x * 14).toFixed(1)}px, ${(lean.y * 10).toFixed(1)}px) scale(${(1 + glow * 0.08).toFixed(3)})`;
     }
     requestAnimationFrame(frame);

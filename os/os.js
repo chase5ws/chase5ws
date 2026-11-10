@@ -41,7 +41,9 @@
     { id: "contact", title: "Contact", icon: "contact", image: "./os/icons/contact.png", w: 420, h: 280, body: contactBody },
     { id: "experience", title: "Experience", icon: "experience", image: "./os/icons/experience.png", w: 620, h: 560, body: experienceBody },
     { id: "roadmap", title: "Roadmap", icon: "roadmap", image: "./os/icons/roadmap.png", w: 560, h: 540, body: roadmapBody },
-    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, live: p.status === "live", w: 540, h: 420, body: () => projectBody(p) })),
+    { id: "stats", title: "Languages & activity", icon: "me", image: "./os/icons/stats.png", w: 540, h: 560, body: statsBody },
+    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, live: p.status === "live", desktop: p.status === "live", w: 540, h: 420, body: () => projectBody(p) })),
+    { id: "projects", title: "Projects", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: folderBody },
     { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
     { id: "recycle-bin", title: "Recycle Bin", icon: "me", image: "./os/icons/win-recycle.png", w: 380, h: 220, body: recycleBody },
   ];
@@ -134,6 +136,14 @@
       if (act === "max") toggleMax(w);
       if (act === "close") close(w);
     });
+    el.addEventListener("dblclick", (e) => { const b = e.target.closest("[data-open]"); if (b) open(b.dataset.open); });
+    el.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-open]");
+      if (!b) return;
+      $$(".is-selected", el).forEach((x) => x.classList.remove("is-selected"));
+      b.classList.add("is-selected");
+      if (e.detail === 0 || matchMedia("(pointer: coarse)").matches) open(b.dataset.open);
+    });
     el.addEventListener("keydown", (e) => { if (e.key === "Escape") close(w); });
     bar.addEventListener("dblclick", (e) => { if (!e.target.closest("button")) toggleMax(w); });
     bar.addEventListener("pointerdown", (e) => {
@@ -180,6 +190,18 @@
       <h4>Certifications</h4><ul class="points">${D.certs.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>`;
   }
 
+  // Projects that are not live yet live in one folder; each still opens its own window.
+  function folderBody() {
+    const inside = ITEMS.filter((i) => i.desktop === false);
+    return `<ul class="folder" aria-label="Projects">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
+  }
+
+  // The same card as the GitHub profile README, rebuilt daily by the Metrics workflow.
+  function statsBody() {
+    return `<div class="pad"><p class="muted small">Recent activity, repositories and languages, refreshed daily from GitHub.</p>
+      <div class="stats-card"><img src="./metrics/profile.svg" alt="GitHub activity, repositories and languages for chase5ws" width="480" height="471"></div></div>`;
+  }
+
   function thisPcBody() {
     return `<div class="pad"><h4>ChaseOS</h4>
       <ul class="links"><li><span>Built with</span><span>Plain HTML, CSS and JavaScript</span></li><li><span>Background</span><span>WebGL, drawn live</span></li><li><span>Hosted on</span><span>GitHub Pages</span></li><li><span>Source</span><a href="https://github.com/chase5ws/chase5ws" target="_blank" rel="noopener">chase5ws/chase5ws</a></li></ul></div>`;
@@ -204,7 +226,7 @@
 
   // ---------- desktop icons ----------
   const icons = $("#icons");
-  icons.innerHTML = ITEMS.map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
+  icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
   icons.addEventListener("dblclick", (e) => { const b = e.target.closest(".dicon"); if (b) open(b.dataset.id); });
   icons.addEventListener("click", (e) => {
     const b = e.target.closest(".dicon");

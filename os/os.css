@@ -8,13 +8,13 @@
   --accent: #3b9cff;
   --accent-ink: #ffffff;
   --live: #4ade80;
-  --win: #1d2129;
-  --win-bar: #14171d;
+  --win: #121419;
+  --win-bar: #0c0e12;
   --win-line: rgba(255, 255, 255, 0.09);
   --card: rgba(255, 255, 255, 0.05);
   --hover: rgba(255, 255, 255, 0.08);
   --press: rgba(255, 255, 255, 0.04);
-  --taskbar: rgba(10, 12, 16, 0.82);
+  --taskbar: rgba(4, 5, 8, 0.92);
   --taskbar-h: 40px;
 }
 
@@ -38,8 +38,8 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .js .os { display: block; height: 100dvh; }
 
 /* ---------- wallpaper: rotating ASCII sphere (os/wall.js) ---------- */
-.wall { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: radial-gradient(70% 70% at 50% 45%, #0d1a2e 0%, #070b12 55%, #000 100%); }
-.sphere { position: absolute; left: 50%; top: 47%; margin: 0; transform: translate(-50%, -50%); color: #b9c2cf; font: 400 min(3.1vh, 2.3vw)/1.15 "Cascadia Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; white-space: pre; user-select: none; pointer-events: none; will-change: transform; }
+.wall { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: radial-gradient(60% 60% at 50% 45%, #060d18 0%, #020408 60%, #000 100%); }
+.sphere { position: absolute; left: 50%; top: 47%; margin: 0; transform: translate(-50%, -50%); color: #606874; font: 400 min(3.1vh, 2.3vw)/1.15 "Cascadia Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; white-space: pre; user-select: none; pointer-events: none; will-change: transform; }
 
 /* ---------- desktop ---------- */
 .desktop { position: absolute; inset: 0 0 var(--taskbar-h) 0; z-index: 1; }
@@ -174,4 +174,11 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .links li > span:last-child { color: var(--text); }
 .links li > span:first-child { color: var(--muted); }
 /* pixel icons stay crisp at any size */
-img[src*="/contact."], img[src*="/experience."], img[src*="/roadmap."], img[src*="/mbti."], img[src*="/easy-mcp."], img[src*="/it-ops-ai."], img[src*="/start."] { image-rendering: pixelated; border-radius: 0 !important; }
+img[src*="/contact."], img[src*="/experience."], img[src*="/roadmap."], img[src*="/mbti."], img[src*="/easy-mcp."], img[src*="/it-ops-ai."], img[src*="/start."], img[src*="/asc-"], img[src*="/wallpaper."], img[src*="/form-limiter."], img[src*="/folder."], img[src*="/stats."] { image-rendering: pixelated; border-radius: 0 !important; object-fit: contain !important; }
+
+/* Projects folder and stats card */
+.folder { list-style: none; margin: 0; padding: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.dicon--dark .dicon__label { text-shadow: none; }
+.dicon--dark:hover { background: var(--hover); }
+.stats-card { margin-top: 8px; padding: 10px; border-radius: 6px; background: #f4f6f9; }
+.stats-card img { display: block; width: 100%; height: auto; }

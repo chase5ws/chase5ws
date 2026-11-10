@@ -80,3 +80,16 @@ Status: complete. Chromium: pixel icons crisp, sphere grey→blue on hold, no er
 
 ### 2026-11-10 14:54 | claude-opus-5-5 | NOTE
 Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
+
+### 2026-11-10 14:58 | claude-opus-5-5 | PROMPT
+> 顏色不夠深色 各專案自己的圖也幫我換成像素 然後除了目前在live的以外放在同一個folder 另外放上跟我readme一樣 近期語言跟進度這樣
+
+### 2026-11-10 14:58 | claude-opus-5-5 | FILES_MODIFIED
+- darker palette: sphere grey #606874 → blue #2a76d2 on hold; near-black backdrop, windows and taskbar
+- os/icons/{asc-bot,asc-site,wallpaper,form-limiter}.png pixelated from the projects' own images; new pixel folder.png and stats.png
+- desktop: live projects stay on the desktop; the rest sit in a Projects folder window
+- new 'Languages & activity' window shows metrics/profile.svg (same card as the README)
+- os/os.js, os/os.css, os/wall.js, index.html (?v=20261110j), NOTICE.md
+
+### 2026-11-10 14:58 | claude-opus-5-5 | WORK_END
+Status: complete. Chromium: folder opens projects, stats card renders, sphere darker, no errors.

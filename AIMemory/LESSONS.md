@@ -6,3 +6,4 @@
 - 2026-11-10 (claude-opus-5-5) README images come from the Metrics workflow: if you rename or add a metrics card, the image stays broken until the workflow runs. The workflow now runs on push when README.md or metrics.yml change.
 - 2026-11-10 (claude-opus-5-5) Taskbar stays minimal: start button on the left, time on the right, nothing else.
 - 2026-11-10 (claude-opus-5-5) Owner's palette for the site background: black, grey and blue only (no rainbow). Icons: pixel art for drawn ones; keep the Windows 10 icons he supplied and each project's own image.
+- 2026-11-10 (claude-opus-5-5) Desktop layout: only live projects sit on the desktop; projects that are not live go in the Projects folder. Keep the colours dark (near-black, dim grey, deep blue).
