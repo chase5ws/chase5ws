@@ -37,13 +37,9 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .js .fallback { display: none; }
 .js .os { display: block; height: 100dvh; }
 
-/* ---------- wallpaper: static here, animated waves when wall.js runs ---------- */
-.wall { position: fixed; inset: 0; z-index: 0;
-  background:
-    radial-gradient(80% 60% at 70% 110%, rgba(40, 110, 200, 0.55), transparent 70%),
-    radial-gradient(60% 50% at 10% 100%, rgba(20, 80, 160, 0.45), transparent 70%),
-    linear-gradient(180deg, #050a14 0%, #0a1a33 60%, #0f2a52 100%); }
-.wall canvas { display: block; width: 100%; height: 100%; }
+/* ---------- wallpaper: rotating ASCII sphere (os/wall.js) ---------- */
+.wall { position: fixed; inset: 0; z-index: 0; background: #000; overflow: hidden; }
+.sphere { position: absolute; left: 50%; top: 47%; margin: 0; transform: translate(-50%, -50%); color: #e8ecf3; font: 400 min(3.1vh, 2.3vw)/1.15 "Cascadia Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; white-space: pre; user-select: none; pointer-events: none; will-change: transform; }
 
 /* ---------- desktop ---------- */
 .desktop { position: absolute; inset: 0 0 var(--taskbar-h) 0; z-index: 1; }

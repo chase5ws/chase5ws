@@ -97,3 +97,14 @@ Status: complete. Chromium: shader renders, 11 icons, no errors, mobile ok.
 
 ### 2026-11-10 14:40 | claude-opus-5-5 | WORK_END
 Status: complete. Chromium: 13 icons, minimal taskbar, no errors, mobile ok.
+
+### 2026-11-10 14:51 | claude-opus-5-5 | PROMPT
+> 背景幫我放這個(3D ASCII Sphere) 然後我希望可以用滑鼠互動 按跟畫的時候 背景都會加快或變化之類的
+
+### 2026-11-10 14:51 | claude-opus-5-5 | FILES_MODIFIED
+- os/sphere-frames.js: frames from the 3D ASCII Sphere wallpaper (Filispeen, CC0)
+- os/wall.js: renders the sphere; hold = faster + glow + colour cycle, drag = spin follows drag direction/speed, move = gentle lean; reduced motion = still frame
+- os/os.css, index.html (?v=20261110h), NOTICE.md
+
+### 2026-11-10 14:51 | claude-opus-5-5 | WORK_END
+Status: complete. Chromium: sphere animates, press+drag changes speed and colour, no errors.

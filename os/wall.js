@@ -1,66 +1,69 @@
-// HD animated wallpaper: a flowing aurora drawn by a small WebGL shader at screen
-// resolution. Falls back to the CSS gradient in os.css when WebGL is missing, and
-// draws a single still frame when the visitor prefers reduced motion.
+// Background: a rotating 3D ASCII sphere ("3D ASCII Sphere" by Filispeen, CC0; frames in
+// sphere-frames.js). It reacts to the mouse on empty desktop space:
+//   hold the button  → spins faster, glows and shifts colour
+//   drag             → spin follows the drag (left/right = direction, speed = drag speed)
+//   move             → the sphere leans gently toward the pointer
+// With reduced motion the sphere shows one still frame.
 (() => {
   const host = document.getElementById("wall");
-  if (!host) return;
-  const canvas = document.createElement("canvas");
-  const gl = canvas.getContext("webgl", { antialias: false, premultipliedAlpha: false, powerPreference: "low-power" });
-  if (!gl) return;
+  const frames = window.SPHERE_FRAMES;
+  if (!host || !frames || !frames.length) return;
 
-  const vs = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
-  const fs = `precision highp float;
-uniform vec2 r;uniform float t;
-float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
-float n(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.-2.*f);
-  return mix(mix(h(i),h(i+vec2(1,0)),u.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),u.x),u.y);}
-float fbm(vec2 p){float v=0.,a=.5;mat2 m=mat2(1.6,1.2,-1.2,1.6);
-  for(int i=0;i<6;i++){v+=a*n(p);p=m*p;a*=.5;}return v;}
-void main(){
-  vec2 uv=gl_FragCoord.xy/r.y;float T=t*.035;
-  vec2 q=vec2(fbm(uv*1.3+T),fbm(uv*1.3+vec2(5.2,1.3)-T));
-  vec2 w=vec2(fbm(uv*1.5+3.*q+vec2(1.7,9.2)+T*1.3),fbm(uv*1.5+3.*q+vec2(8.3,2.8)-T));
-  float f=fbm(uv*1.7+3.4*w);
-  vec3 c=mix(vec3(.015,.03,.09),vec3(.04,.17,.48),clamp(f*f*2.4,0.,1.));
-  c=mix(c,vec3(.42,.22,.82),clamp(length(q)*.6-.25,0.,1.));
-  c=mix(c,vec3(.2,.72,1.),clamp(pow(w.x,3.2)*1.5,0.,1.));
-  c+=vec3(.55,.75,1.)*.10*smoothstep(.62,1.,f);
-  vec2 v=gl_FragCoord.xy/r-.5;c*=1.-.6*dot(v,v);
-  gl_FragColor=vec4(c,1.);
-}`;
-  const sh = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return gl.getShaderParameter(s, gl.COMPILE_STATUS) ? s : null; };
-  const v = sh(gl.VERTEX_SHADER, vs), f = sh(gl.FRAGMENT_SHADER, fs);
-  if (!v || !f) return;
-  const prog = gl.createProgram();
-  gl.attachShader(prog, v); gl.attachShader(prog, f); gl.linkProgram(prog);
-  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
-  gl.useProgram(prog);
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-  const loc = gl.getAttribLocation(prog, "p");
-  gl.enableVertexAttribArray(loc);
-  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-  const uR = gl.getUniformLocation(prog, "r"), uT = gl.getUniformLocation(prog, "t");
-
-  host.append(canvas);
+  const pre = document.createElement("pre");
+  pre.className = "sphere";
+  pre.setAttribute("aria-hidden", "true");
+  pre.textContent = frames[0];
+  host.append(pre);
   host.classList.add("is-live");
-  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const scale = Math.min(window.devicePixelRatio || 1, 2);
-  function resize() {
-    canvas.width = Math.round(innerWidth * scale);
-    canvas.height = Math.round(innerHeight * scale);
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.uniform2f(uR, canvas.width, canvas.height);
-    if (still) draw(40);
-  }
-  function draw(time) { gl.uniform1f(uT, time); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
-  addEventListener("resize", resize);
-  resize();
-  if (still) return;
-  const t0 = performance.now();
-  (function frame(now) {
-    if (!document.hidden) draw((now - t0) / 1000 + 40);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const BASE = 1;            // frames per 10 ms at rest (the original speed)
+  let pos = 0;               // fractional frame index
+  let speed = BASE, target = BASE;
+  let glow = 0, glowTarget = 0;
+  let hue = 210;
+  let lean = { x: 0, y: 0 }, leanTarget = { x: 0, y: 0 };
+  let down = false, lastX = 0, lastT = 0;
+
+  const onDesktop = (e) => !e.target.closest(".win, .dicon, .taskbar, .start, a, button");
+
+  addEventListener("pointerdown", (e) => {
+    if (e.button !== 0 || !onDesktop(e)) return;
+    down = true; lastX = e.clientX; lastT = performance.now();
+    target = 6; glowTarget = 1;
+  });
+  addEventListener("pointermove", (e) => {
+    leanTarget.x = (e.clientX / innerWidth - 0.5) * 2;
+    leanTarget.y = (e.clientY / innerHeight - 0.5) * 2;
+    if (!down) return;
+    const now = performance.now(), dt = Math.max(now - lastT, 1);
+    const v = (e.clientX - lastX) / dt;            // px per ms, signed
+    lastX = e.clientX; lastT = now;
+    if (Math.abs(v) > 0.05) target = Math.max(-14, Math.min(14, v * 9));
+  });
+  const release = () => { if (!down) return; down = false; target = BASE; glowTarget = 0; };
+  addEventListener("pointerup", release);
+  addEventListener("pointercancel", release);
+  addEventListener("blur", release);
+
+  let prev = performance.now();
+  function frame(now) {
+    const dt = Math.min(now - prev, 64); prev = now;
+    if (!document.hidden) {
+      const k = 1 - Math.pow(0.001, dt / 1000);      // smooth easing, frame-rate independent
+      speed += (target - speed) * Math.min(1, k * 3);
+      glow += (glowTarget - glow) * Math.min(1, k * 4);
+      lean.x += (leanTarget.x - lean.x) * k; lean.y += (leanTarget.y - lean.y) * k;
+      pos = (pos + speed * dt / 10) % frames.length;
+      if (pos < 0) pos += frames.length;
+      pre.textContent = frames[Math.floor(pos)];
+      hue = (hue + glow * dt * 0.12) % 360;
+      const light = 88 - glow * 18;
+      pre.style.color = `hsl(${hue.toFixed(0)} ${(glow * 90).toFixed(0)}% ${light.toFixed(0)}%)`;
+      pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px hsl(${hue.toFixed(0)} 90% 60% / ${(glow * 0.9).toFixed(2)})` : "none";
+      pre.style.transform = `translate(-50%, -50%) translate(${(lean.x * 14).toFixed(1)}px, ${(lean.y * 10).toFixed(1)}px) scale(${(1 + glow * 0.08).toFixed(3)})`;
+    }
     requestAnimationFrame(frame);
-  })(t0);
+  }
+  requestAnimationFrame(frame);
 })();
