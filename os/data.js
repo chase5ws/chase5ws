@@ -13,7 +13,7 @@ window.CHASE = {
   // status: live | source | private | building
   projects: [
     {
-      id: "asc-bot", name: "ASC Bot", status: "live", where: "Railway",
+      id: "asc-bot", icon: "bot", name: "ASC Bot", status: "live", where: "Railway",
       summary: "A Discord bot that communities license per server, run from a web admin.",
       points: [
         "Each system is a folder: drop it in, restart, enable it per server.",
@@ -26,7 +26,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_asc_discord_bot",
     },
     {
-      id: "asc-site", name: "ASC community website", status: "live", where: "GitHub Pages",
+      id: "asc-site", icon: "coin", name: "ASC community website", status: "live", where: "GitHub Pages",
       summary: "One page for the community’s Cat Samurai NFTs and ASC token, in Chinese and English.",
       points: [
         "Mint, reveal, change outfits, pull parts and trade them in a market.",
@@ -39,7 +39,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_asc_web3_website",
     },
     {
-      id: "mbti", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
+      id: "mbti", icon: "quiz", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
       summary: "Twenty story questions that pick a race and class for WoW Forever.",
       points: [
         "An unofficial fan quiz built on MBTI traits.",
@@ -51,7 +51,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_wow_forever_mbti",
     },
     {
-      id: "wallpaper", name: "Live Wallpaper new tab", status: "source", where: "Chrome extension",
+      id: "wallpaper", icon: "monitor", name: "Live Wallpaper new tab", status: "source", where: "Chrome extension",
       summary: "A Chrome extension that turns the new tab into an animated desktop.",
       points: [
         "Wallpapers from uploaded video or GIF, a URL, YouTube or six built-in animations.",
@@ -62,7 +62,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_google_wallpaper_customized",
     },
     {
-      id: "form-limiter", name: "Google Form limiter", status: "source", where: "Railway",
+      id: "form-limiter", icon: "form", name: "Google Form limiter", status: "source", where: "Railway",
       summary: "A platform that caps sign-ups on Google Forms for many organisations.",
       points: [
         "Opens and closes each form by quota and schedule, checked every minute.",
@@ -73,7 +73,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_google_form_limiter",
     },
     {
-      id: "easy-mcp", name: "claude-easy-mcp", status: "private", where: "MCP server",
+      id: "easy-mcp", icon: "chip", name: "claude-easy-mcp", status: "private", where: "MCP server",
       summary: "One MCP server that gives every AI coding agent the same project memory.",
       points: [
         "Claude, Codex and Cursor share a work log, hand tasks to each other and keep lessons.",
@@ -83,7 +83,7 @@ window.CHASE = {
       stack: "Node.js, MCP SDK, node:test",
     },
     {
-      id: "it-ops-ai", name: "IT Ops AI Assistant", status: "building", where: "LINE bot",
+      id: "it-ops-ai", icon: "chat", name: "IT Ops AI Assistant", status: "building", where: "LINE bot",
       summary: "A LINE bot that answers IT questions from internal SOPs, and opens a ticket when it can’t.",
       points: [],
       stack: "Python, FastAPI, Gemini API, vector search, Docker, Cloud Run, GitHub Actions",

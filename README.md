@@ -25,5 +25,17 @@ Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; 
 
 Thanks for stopping by.
 
-<p align="center"><img src="./metrics.svg" alt="Contribution calendar, languages and coding habits for chase5ws" width="100%"></p>
-<p align="center"><sub>Generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></sub></p>
+<p align="center">
+  <img src="./metrics/overview.svg" alt="GitHub overview for chase5ws: activity and repositories" width="100%">
+</p>
+<p align="center">
+  <img src="./metrics/calendar.svg" alt="Contribution calendar for the past year" width="100%">
+</p>
+<p align="center">
+  <img src="./metrics/languages.svg" alt="Most used languages" width="49%">
+  <img src="./metrics/habits.svg" alt="Coding habits over the last 30 days" width="49%">
+</p>
+<p align="center">
+  <img src="./metrics/achievements.svg" alt="GitHub achievements" width="100%">
+</p>
+<p align="center"><sub>Infographics generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></sub></p>

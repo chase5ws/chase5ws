@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chase Tseng · ChaseOS</title>
 <meta name="description" content="Chase Tseng, infrastructure and automation engineer in Hsinchu. A desktop in the browser with his live projects, experience and roadmap.">
-<meta name="theme-color" content="#3a74d6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1522" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b1a2e">
 <link rel="stylesheet" href="./os/os.css">
 <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -40,76 +39,35 @@
 </main>
 
 <div class="os" aria-label="ChaseOS desktop">
-  <div id="lock" class="lock" hidden>
-    <button type="button" class="lock__face" id="lock-face" aria-label="Unlock ChaseOS">
-      <span class="lock__time" id="lock-time"></span>
-      <span class="lock__date" id="lock-date"></span>
-      <span class="lock__hint">Click or press any key</span>
-    </button>
-    <div class="lock__login" id="lock-login" hidden>
-      <span class="avatar avatar--xl" aria-hidden="true">CT</span>
-      <h2>Chase Tseng</h2>
-      <p>Infrastructure and automation engineer</p>
-      <button type="button" class="btn btn--accent btn--lg" id="sign-in">Sign in</button>
-    </div>
-  </div>
+  <div id="wall" class="wall" aria-hidden="true"></div>
 
   <div class="desktop" id="desktop">
     <h1 class="sr">Chase Tseng, infrastructure and automation engineer</h1>
     <ul id="icons" class="icons" aria-label="Desktop"></ul>
-    <aside class="widget" aria-labelledby="widget-h">
-      <div class="widget__top"><h2 id="widget-h">Live now</h2><span class="pill pill--live"><i aria-hidden="true"></i><span id="live-count"></span> running</span></div>
-      <p class="widget__note">Public sites. No sign-in needed.</p>
-      <ul id="widget-rows" class="widget__rows"></ul>
-    </aside>
     <div id="windows" class="windows"></div>
-    <div id="snap-preview" class="snap-preview" hidden></div>
   </div>
 
-  <div id="start" class="flyout start" role="dialog" aria-label="Start" hidden>
-    <div class="start__search">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input id="start-search" type="search" placeholder="Search apps and projects" aria-label="Search apps and projects" autocomplete="off">
+  <nav id="start" class="start" aria-label="Start menu" hidden>
+    <div class="start__rail">
+      <span class="avatar" aria-hidden="true">CT</span>
     </div>
-    <h2 class="start__h">Pinned</h2>
-    <ul id="start-pinned" class="start__pinned"></ul>
-    <h2 class="start__h">Projects</h2>
-    <ul id="start-rec" class="start__rec"></ul>
-    <div class="start__foot">
-      <span class="start__user"><span class="avatar avatar--s" aria-hidden="true">CT</span>Chase Tseng</span>
-      <button type="button" id="restart" class="icon-btn" aria-label="Lock ChaseOS" title="Lock">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M7 6.5a7 7 0 1 0 10 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
+    <div class="start__main">
+      <p class="start__who"><b>Chase Tseng</b><span>Infrastructure and automation engineer</span></p>
+      <ul id="start-list" class="start__list"></ul>
     </div>
-  </div>
-
-  <div id="widgets-panel" class="flyout widgets-panel" role="dialog" aria-label="Widgets" hidden></div>
-  <div id="quick" class="flyout quick" role="dialog" aria-label="Quick settings" hidden></div>
-  <ul id="ctx" class="flyout ctx" role="menu" hidden></ul>
-  <div id="snap" class="flyout snap" role="menu" aria-label="Snap layouts" hidden></div>
+  </nav>
 
   <footer class="taskbar">
-    <button type="button" id="widgets-btn" class="tb-widgets" aria-label="Widgets" aria-expanded="false" aria-controls="widgets-panel">
-      <span class="tb-widgets__dot" aria-hidden="true"></span><span><b id="tb-live"></b><small>sites live</small></span>
-    </button>
-    <div class="taskbar__center">
-      <button type="button" id="start-btn" class="task task--start" aria-label="Start" aria-expanded="false" aria-controls="start" title="Start"></button>
-      <button type="button" id="search-btn" class="tb-search" aria-label="Search" aria-controls="start">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Search</span>
-      </button>
-      <ul id="tasks" class="tasks" aria-label="Apps"></ul>
-    </div>
-    <button type="button" id="tray-btn" class="tray" aria-label="Quick settings and calendar" aria-expanded="false" aria-controls="quick">
-      <span class="tray__icons" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M2.5 9.5a14 14 0 0 1 19 0M5.5 12.8a9.5 9.5 0 0 1 13 0M8.6 16a5 5 0 0 1 6.8 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="19" r="1.4" fill="currentColor"/></svg>
-        <svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="17" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="5" y="9.5" width="10" height="5" rx="1" fill="currentColor"/><path d="M21.5 10.5v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      </span>
-      <time id="clock" class="clock"><span id="clock-time"></span><span id="clock-date"></span></time>
-    </button>
+    <button type="button" id="start-btn" class="tb-start" aria-label="Start" aria-expanded="false" aria-controls="start"></button>
+    <ul id="tasks" class="tasks" aria-label="Open windows"></ul>
+    <time id="clock" class="clock"><span id="clock-time"></span><span id="clock-date"></span></time>
   </footer>
 </div>
 
 <script src="./os/data.js"></script>
 <script src="./os/os.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.waves.min.js" defer></script>
+<script src="./os/wall.js" defer></script>
 </body>
 </html>
