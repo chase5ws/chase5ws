@@ -13,7 +13,7 @@ window.CHASE = {
   // status: live | source | private | building
   projects: [
     {
-      id: "asc-bot", icon: "bot", name: "ASC Bot", status: "live", where: "Railway",
+      id: "asc-bot", image: "./os/icons/asc-bot.png", icon: "bot", name: "ASC Bot", status: "live", where: "Railway",
       summary: "A Discord bot that communities license per server, run from a web admin.",
       points: [
         "Each system is a folder: drop it in, restart, enable it per server.",
@@ -26,7 +26,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_asc_discord_bot",
     },
     {
-      id: "asc-site", icon: "coin", name: "ASC community website", status: "live", where: "GitHub Pages",
+      id: "asc-site", image: "./os/icons/asc-site.png", icon: "coin", name: "ASC community website", status: "live", where: "GitHub Pages",
       summary: "One page for the community’s Cat Samurai NFTs and ASC token, in Chinese and English.",
       points: [
         "Mint, reveal, change outfits, pull parts and trade them in a market.",
@@ -39,7 +39,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_asc_web3_website",
     },
     {
-      id: "mbti", icon: "quiz", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
+      id: "mbti", icon: "swords", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
       summary: "Twenty story questions that pick a race and class for WoW Forever.",
       points: [
         "An unofficial fan quiz built on MBTI traits.",
@@ -51,7 +51,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_wow_forever_mbti",
     },
     {
-      id: "wallpaper", icon: "monitor", name: "Live Wallpaper new tab", status: "source", where: "Chrome extension",
+      id: "wallpaper", image: "./os/icons/wallpaper.png", icon: "monitor", name: "Live Wallpaper new tab", status: "source", where: "Chrome extension",
       summary: "A Chrome extension that turns the new tab into an animated desktop.",
       points: [
         "Wallpapers from uploaded video or GIF, a URL, YouTube or six built-in animations.",
@@ -62,7 +62,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_google_wallpaper_customized",
     },
     {
-      id: "form-limiter", icon: "form", name: "Google Form limiter", status: "source", where: "Railway",
+      id: "form-limiter", image: "./os/icons/form-limiter.png", icon: "form", name: "Google Form limiter", status: "source", where: "Railway",
       summary: "A platform that caps sign-ups on Google Forms for many organisations.",
       points: [
         "Opens and closes each form by quota and schedule, checked every minute.",
