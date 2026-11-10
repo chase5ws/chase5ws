@@ -5,46 +5,6 @@
 #         PROJECT_BOOTSTRAPPED RE_ENGAGED
 # Rules: AIMemory/PROTOCOL.md. Never edit existing events; append a CORRECTION.
 
-### 2026-11-10 13:15 | claude-opus-5-5 | FILES_MODIFIED
-- Site rebuilt as XP style: os/os.css, os/os.js, index.html; new os/pixels.js (16x16 pixel icons, own art) and os/wallpaper.png (pixel landscape, own art); deleted os/wall.js and Vanta CDN
-- Desktop order: Me, Contact, Experience, Roadmap, then projects; no window opens on load; Terminal and Earlier tools removed
-- metrics.yml: profile.svg + topics.svg (small, side by side); AniList/Apple Music cards gated on repo variables ANILIST_USER / MUSIC_PLAYLIST; old metrics/*.svg removed
-
-### 2026-11-10 13:15 | claude-opus-5-5 | NOTE
-Waiting on the owner for: AniList user name and an Apple Music playlist URL (set as repo variables, then uncomment the block in README).
-
-### 2026-11-10 13:15 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: 11 icons, empty desktop on load, windows open/drag/minimise, start menu, mobile no horizontal scroll, no console errors.
-
-### 2026-11-10 14:31 | claude-opus-5-5 | PROMPT
-> 網頁還是太醜了 我想跟https://dustinbrett.com/網站一樣 底下簡單就好 然後背景用酷動態圖片 icon用win project幫我用該project的icon圖片 從裡面挖也行
-
-### 2026-11-10 14:31 | claude-opus-5-5 | FILES_MODIFIED
-- os/os.js, os/os.css, index.html: back to the dark daedalOS-style desktop with animated Vanta waves (os/wall.js); simple taskbar
-- os/icons/: asc-bot (logo.png from the bot admin), asc-site (box.png from the website), wallpaper (extension icon128), form-limiter (favicon from public/index.html)
-- os/data.js: image per project; MBTI uses a crossed-swords tile after its ⚔️ favicon
-- deleted XP files os/pixels.js, os/wallpaper.png
-
-### 2026-11-10 14:31 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: 11 icons, empty desktop, waves render, windows open, mobile no horizontal scroll, no errors.
-
-### 2026-11-10 14:35 | claude-opus-5-5 | PROMPT
-> 左下角我想要維持windows那種 然後這些default icon能幫我換現在win的嗎？ 背景圖我也想換成高清動態圖
-
-### 2026-11-10 14:35 | claude-opus-5-5 | FILES_MODIFIED
-- os/icons/{me,contact,experience,roadmap,start,mbti,easy-mcp,it-ops-ai}.png: Microsoft Fluent Emoji 3D (MIT), credited in NOTICE.md
-- os/wall.js: own WebGL aurora shader at screen resolution (replaces Vanta + three.js CDN)
-- os/os.js, os/os.css, os/data.js, index.html (?v=20261110e)
-
-### 2026-11-10 14:35 | claude-opus-5-5 | NOTE
-Start button uses the Fluent Emoji 'window' glyph, not the Windows logo (trademark); icons are Fluent Emoji (MIT), not copies of Windows system icons.
-
-### 2026-11-10 14:35 | claude-opus-5-5 | NOTE
-Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
-
-### 2026-11-10 14:35 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: shader renders, 11 icons, no errors, mobile ok.
-
 ### 2026-11-10 14:39 | claude-opus-5-5 | PROMPT
 > windows-10-icon-set 這個 / 底下不要有icon 要是最小短簡單 只保由右邊時間跟左邊的開始
 
@@ -111,3 +71,15 @@ README.md, .github/workflows/metrics.yml, metrics/placeholder.svg, os/os.js, ind
 
 ### 2026-11-10 15:05 | claude-opus-5-5 | WORK_END
 README split into lowlighter-style cards
+
+### 2026-11-10 15:10 | claude-opus-5-5 | PROMPT
+> 這邊不要放東西(開始鈕) / asc的2個icon也請自行用適合的像素圖 / The Recycle Bin is empty.幫我移除
+
+### 2026-11-10 15:10 | claude-opus-5-5 | NOTE
+Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
+
+### 2026-11-10 15:10 | claude-opus-5-5 | FILES_MODIFIED
+os/os.js, index.html, NOTICE.md, os/icons/asc-{bot,site}.png redrawn; removed start.png, win-recycle.png
+
+### 2026-11-10 15:10 | claude-opus-5-5 | WORK_END
+empty start button, no recycle bin, new ASC pixel icons

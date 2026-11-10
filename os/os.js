@@ -45,7 +45,6 @@
     ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, live: p.status === "live", desktop: p.status === "live", w: 540, h: 420, body: () => projectBody(p) })),
     { id: "projects", title: "Projects", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: folderBody },
     { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
-    { id: "recycle-bin", title: "Recycle Bin", icon: "me", image: "./os/icons/win-recycle.png", w: 380, h: 220, body: recycleBody },
   ];
   const byId = (id) => ITEMS.find((i) => i.id === id);
 
@@ -204,11 +203,7 @@
 
   function thisPcBody() {
     return `<div class="pad"><h4>ChaseOS</h4>
-      <ul class="links"><li><span>Built with</span><span>Plain HTML, CSS and JavaScript</span></li><li><span>Background</span><span>WebGL, drawn live</span></li><li><span>Hosted on</span><span>GitHub Pages</span></li><li><span>Source</span><a href="https://github.com/chase5ws/chase5ws" target="_blank" rel="noopener">chase5ws/chase5ws</a></li></ul></div>`;
-  }
-
-  function recycleBody() {
-    return `<div class="pad empty"><p>The Recycle Bin is empty.</p><p class="muted small">Every project here is still running.</p></div>`;
+      <ul class="links"><li><span>Built with</span><span>Plain HTML, CSS and JavaScript</span></li><li><span>Background</span><span>ASCII sphere, drawn live</span></li><li><span>Hosted on</span><span>GitHub Pages</span></li><li><span>Source</span><a href="https://github.com/chase5ws/chase5ws" target="_blank" rel="noopener">chase5ws/chase5ws</a></li></ul></div>`;
   }
 
   function projectBody(p) {
@@ -239,7 +234,6 @@
 
   // ---------- start menu ----------
   const start = $("#start"), startBtn = $("#start-btn");
-  startBtn.innerHTML = `<img src="./os/icons/start.png" alt="" draggable="false" class="pixel">`;
   $("#start-list").innerHTML = ITEMS.map((i) => `<li><button type="button" data-id="${i.id}">${iconOf(i)}<span>${esc(i.title)}</span></button></li>`).join("");
   const setStart = (on) => {
     start.hidden = !on; startBtn.setAttribute("aria-expanded", String(on));
