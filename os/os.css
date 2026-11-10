@@ -38,8 +38,8 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .js .os { display: block; height: 100dvh; }
 
 /* ---------- wallpaper: rotating ASCII sphere (os/wall.js) ---------- */
-.wall { position: fixed; inset: 0; z-index: 0; background: #000; overflow: hidden; }
-.sphere { position: absolute; left: 50%; top: 47%; margin: 0; transform: translate(-50%, -50%); color: #e8ecf3; font: 400 min(3.1vh, 2.3vw)/1.15 "Cascadia Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; white-space: pre; user-select: none; pointer-events: none; will-change: transform; }
+.wall { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: radial-gradient(70% 70% at 50% 45%, #0d1a2e 0%, #070b12 55%, #000 100%); }
+.sphere { position: absolute; left: 50%; top: 47%; margin: 0; transform: translate(-50%, -50%); color: #b9c2cf; font: 400 min(3.1vh, 2.3vw)/1.15 "Cascadia Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; white-space: pre; user-select: none; pointer-events: none; will-change: transform; }
 
 /* ---------- desktop ---------- */
 .desktop { position: absolute; inset: 0 0 var(--taskbar-h) 0; z-index: 1; }
@@ -173,3 +173,5 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .empty { display: grid; place-content: center; text-align: center; height: 100%; }
 .links li > span:last-child { color: var(--text); }
 .links li > span:first-child { color: var(--muted); }
+/* pixel icons stay crisp at any size */
+img[src*="/contact."], img[src*="/experience."], img[src*="/roadmap."], img[src*="/mbti."], img[src*="/easy-mcp."], img[src*="/it-ops-ai."], img[src*="/start."] { image-rendering: pixelated; border-radius: 0 !important; }

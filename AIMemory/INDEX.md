@@ -11,7 +11,7 @@
 | File | Date range | Events | Topics | Summary |
 |------|------------|--------|--------|---------|
 <!-- memory:warm:start -->
-| archive/work-2026-11-10.log | 2026-11-10 09:28 → 2026-11-10 09:52 | 11 | - | Redesign index.html with Hallmark (tabbed one-page intro incl. in-progress projects, small live links) and update README.md |
+| archive/work-2026-11-10.log | 2026-11-10 09:28 → 2026-11-10 13:15 | 22 | - | Redesign index.html with Hallmark (tabbed one-page intro incl. in-progress projects, small live links) and update README.md; Rebuild site as a Win11-style deskt …(truncated) |
 <!-- memory:warm:end -->
 
 ## Cold — fetch only on explicit need
@@ -31,4 +31,4 @@
 - PROTOCOL.md — rules, for agents without the easy MCP server
 - LESSONS.md — lessons learned on this project (lesson_add)
 
-Last update: 2026-11-10 14:35
+Last update: 2026-11-10 14:54

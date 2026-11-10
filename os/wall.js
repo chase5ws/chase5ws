@@ -1,6 +1,6 @@
 // Background: a rotating 3D ASCII sphere ("3D ASCII Sphere" by Filispeen, CC0; frames in
 // sphere-frames.js). It reacts to the mouse on empty desktop space:
-//   hold the button  → spins faster, glows and shifts colour
+//   hold the button  → spins faster and glows from grey to blue
 //   drag             → spin follows the drag (left/right = direction, speed = drag speed)
 //   move             → the sphere leans gently toward the pointer
 // With reduced motion the sphere shows one still frame.
@@ -21,7 +21,7 @@
   let pos = 0;               // fractional frame index
   let speed = BASE, target = BASE;
   let glow = 0, glowTarget = 0;
-  let hue = 210;
+  const GREY = [185, 194, 207], BLUE = [77, 163, 255];
   let lean = { x: 0, y: 0 }, leanTarget = { x: 0, y: 0 };
   let down = false, lastX = 0, lastT = 0;
 
@@ -57,10 +57,9 @@
       pos = (pos + speed * dt / 10) % frames.length;
       if (pos < 0) pos += frames.length;
       pre.textContent = frames[Math.floor(pos)];
-      hue = (hue + glow * dt * 0.12) % 360;
-      const light = 88 - glow * 18;
-      pre.style.color = `hsl(${hue.toFixed(0)} ${(glow * 90).toFixed(0)}% ${light.toFixed(0)}%)`;
-      pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px hsl(${hue.toFixed(0)} 90% 60% / ${(glow * 0.9).toFixed(2)})` : "none";
+      const c = GREY.map((g, i) => Math.round(g + (BLUE[i] - g) * glow));
+      pre.style.color = `rgb(${c.join(",")})`;
+      pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px rgba(77, 163, 255, ${(glow * 0.85).toFixed(2)})` : "none";
       pre.style.transform = `translate(-50%, -50%) translate(${(lean.x * 14).toFixed(1)}px, ${(lean.y * 10).toFixed(1)}px) scale(${(1 + glow * 0.08).toFixed(3)})`;
     }
     requestAnimationFrame(frame);

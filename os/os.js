@@ -1,6 +1,6 @@
 // ChaseOS: a simple dark desktop in the spirit of daedalOS. One icon, one thing.
 // Content comes from data.js (window.CHASE). Project icons are the projects' own images;
-// the rest are Microsoft Fluent Emoji (MIT licence, see NOTICE.md).
+// the rest are pixel icons drawn for this site and Windows 10 icons the owner supplied (NOTICE.md).
 (() => {
   const D = window.CHASE;
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -217,7 +217,7 @@
 
   // ---------- start menu ----------
   const start = $("#start"), startBtn = $("#start-btn");
-  startBtn.innerHTML = `<img src="./os/icons/start.png" alt="" draggable="false">`;
+  startBtn.innerHTML = `<img src="./os/icons/start.png" alt="" draggable="false" class="pixel">`;
   $("#start-list").innerHTML = ITEMS.map((i) => `<li><button type="button" data-id="${i.id}">${iconOf(i)}<span>${esc(i.title)}</span></button></li>`).join("");
   const setStart = (on) => {
     start.hidden = !on; startBtn.setAttribute("aria-expanded", String(on));
