@@ -26,16 +26,13 @@ Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; 
 Thanks for stopping by.
 
 <p align="center">
-  <img src="./metrics/overview.svg" alt="GitHub overview for chase5ws: activity and repositories" width="100%">
+  <img src="./metrics/profile.svg" alt="GitHub activity, repositories and languages for chase5ws">
+  <img src="./metrics/topics.svg" alt="Topics from repositories I starred">
 </p>
+<!-- Turned on once the ANILIST_USER and MUSIC_PLAYLIST repository variables are set:
 <p align="center">
-  <img src="./metrics/calendar.svg" alt="Contribution calendar for the past year" width="100%">
+  <img src="./metrics/anilist.svg" alt="Favourite characters on AniList">
+  <img src="./metrics/music.svg" alt="Suggested tracks from Apple Music">
 </p>
-<p align="center">
-  <img src="./metrics/languages.svg" alt="Most used languages" width="49%">
-  <img src="./metrics/habits.svg" alt="Coding habits over the last 30 days" width="49%">
-</p>
-<p align="center">
-  <img src="./metrics/achievements.svg" alt="GitHub achievements" width="100%">
-</p>
-<p align="center"><sub>Infographics generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></sub></p>
+-->
+<p align="center"><sub>Generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></sub></p>

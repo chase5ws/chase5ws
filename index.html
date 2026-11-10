@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Chase Tseng · ChaseOS</title>
 <meta name="description" content="Chase Tseng, infrastructure and automation engineer in Hsinchu. A desktop in the browser with his live projects, experience and roadmap.">
-<meta name="theme-color" content="#0b1a2e">
-<link rel="stylesheet" href="./os/os.css?v=20261110b">
+<meta name="theme-color" content="#245edb">
+<link rel="stylesheet" href="./os/os.css?v=20261110c">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -39,8 +39,6 @@
 </main>
 
 <div class="os" aria-label="ChaseOS desktop">
-  <div id="wall" class="wall" aria-hidden="true"></div>
-
   <div class="desktop" id="desktop">
     <h1 class="sr">Chase Tseng, infrastructure and automation engineer</h1>
     <ul id="icons" class="icons" aria-label="Desktop"></ul>
@@ -48,26 +46,23 @@
   </div>
 
   <nav id="start" class="start" aria-label="Start menu" hidden>
-    <div class="start__rail">
-      <span class="avatar" aria-hidden="true">CT</span>
+    <div class="start__top"><span class="start__pic" id="start-pic"></span><b>Chase Tseng</b></div>
+    <div class="start__cols">
+      <ul id="start-left" class="start__left"></ul>
+      <ul id="start-right" class="start__right"></ul>
     </div>
-    <div class="start__main">
-      <p class="start__who"><b>Chase Tseng</b><span>Infrastructure and automation engineer</span></p>
-      <ul id="start-list" class="start__list"></ul>
-    </div>
+    <div class="start__bottom"></div>
   </nav>
 
   <footer class="taskbar">
-    <button type="button" id="start-btn" class="tb-start" aria-label="Start" aria-expanded="false" aria-controls="start"></button>
+    <button type="button" id="start-btn" class="start-btn" aria-label="Start" aria-expanded="false" aria-controls="start"><span id="start-btn-icon" class="start-btn__icon"></span><span class="start-btn__text">start</span></button>
     <ul id="tasks" class="tasks" aria-label="Open windows"></ul>
-    <time id="clock" class="clock"><span id="clock-time"></span><span id="clock-date"></span></time>
+    <div class="tray"><time id="clock" class="clock"></time></div>
   </footer>
 </div>
 
-<script src="./os/data.js?v=20261110b"></script>
-<script src="./os/os.js?v=20261110b"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.waves.min.js" defer></script>
-<script src="./os/wall.js?v=20261110b" defer></script>
+<script src="./os/data.js?v=20261110c"></script>
+<script src="./os/pixels.js?v=20261110c"></script>
+<script src="./os/os.js?v=20261110c"></script>
 </body>
 </html>
