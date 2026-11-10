@@ -11,6 +11,11 @@ on:
   schedule:
     - cron: "17 16 * * *"   # daily, 00:17 Taipei time
   workflow_dispatch:
+  # Rebuild right away whenever the README or this workflow changes, so the README
+  # never points at a card that has not been generated yet.
+  push:
+    branches: [main]
+    paths: ["README.md", ".github/workflows/metrics.yml"]
 
 concurrency: metrics
 
