@@ -2,7 +2,7 @@
 // sphere-frames.js). It reacts to the mouse on empty desktop space:
 //   hold the button  → spins faster and glows from grey to blue
 //   drag             → spin follows the drag (left/right = direction, speed = drag speed)
-//   move             → the sphere leans gently toward the pointer and the pointer leaves an ASCII trail
+//   move             → the sphere leans gently toward the pointer and the pointer drags a glowing deep-blue streak
 // With reduced motion the sphere shows one still frame.
 (() => {
   const host = document.getElementById("wall");
@@ -44,14 +44,14 @@
   let lean = { x: 0, y: 0 }, leanTarget = { x: 0, y: 0 };
   let down = false, lastX = 0, lastT = 0;
 
-  // ASCII trail behind the pointer, drawn on its own canvas under the icons and windows.
+  // Glowing deep-blue streak behind the pointer, on its own canvas under the icons and windows.
   const trail = document.createElement("canvas");
   trail.className = "trail";
   host.append(trail);
   const tx = trail.getContext("2d");
-  const CHARS = ".:!/r(l1Z4H9W8$@";
-  const dots = [];
-  let tw = 0, th = 0, dpr = 1, lastDot = { x: -99, y: -99 };
+  const pts = [];                       // recent pointer positions {x, y, t}
+  const LIFE = 600;                     // ms a point stays in the streak
+  let tw = 0, th = 0, dpr = 1;
   function sizeTrail() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     tw = innerWidth; th = innerHeight;
@@ -60,17 +60,35 @@
   }
   sizeTrail();
   addEventListener("resize", sizeTrail);
-  function addDots(x, y) {
-    const dist = Math.hypot(x - lastDot.x, y - lastDot.y);
-    if (dist < 9) return;
-    const steps = Math.min(6, Math.floor(dist / 9));
-    for (let i = 1; i <= steps; i++) {
-      const px = lastDot.x < -50 ? x : lastDot.x + (x - lastDot.x) * (i / steps);
-      const py = lastDot.y < -50 ? y : lastDot.y + (y - lastDot.y) * (i / steps);
-      dots.push({ x: px, y: py, born: performance.now(), ch: CHARS[(Math.random() * CHARS.length) | 0], vy: -0.02 - Math.random() * 0.03 });
+  function addPoint(x, y) {
+    const last = pts[pts.length - 1];
+    if (last && Math.hypot(x - last.x, y - last.y) < 2) return;
+    pts.push({ x, y, t: performance.now() });
+    if (pts.length > 80) pts.shift();
+  }
+  // one pass of the streak: segments get thicker and brighter toward the pointer
+  function stroke(now, width, color, blur) {
+    tx.shadowColor = blur ? "rgba(20, 70, 255, 0.95)" : "transparent";
+    tx.shadowBlur = blur;
+    for (let i = 1; i < pts.length; i++) {
+      const a = 1 - (now - pts[i].t) / LIFE;
+      if (a <= 0) continue;
+      tx.strokeStyle = `rgba(${color}, ${(a * a).toFixed(3)})`;
+      tx.lineWidth = width * (0.25 + 0.75 * a);
+      tx.beginPath(); tx.moveTo(pts[i - 1].x, pts[i - 1].y); tx.lineTo(pts[i].x, pts[i].y); tx.stroke();
     }
-    lastDot = { x, y };
-    if (dots.length > 140) dots.splice(0, dots.length - 140);
+  }
+  function drawTrail(now) {
+    while (pts.length && now - pts[0].t > LIFE) pts.shift();
+    tx.clearRect(0, 0, tw, th);
+    if (pts.length < 2) return;
+    tx.save();
+    tx.lineCap = "round"; tx.lineJoin = "round";
+    tx.globalCompositeOperation = "lighter";
+    stroke(now, 10, "18, 60, 230", 22);   // wide deep-blue glow
+    stroke(now, 4, "60, 130, 255", 8);    // brighter blue body
+    stroke(now, 1.6, "190, 220, 255", 0); // thin hot core
+    tx.restore();
   }
 
   const onDesktop = (e) => !e.target.closest(".win, .dicon, .taskbar, .start, a, button");
@@ -81,7 +99,7 @@
     target = 3; glowTarget = 1;
   });
   addEventListener("pointermove", (e) => {
-    addDots(e.clientX, e.clientY);
+    addPoint(e.clientX, e.clientY);
     leanTarget.x = (e.clientX / innerWidth - 0.5) * 2;
     leanTarget.y = (e.clientY / innerHeight - 0.5) * 2;
     if (!down) return;
@@ -109,19 +127,7 @@
       const c = GREY.map((g, i) => Math.round(g + (BLUE[i] - g) * glow));
       pre.style.color = `rgb(${c.join(",")})`;
       pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px rgba(42, 118, 210, ${(glow * 0.85).toFixed(2)})` : "none";
-      // trail: each character fades over ~900 ms, drifting up a little
-      tx.clearRect(0, 0, tw, th);
-      tx.font = "600 14px Cascadia Mono, SF Mono, Menlo, Consolas, monospace";
-      tx.textAlign = "center"; tx.textBaseline = "middle";
-      const life = 900;
-      for (let i = dots.length - 1; i >= 0; i--) {
-        const d = dots[i], age = now - d.born;
-        if (age > life) { dots.splice(i, 1); continue; }
-        const a = 1 - age / life;
-        const cc = GREY.map((g, j) => Math.round(g + (BLUE[j] - g) * Math.max(glow, 0.55)));
-        tx.fillStyle = `rgba(${cc.join(",")}, ${(a * 0.9).toFixed(3)})`;
-        tx.fillText(d.ch, d.x, d.y + d.vy * age);
-      }
+      drawTrail(now);
       pre.style.transform = `translate(-50%, -50%) translate(${(lean.x * 14).toFixed(1)}px, ${(lean.y * 10).toFixed(1)}px) scale(${(1 + glow * 0.08).toFixed(3)})`;
     }
     requestAnimationFrame(frame);

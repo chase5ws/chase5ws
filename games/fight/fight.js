@@ -103,7 +103,7 @@
     }
   }
 
-  const game = { mode: null, state: "title", time: 60, clock: 0, shake: 0, winner: "", menu: 0 };
+  const game = { mode: null, state: "controls", time: 60, clock: 0, shake: 0, winner: "", menu: 0 };
   let p1, p2;
   function start(mode) {
     game.mode = mode; game.state = "fight"; game.time = 60; game.clock = 0; game.winner = "";
@@ -118,6 +118,7 @@
     if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.code)) e.preventDefault();
     if (game.state !== "fight") {
       if (!down) return;
+      if (game.state === "controls") { game.state = "title"; return; }
       if (game.state === "title") {
         if (e.code === "ArrowUp" || e.code === "ArrowDown" || e.code === "KeyW" || e.code === "KeyS") game.menu ^= 1;
         if (e.code === "Enter" || e.code === "Space") start(game.menu ? "2p" : "cpu");
@@ -135,6 +136,7 @@
   addEventListener("keyup", (e) => key(e, false));
   canvas.addEventListener("pointerdown", (e) => {
     canvas.focus();
+    if (game.state === "controls") { game.state = "title"; return; }
     if (game.state === "title") { const r = canvas.getBoundingClientRect(), y = (e.clientY - r.top) / r.height * H; start(y > 330 ? "2p" : "cpu"); }
     else if (game.state === "over") start(game.mode);
   });
@@ -187,6 +189,24 @@
     if (p1) { p2.draw(); p1.draw(); }
     ctx.restore();
 
+    if (game.state === "controls") {
+      ctx.fillStyle = "rgba(0,0,0,.7)"; ctx.fillRect(0, 0, W, H);
+      center("CONTROLS", 110, 40, "#6fb2ff");
+      const col = (x, title, rows) => {
+        ctx.textAlign = "left"; ctx.font = font(22); ctx.fillStyle = "#fff"; ctx.fillText(title, x, 180);
+        rows.forEach(([k, what], i) => {
+          const y = 232 + i * 46;
+          ctx.font = font(18); const kw = ctx.measureText(k).width + 20;
+          ctx.fillStyle = "#1b2433"; ctx.fillRect(x, y - 24, kw, 34); ctx.strokeStyle = "#2a76d2"; ctx.strokeRect(x + .5, y - 23.5, kw - 1, 33);
+          ctx.fillStyle = "#cfe3ff"; ctx.fillText(k, x + 10, y);
+          ctx.fillStyle = "#c9ced8"; ctx.font = font(17); ctx.fillText(what, x + kw + 14, y);
+        });
+      };
+      col(110, "Player 1", [["A", "Move backwards"], ["W", "Jump"], ["D", "Move forward"], ["SPACE", "Attack"]]);
+      col(560, "Player 2", [["←", "Move forward"], ["↑", "Jump"], ["→", "Move backwards"], ["↓", "Attack"]]);
+      if (Math.floor(performance.now() / 600) % 2) center("Press any key or click to continue", 470, 18, "#9aa3b2");
+      return;
+    }
     if (game.state === "title") {
       ctx.fillStyle = "rgba(0,0,0,.55)"; ctx.fillRect(0, 0, W, H);
       center("SAMURAI DUEL", 200, 56);

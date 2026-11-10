@@ -47,7 +47,7 @@
     { id: "dev", title: "In progress", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("dev") },
     { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
     // small JS games anyone can play in a window (games/, credits in NOTICE.md)
-    { id: "doom", title: "Doom (Freedoom)", icon: "me", image: "./os/icons/doom.png", frame: "./games/doom/index.html?wad=wad/freedoom1.wad", w: 860, h: 560 },
+    { id: "doom", title: "Doom", icon: "me", image: "./os/icons/doom.png", frame: "./games/doom/index.html?wad=wad/freedoom1.wad", w: 860, h: 560 },
     { id: "duel", title: "Samurai Duel", icon: "me", image: "./os/icons/duel.png", frame: "./games/fight/index.html", w: 860, h: 520 },
   ];
   const byId = (id) => ITEMS.find((i) => i.id === id);
@@ -226,7 +226,7 @@
 
   // ---------- desktop icons ----------
   const icons = $("#icons");
-  icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
+  icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}${i.frame ? '<span class="dicon__play">PLAY</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
   icons.addEventListener("dblclick", (e) => { const b = e.target.closest(".dicon"); if (b) open(b.dataset.id); });
   icons.addEventListener("click", (e) => {
     const b = e.target.closest(".dicon");

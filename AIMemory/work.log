@@ -92,3 +92,12 @@ os/os.js os/os.css index.html NOTICE.md os/icons/{doom,duel}.png games/doom (Spi
 
 ### 2026-11-10 15:26 | claude-opus-5-5 | WORK_END
 Live/In progress folders; Doom + Samurai Duel playable in windows
+
+### 2026-11-10 15:44 | claude-opus-5-5 | PROMPT
+> Samurai controls 進入遊戲先顯示 / doom用這張圖片 尺寸縮小 / 互動遊戲加上可以點的小圖 / 滑鼠軌跡 螢光深藍色拖拽特效 / steam 桌布引擎檔案?
+
+### 2026-11-10 15:44 | claude-opus-5-5 | FILES_MODIFIED
+games/fight/fight.js controls screen; os/icons/doom.png (user-supplied logo, 128px); os/os.js+os.css PLAY badge; os/wall.js neon deep-blue pointer streak; index.html ?v=p
+
+### 2026-11-10 15:44 | claude-opus-5-5 | WORK_END
+controls screen, doom logo icon, play badges, neon trail
