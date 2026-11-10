@@ -6,3 +6,6 @@
 
 # local scratch
 _to_delete/
+
+# Hallmark working files
+.hallmark/

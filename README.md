@@ -25,6 +25,22 @@
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 
+## 🛰️ Building now
+
+Live projects open without signing in. The full write-up, one tab per project, is on **[my website](https://chase5ws.github.io/chase5ws/#projects)**.
+
+| Project | What it is | Try it |
+|---|---|---|
+| **ASC Bot** | Discord bot licensed per server: plug-in systems, Excel data store, web admin with Discord login | [Admin console](https://2026ascdiscordbot-production.up.railway.app) · [repo](https://github.com/chase5ws/2026_asc_discord_bot) |
+| **ASC community website** | Bilingual Web3 page: Cat Samurai NFT mint, outfits, gacha and market, plus the ASC token vault on Polygon | [Live site](https://chase5ws.github.io/2026_asc_web3_website/) · [repo](https://github.com/chase5ws/2026_asc_web3_website) |
+| **WoW Forever MBTI quiz** | 20 story questions that recommend a race and class | [Live site](https://chase5ws.github.io/2026_wow_forever_mbti/) · [repo](https://github.com/chase5ws/2026_wow_forever_mbti) |
+| **Live Wallpaper new tab** | Chrome MV3 extension: video, YouTube or animated wallpapers with draggable widgets | [repo](https://github.com/chase5ws/2026_google_wallpaper_customized) |
+| **Google Form limiter** | Multi-org platform that caps sign-ups, schedules forms and emails the waitlist | [repo](https://github.com/chase5ws/2026_google_form_limiter) |
+| **claude-easy-mcp** | MCP server giving Claude, Codex and Cursor shared project memory, handoffs, lessons and skills | private |
+| **IT Ops AI Assistant** | LINE bot answering IT questions from internal SOPs with RAG | building |
+
+<img src="./assets/divider.svg" width="100%" alt="" />
+
 ## 💼 Experience
 
 | | Role | Company | When |
@@ -65,7 +81,7 @@
 
 <img src="./assets/divider.svg" width="100%" alt="" />
 
-## 🚀 Featured Projects
+## 🚀 Tools already shipped
 
 <table>
 <tr>
