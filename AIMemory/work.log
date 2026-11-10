@@ -25,3 +25,16 @@ Live links verified 2026-11-10: ASC Bot admin (Railway), ASC website and WoW MBT
 
 ### 2026-11-10 09:32 | claude-opus-5-5 | WORK_END
 Status: complete. sloplint 0 FAIL (before 45), links kept 13/13; rendered at 390/1280/1920 with no horizontal scroll.
+
+### 2026-11-10 09:41 | claude-opus-5-5 | PROMPT
+> 怎麼原本的readme跟網站沒看到有變 一樣有點醜跟ai感 / 我是說資料夾chase5ws
+
+### 2026-11-10 09:41 | claude-opus-5-5 | FILES_MODIFIED
+- README.md rewritten plain (no SVG banners, badge walls, emoji headings, view counter)
+- assets/ removed (only the old README used it)
+
+### 2026-11-10 09:41 | claude-opus-5-5 | NOTE
+User finds emoji headings, badge walls and generated SVG banners look AI-made; keep README plain.
+
+### 2026-11-10 09:41 | claude-opus-5-5 | WORK_END
+Status: complete. README rewritten; website already deployed (needs a hard refresh to see).
