@@ -27,7 +27,6 @@ Thanks for stopping by.
 
 <p align="center">
   <img src="./metrics/profile.svg" alt="GitHub activity, repositories and languages for chase5ws">
-  <img src="./metrics/topics.svg" alt="Topics from repositories I starred">
 </p>
 <!-- Turned on once the ANILIST_USER and MUSIC_PLAYLIST repository variables are set:
 <p align="center">
@@ -35,4 +34,3 @@ Thanks for stopping by.
   <img src="./metrics/music.svg" alt="Suggested tracks">
 </p>
 -->
-<p align="center"><sub>Generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></sub></p>
