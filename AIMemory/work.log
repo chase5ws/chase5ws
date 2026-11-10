@@ -93,3 +93,12 @@ Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics wit
 
 ### 2026-11-10 14:58 | claude-opus-5-5 | WORK_END
 Status: complete. Chromium: folder opens projects, stats card renders, sphere darker, no errors.
+
+### 2026-11-10 15:02 | claude-opus-5-5 | PROMPT
+> 例外背景圖的圓球 運行速度慢50％ 卪後曾加滑鼠移動軌跡 / 另外那些圓球符號數字也改 他太重複了
+
+### 2026-11-10 15:02 | claude-opus-5-5 | FILES_MODIFIED
+os/wall.js os/os.css index.html: sphere 0.5x speed, ASCII pointer trail, varied glyph sets per brightness
+
+### 2026-11-10 15:02 | claude-opus-5-5 | WORK_END
+sphere slower + trail + varied glyphs
