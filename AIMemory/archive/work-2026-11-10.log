@@ -1,0 +1,38 @@
+# AIMemory archive — 2026-11-10
+
+### 2026-11-10 09:28 | claude-opus-5-5 | PROJECT_BOOTSTRAPPED
+Installed AIMemory (20 hot events). Each agent declares itself in RE_ENGAGED.
+
+### 2026-11-10 09:28 | claude-opus-5-5 | PROMPT
+> 現在請更新我的chase readme也就是github主頁與該檔案夾的網站 我來看一下進化結果 當然也可以加上我目前這些在研製的專案等等 做個一頁介紹 並且放上一個地方可以實際連結到該網站 讓他們確保我已經實際做出來了 / 但網站不避給他們登入 只是一個小連結這樣 主要還是透過分頁做介紹
+
+### 2026-11-10 09:28 | claude-opus-5-5 | WORK_START
+Task: Redesign index.html with Hallmark (tabbed one-page intro incl. in-progress projects, small live links) and update README.md
+
+### 2026-11-10 09:32 | claude-opus-5-5 | FILES_MODIFIED
+- chase5ws/index.html (full Hallmark redesign, theme Wayfind)
+- chase5ws/README.md (Building now table)
+- chase5ws/.gitignore
+Created: chase5ws/styles.css, tokens.css, base.css
+
+### 2026-11-10 09:32 | claude-opus-5-5 | NOTE
+Live links verified 2026-11-10: ASC Bot admin (Railway), ASC website and WoW MBTI quiz (GitHub Pages). Wallpaper Pages not enabled and Form limiter has no known public URL, so those link to repos only. Site must show engineering work only (no non-engineering roles).
+
+### 2026-11-10 09:32 | claude-opus-5-5 | WORK_END
+Status: complete. sloplint 0 FAIL (before 45), links kept 13/13; rendered at 390/1280/1920 with no horizontal scroll.
+
+### 2026-11-10 09:41 | claude-opus-5-5 | PROMPT
+> 怎麼原本的readme跟網站沒看到有變 一樣有點醜跟ai感 / 我是說資料夾chase5ws
+
+### 2026-11-10 09:41 | claude-opus-5-5 | FILES_MODIFIED
+- README.md rewritten plain (no SVG banners, badge walls, emoji headings, view counter)
+- assets/ removed (only the old README used it)
+
+### 2026-11-10 09:41 | claude-opus-5-5 | NOTE
+User finds emoji headings, badge walls and generated SVG banners look AI-made; keep README plain.
+
+### 2026-11-10 09:41 | claude-opus-5-5 | WORK_END
+Status: complete. README rewritten; website already deployed (needs a hard refresh to see).
+
+### 2026-11-10 09:52 | claude-opus-5-5 | PROMPT
+> 幫我的ai升級這2個技能 另外我想要我的github網頁像是https://dustinbrett.com/這樣 首頁幫我上win11 然後我的github readme參考這個 https://github.com/lowlighter

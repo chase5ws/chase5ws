@@ -1,5 +1,6 @@
 // ChaseOS: a simple dark desktop in the spirit of daedalOS. One icon, one thing.
-// Content comes from data.js (window.CHASE). Project icons are the projects' own images.
+// Content comes from data.js (window.CHASE). Project icons are the projects' own images;
+// the rest are Microsoft Fluent Emoji (MIT licence, see NOTICE.md).
 (() => {
   const D = window.CHASE;
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -11,7 +12,7 @@
   const anim = (el, frames, opts) => (reduceMotion || !el.animate ? Promise.resolve() : el.animate(frames, { duration: 160, easing: "cubic-bezier(.1,.9,.2,1)", ...opts }).finished.catch(() => {}));
   const ext = (href) => (href.startsWith("http") ? ' target="_blank" rel="noopener"' : "");
 
-  // ---------- icons: drawn tiles for things without their own image ----------
+  // ---------- icons: drawn tiles, used only when an item has no image ----------
   let gid = 0;
   const tile = (a, b, inner) => { gid++; return `<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="g${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect x="4" y="4" width="40" height="40" rx="10" fill="url(#g${gid})"/><rect x="4" y="4" width="40" height="20" rx="10" fill="#fff" opacity=".1"/>${inner}</svg>`; };
   const W = 'fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"';
@@ -36,10 +37,10 @@
 
   // ---------- desktop items: each icon is one thing ----------
   const ITEMS = [
-    { id: "me", title: "Me", icon: "me", w: 500, h: 420, body: meBody },
-    { id: "contact", title: "Contact", icon: "contact", w: 420, h: 280, body: contactBody },
-    { id: "experience", title: "Experience", icon: "experience", w: 620, h: 560, body: experienceBody },
-    { id: "roadmap", title: "Roadmap", icon: "roadmap", w: 560, h: 540, body: roadmapBody },
+    { id: "me", title: "Me", icon: "me", image: "./os/icons/me.png", w: 500, h: 420, body: meBody },
+    { id: "contact", title: "Contact", icon: "contact", image: "./os/icons/contact.png", w: 420, h: 280, body: contactBody },
+    { id: "experience", title: "Experience", icon: "experience", image: "./os/icons/experience.png", w: 620, h: 560, body: experienceBody },
+    { id: "roadmap", title: "Roadmap", icon: "roadmap", image: "./os/icons/roadmap.png", w: 560, h: 540, body: roadmapBody },
     ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, live: p.status === "live", w: 540, h: 420, body: () => projectBody(p) })),
   ];
   const byId = (id) => ITEMS.find((i) => i.id === id);
@@ -153,7 +154,7 @@
   function meBody() {
     const live = D.projects.filter((p) => p.status === "live");
     return `<div class="pad">
-      <div class="who"><span class="who__pic">${DRAWN.me()}</span><div><h3>${esc(D.name)}</h3><p>${esc(D.role)}</p><p class="muted">${esc(D.place)}</p></div></div>
+      <div class="who"><span class="who__pic">${iconOf(byId("me"))}</span><div><h3>${esc(D.name)}</h3><p>${esc(D.role)}</p><p class="muted">${esc(D.place)}</p></div></div>
       <p>${esc(D.bio)}</p>
       <h4>Running right now</h4>
       <ul class="rows">${live.map((p) => `<li><span class="rows__pic">${iconOf(p)}</span><span><b>${esc(p.name)}</b><small>${esc(p.where)}</small></span><a class="btn btn--accent" href="${esc(p.live)}" target="_blank" rel="noopener">Open ${UI.external}</a></li>`).join("")}</ul>
@@ -205,7 +206,7 @@
 
   // ---------- start menu ----------
   const start = $("#start"), startBtn = $("#start-btn");
-  startBtn.innerHTML = DRAWN.logo();
+  startBtn.innerHTML = `<img src="./os/icons/start.png" alt="" draggable="false">`;
   $("#start-list").innerHTML = ITEMS.map((i) => `<li><button type="button" data-id="${i.id}">${iconOf(i)}<span>${esc(i.title)}</span></button></li>`).join("");
   const setStart = (on) => {
     start.hidden = !on; startBtn.setAttribute("aria-expanded", String(on));

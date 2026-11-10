@@ -39,7 +39,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_asc_web3_website",
     },
     {
-      id: "mbti", icon: "swords", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
+      id: "mbti", image: "./os/icons/mbti.png", icon: "swords", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
       summary: "Twenty story questions that pick a race and class for WoW Forever.",
       points: [
         "An unofficial fan quiz built on MBTI traits.",
@@ -73,7 +73,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_google_form_limiter",
     },
     {
-      id: "easy-mcp", icon: "chip", name: "claude-easy-mcp", status: "private", where: "MCP server",
+      id: "easy-mcp", image: "./os/icons/easy-mcp.png", icon: "chip", name: "claude-easy-mcp", status: "private", where: "MCP server",
       summary: "One MCP server that gives every AI coding agent the same project memory.",
       points: [
         "Claude, Codex and Cursor share a work log, hand tasks to each other and keep lessons.",
@@ -83,7 +83,7 @@ window.CHASE = {
       stack: "Node.js, MCP SDK, node:test",
     },
     {
-      id: "it-ops-ai", icon: "chat", name: "IT Ops AI Assistant", status: "building", where: "LINE bot",
+      id: "it-ops-ai", image: "./os/icons/it-ops-ai.png", icon: "chat", name: "IT Ops AI Assistant", status: "building", where: "LINE bot",
       summary: "A LINE bot that answers IT questions from internal SOPs, and opens a ticket when it can’t.",
       points: [],
       stack: "Python, FastAPI, Gemini API, vector search, Docker, Cloud Run, GitHub Actions",
