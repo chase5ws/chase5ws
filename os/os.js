@@ -37,11 +37,13 @@
 
   // ---------- desktop items: each icon is one thing ----------
   const ITEMS = [
-    { id: "me", title: "Me", icon: "me", image: "./os/icons/me.png", w: 500, h: 420, body: meBody },
+    { id: "me", title: "Me", icon: "me", image: "./os/icons/win-user.png", w: 520, h: 520, body: meBody },
     { id: "contact", title: "Contact", icon: "contact", image: "./os/icons/contact.png", w: 420, h: 280, body: contactBody },
     { id: "experience", title: "Experience", icon: "experience", image: "./os/icons/experience.png", w: 620, h: 560, body: experienceBody },
     { id: "roadmap", title: "Roadmap", icon: "roadmap", image: "./os/icons/roadmap.png", w: 560, h: 540, body: roadmapBody },
     ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, live: p.status === "live", w: 540, h: 420, body: () => projectBody(p) })),
+    { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
+    { id: "recycle-bin", title: "Recycle Bin", icon: "me", image: "./os/icons/win-recycle.png", w: 380, h: 220, body: recycleBody },
   ];
   const byId = (id) => ITEMS.find((i) => i.id === id);
 
@@ -178,6 +180,15 @@
       <h4>Certifications</h4><ul class="points">${D.certs.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>`;
   }
 
+  function thisPcBody() {
+    return `<div class="pad"><h4>ChaseOS</h4>
+      <ul class="links"><li><span>Built with</span><span>Plain HTML, CSS and JavaScript</span></li><li><span>Background</span><span>WebGL, drawn live</span></li><li><span>Hosted on</span><span>GitHub Pages</span></li><li><span>Source</span><a href="https://github.com/chase5ws/chase5ws" target="_blank" rel="noopener">chase5ws/chase5ws</a></li></ul></div>`;
+  }
+
+  function recycleBody() {
+    return `<div class="pad empty"><p>The Recycle Bin is empty.</p><p class="muted small">Every project here is still running.</p></div>`;
+  }
+
   function projectBody(p) {
     return `<div class="pad">
       <div class="who"><span class="who__pic">${iconOf(p)}</span><div><h3>${esc(p.name)}</h3><p class="status status--${p.status}"><span class="dot" aria-hidden="true"></span>${esc(STATUS[p.status])}${p.where ? `, ${esc(p.where)}` : ""}</p></div></div>
@@ -217,21 +228,13 @@
   document.addEventListener("pointerdown", (e) => { if (!start.hidden && !e.target.closest("#start, #start-btn")) setStart(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !start.hidden) { setStart(false); startBtn.focus(); } });
 
-  // ---------- taskbar: one button per open window ----------
-  const tasks = $("#tasks");
-  function renderTasks() {
-    tasks.innerHTML = [...wins.values()].map((w) => `<li><button type="button" class="task${active === w && !w.min ? " is-active" : ""}" data-id="${w.id}">${iconOf(w.item)}<span>${esc(w.item.title)}</span></button></li>`).join("");
-  }
-  tasks.addEventListener("click", (e) => {
-    const w = wins.get(e.target.closest("[data-id]")?.dataset.id);
-    if (!w) return;
-    if (active === w && !w.min) minimise(w); else focus(w, true);
-  });
+  // The taskbar stays minimal (start + clock); a minimised window comes back from its desktop icon.
+  function renderTasks() {}
 
   const tick = () => {
     const d = new Date();
-    $("#clock-time").textContent = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    $("#clock-date").textContent = d.toLocaleDateString();
+    $("#clock").textContent = d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    $("#clock").title = d.toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" });
     $("#clock").dateTime = d.toISOString();
   };
   tick(); setInterval(tick, 15000);

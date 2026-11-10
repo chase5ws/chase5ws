@@ -86,3 +86,14 @@ Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics wit
 
 ### 2026-11-10 14:35 | claude-opus-5-5 | WORK_END
 Status: complete. Chromium: shader renders, 11 icons, no errors, mobile ok.
+
+### 2026-11-10 14:39 | claude-opus-5-5 | PROMPT
+> windows-10-icon-set 這個 / 底下不要有icon 要是最小短簡單 只保由右邊時間跟左邊的開始
+
+### 2026-11-10 14:40 | claude-opus-5-5 | FILES_MODIFIED
+- os/icons/win-{user,this-pc,recycle}.png from the user's windows-10-icon-set (Me icon, new This PC and Recycle Bin items)
+- taskbar: only start button (left) and time (right), 40px; open windows no longer listed
+- os/os.js, os/os.css, index.html (?v=20261110g), NOTICE.md
+
+### 2026-11-10 14:40 | claude-opus-5-5 | WORK_END
+Status: complete. Chromium: 13 icons, minimal taskbar, no errors, mobile ok.

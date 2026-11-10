@@ -15,7 +15,7 @@
   --hover: rgba(255, 255, 255, 0.08);
   --press: rgba(255, 255, 255, 0.04);
   --taskbar: rgba(10, 12, 16, 0.82);
-  --taskbar-h: 44px;
+  --taskbar-h: 40px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -138,7 +138,7 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .start__list button:hover, .start__list button:focus-visible { background: var(--hover); outline: none; }
 
 /* ---------- taskbar ---------- */
-.taskbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 100001; height: var(--taskbar-h); display: flex; align-items: stretch; background: var(--taskbar); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.taskbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 100001; height: var(--taskbar-h); display: flex; align-items: stretch; justify-content: space-between; background: var(--taskbar); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-top: 1px solid rgba(255, 255, 255, 0.06); }
 .tb-start { width: 48px; border: 0; background: none; display: grid; place-items: center; color: #fff; }
 .tb-start img { width: 24px; height: 24px; display: block; transition: transform .12s; }
 .tb-start:active img { transform: scale(.88); }
@@ -151,7 +151,7 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .task:hover { background: var(--hover); }
 .task.is-active { background: rgba(255, 255, 255, 0.12); }
 .task.is-active::after { opacity: 1; }
-.clock { display: grid; align-content: center; justify-items: center; padding: 0 12px; font-size: 12px; line-height: 1.3; }
+.clock { display: grid; align-content: center; padding: 0 14px; font-size: 12px; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 720px) {
@@ -174,3 +174,6 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .rows__pic svg, .rows__pic img { width: 32px; height: 32px; display: block; border-radius: 8px; object-fit: cover; }
 .dicon__img > img { border-radius: 0; filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45)); }
 .dicon__img > img[src*="asc-"], .dicon__img > img[src*="wallpaper"], .dicon__img > img[src*="form-limiter"] { border-radius: 10px; }
+.empty { display: grid; place-content: center; text-align: center; height: 100%; }
+.links li > span:last-child { color: var(--text); }
+.links li > span:first-child { color: var(--muted); }
