@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samurai Duel</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  body { display: grid; place-items: center; }
+  canvas { width: min(100vw, calc(100vh * 16 / 9)); aspect-ratio: 16 / 9; image-rendering: pixelated; outline: none; display: block; }
+  .pad { position: fixed; inset: auto 0 10px 0; display: none; justify-content: space-between; padding: 0 12px; pointer-events: none; }
+  .pad div { display: flex; gap: 8px; }
+  .pad button { pointer-events: auto; width: 56px; height: 56px; border-radius: 50%; border: 1px solid #3a4250; background: rgba(12,14,18,.7); color: #c9ced8; font: 700 16px ui-monospace, monospace; touch-action: none; }
+  @media (pointer: coarse) { .pad { display: flex; } }
+</style>
+</head>
+<body>
+<canvas id="game" width="1024" height="576" tabindex="0" aria-label="Samurai Duel game"></canvas>
+<div class="pad" aria-hidden="true">
+  <div><button data-pad="left">◀</button><button data-pad="right">▶</button></div>
+  <div><button data-pad="jump">▲</button><button data-pad="a1">A</button><button data-pad="a2">B</button></div>
+</div>
+<script src="fight.js"></script>
+</body>
+</html>

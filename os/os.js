@@ -42,9 +42,13 @@
     { id: "experience", title: "Experience", icon: "experience", image: "./os/icons/experience.png", w: 620, h: 560, body: experienceBody },
     { id: "roadmap", title: "Roadmap", icon: "roadmap", image: "./os/icons/roadmap.png", w: 560, h: 540, body: roadmapBody },
     { id: "stats", title: "Languages & activity", icon: "me", image: "./os/icons/stats.png", w: 540, h: 560, body: statsBody },
-    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, live: p.status === "live", desktop: p.status === "live", w: 540, h: 420, body: () => projectBody(p) })),
-    { id: "projects", title: "Projects", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: folderBody },
+    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, folder: p.status === "live" ? "live" : "dev", desktop: false, w: 540, h: 420, body: () => projectBody(p) })),
+    { id: "live", title: "Live projects", icon: "me", image: "./os/icons/folder.png", live: true, w: 520, h: 300, body: () => folderBody("live") },
+    { id: "dev", title: "In progress", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("dev") },
     { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
+    // small JS games anyone can play in a window (games/, credits in NOTICE.md)
+    { id: "doom", title: "Doom (Freedoom)", icon: "me", image: "./os/icons/doom.png", frame: "./games/doom/index.html?wad=wad/freedoom1.wad", w: 860, h: 560 },
+    { id: "duel", title: "Samurai Duel", icon: "me", image: "./os/icons/duel.png", frame: "./games/fight/index.html", w: 860, h: 520 },
   ];
   const byId = (id) => ITEMS.find((i) => i.id === id);
 
@@ -70,7 +74,7 @@
         <button type="button" class="win__btn" data-act="max" aria-label="Maximise">${UI.max}</button>
         <button type="button" class="win__btn win__btn--close" data-act="close" aria-label="Close">${UI.close}</button>
       </header>
-      <div class="win__body">${item.body()}</div>`;
+      <div class="win__body${item.frame ? " win__body--frame" : ""}">${item.frame ? `<iframe class="win__frame" src="${esc(item.frame)}" title="${esc(item.title)}" allow="fullscreen; gamepad; autoplay"></iframe>` : item.body()}</div>`;
     layer.append(el);
     const w = { id, item, el, min: false, max: false };
     wins.set(id, w);
@@ -99,7 +103,8 @@
     $$(".win.is-active").forEach((e) => e.classList.remove("is-active"));
     w.el.classList.add("is-active");
     active = w;
-    if (!w.el.contains(document.activeElement)) w.el.focus({ preventScroll: true });
+    const frame = w.el.querySelector("iframe");
+    if (frame) frame.focus(); else if (!w.el.contains(document.activeElement)) w.el.focus({ preventScroll: true });
     renderTasks();
   }
 
@@ -189,10 +194,10 @@
       <h4>Certifications</h4><ul class="points">${D.certs.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>`;
   }
 
-  // Projects that are not live yet live in one folder; each still opens its own window.
-  function folderBody() {
-    const inside = ITEMS.filter((i) => i.desktop === false);
-    return `<ul class="folder" aria-label="Projects">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
+  // Projects sit in two folders, live and in progress; each still opens its own window.
+  function folderBody(kind) {
+    const inside = ITEMS.filter((i) => i.folder === kind);
+    return `<ul class="folder" aria-label="${kind === "live" ? "Live projects" : "Projects in progress"}">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
   }
 
   // The same card as the GitHub profile README, rebuilt daily by the Metrics workflow.
@@ -243,6 +248,12 @@
   start.addEventListener("click", (e) => { const id = e.target.closest("[data-id]")?.dataset.id; if (id) { setStart(false); open(id); } });
   document.addEventListener("pointerdown", (e) => { if (!start.hidden && !e.target.closest("#start, #start-btn")) setStart(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !start.hidden) { setStart(false); startBtn.focus(); } });
+
+  // A click inside a game window lands in its iframe: bring that window to the front too.
+  addEventListener("blur", () => setTimeout(() => {
+    const f = document.activeElement;
+    if (f && f.tagName === "IFRAME") { const w = [...wins.values()].find((x) => x.el.contains(f)); if (w && active !== w) focus(w); }
+  }));
 
   // The taskbar stays minimal (start + clock); a minimised window comes back from its desktop icon.
   function renderTasks() {}

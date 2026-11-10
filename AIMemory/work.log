@@ -83,3 +83,12 @@ os/os.js, index.html, NOTICE.md, os/icons/asc-{bot,site}.png redrawn; removed st
 
 ### 2026-11-10 15:10 | claude-opus-5-5 | WORK_END
 empty start button, no recycle bin, new ASC pixel icons
+
+### 2026-11-10 15:26 | claude-opus-5-5 | PROMPT
+> 然後就是把我project live放一個folder 進行的放一個folder / 然後我想放這2個js遊戲 讓其他人能在我的網站上完小js
+
+### 2026-11-10 15:26 | claude-opus-5-5 | FILES_MODIFIED
+os/os.js os/os.css index.html NOTICE.md os/icons/{doom,duel}.png games/doom (Spipu-Doom, relative paths, ?wad= autoload, Freedoom wad) games/fight (own Samurai Duel code + CC0/credited art)
+
+### 2026-11-10 15:26 | claude-opus-5-5 | WORK_END
+Live/In progress folders; Doom + Samurai Duel playable in windows
