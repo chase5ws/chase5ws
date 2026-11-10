@@ -3,8 +3,9 @@
 # Needs a repository secret METRICS_TOKEN: a personal access token (classic) with the
 # read:user and repo scopes. Optional repository variables (Settings → Secrets and
 # variables → Actions → Variables) switch on the extra cards:
-#   ANILIST_USER    your AniList user name        → metrics/anilist.svg (favourite characters)
-#   MUSIC_PLAYLIST  an Apple Music playlist URL   → metrics/music.svg (suggested tracks)
+#   ANILIST_USER    your AniList user name → metrics/anilist.svg (favourite anime on your profile)
+#   MUSIC_PLAYLIST  a public playlist URL  → metrics/music.svg (suggested tracks)
+#   MUSIC_PROVIDER  apple (default), spotify or youtube, matching MUSIC_PLAYLIST
 name: Metrics
 on:
   schedule:
@@ -55,7 +56,7 @@ jobs:
           plugin_topics_mode: icons
           plugin_topics_limit: 48
 
-      - name: Favourite characters (AniList)
+      - name: Favourite anime (AniList)
         if: env.METRICS_TOKEN != '' && vars.ANILIST_USER != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
@@ -67,11 +68,13 @@ jobs:
           config_timezone: Asia/Taipei
           plugin_anilist: yes
           plugin_anilist_user: ${{ vars.ANILIST_USER }}
-          plugin_anilist_medias: anime, manga
-          plugin_anilist_sections: favorites-characters
-          plugin_anilist_limit_characters: 22
+          plugin_anilist_medias: anime
+          plugin_anilist_sections: favorites
+          plugin_anilist_limit: 13
+          plugin_anilist_limit_characters: 0
+          plugin_anilist_shuffle: no
 
-      - name: Suggested tracks (Apple Music)
+      - name: Suggested tracks (playlist)
         if: env.METRICS_TOKEN != '' && vars.MUSIC_PLAYLIST != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
@@ -82,7 +85,7 @@ jobs:
           base: ""
           config_timezone: Asia/Taipei
           plugin_music: yes
-          plugin_music_provider: apple
+          plugin_music_provider: ${{ vars.MUSIC_PROVIDER || 'apple' }}
           plugin_music_mode: playlist
           plugin_music_playlist: ${{ vars.MUSIC_PLAYLIST }}
           plugin_music_limit: 9

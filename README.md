@@ -31,8 +31,8 @@ Thanks for stopping by.
 </p>
 <!-- Turned on once the ANILIST_USER and MUSIC_PLAYLIST repository variables are set:
 <p align="center">
-  <img src="./metrics/anilist.svg" alt="Favourite characters on AniList">
-  <img src="./metrics/music.svg" alt="Suggested tracks from Apple Music">
+  <img src="./metrics/anilist.svg" alt="Favourite anime on AniList">
+  <img src="./metrics/music.svg" alt="Suggested tracks">
 </p>
 -->
 <p align="center"><sub>Generated daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></sub></p>
