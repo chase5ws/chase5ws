@@ -102,3 +102,12 @@ os/wall.js os/os.css index.html: sphere 0.5x speed, ASCII pointer trail, varied 
 
 ### 2026-11-10 15:02 | claude-opus-5-5 | WORK_END
 sphere slower + trail + varied glyphs
+
+### 2026-11-10 15:05 | claude-opus-5-5 | PROMPT
+> 你在研究一下他是怎麼做的 (lowlighter README: 說不定他不是一張圖片)
+
+### 2026-11-10 15:05 | claude-opus-5-5 | FILES_MODIFIED
+README.md, .github/workflows/metrics.yml, metrics/placeholder.svg, os/os.js, index.html: lowlighter layout = separate 390px cards floated left/right
+
+### 2026-11-10 15:05 | claude-opus-5-5 | WORK_END
+README split into lowlighter-style cards

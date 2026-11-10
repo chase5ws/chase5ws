@@ -25,12 +25,10 @@ Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; 
 
 Thanks for stopping by.
 
-<p align="center">
-  <img src="./metrics/profile.svg" alt="GitHub activity, repositories and languages for chase5ws">
-</p>
-<!-- Turned on once the ANILIST_USER and MUSIC_PLAYLIST repository variables are set:
-<p align="center">
-  <img src="./metrics/anilist.svg" alt="Favourite anime on AniList">
-  <img src="./metrics/music.svg" alt="Suggested tracks">
-</p>
+[<img align="left" width="390" alt="GitHub overview, calendar and languages for chase5ws" src="./metrics/general.svg">](#)
+[<img align="right" width="390" alt="Achievements" src="./metrics/achievements.svg">](#)
+<!-- Turned on once the ANILIST_USER or MUSIC_PLAYLIST repository variable is set:
+[<img align="right" width="390" alt="Favourite anime and suggested tracks" src="./metrics/medias.svg">](#)
 -->
+
+[<img width="100%" height="1" alt="" src="./metrics/placeholder.svg">](#)

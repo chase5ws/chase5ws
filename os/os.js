@@ -199,7 +199,7 @@
   // The same card as the GitHub profile README, rebuilt daily by the Metrics workflow.
   function statsBody() {
     return `<div class="pad"><p class="muted small">Recent activity, repositories and languages, refreshed daily from GitHub.</p>
-      <div class="stats-card"><img src="./metrics/profile.svg" alt="GitHub activity, repositories and languages for chase5ws" width="480" height="471"></div></div>`;
+      <div class="stats-card"><img src="./metrics/general.svg" alt="GitHub overview, calendar and languages for chase5ws" width="480" onerror="this.onerror=null;this.src='./metrics/profile.svg'"></div></div>`;
   }
 
   function thisPcBody() {

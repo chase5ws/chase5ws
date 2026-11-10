@@ -1,10 +1,12 @@
 # Builds the small infographics shown in the profile README with lowlighter/metrics.
+# Same layout as github.com/lowlighter: several separate 390px-wide cards that the
+# README floats into two columns (align=left / align=right), not one big image.
 #
 # Needs a repository secret METRICS_TOKEN: a personal access token (classic) with the
 # read:user and repo scopes. Optional repository variables (Settings → Secrets and
 # variables → Actions → Variables) switch on the extra cards:
-#   ANILIST_USER    your AniList user name → metrics/anilist.svg (favourite anime on your profile)
-#   MUSIC_PLAYLIST  a public playlist URL  → metrics/music.svg (suggested tracks)
+#   ANILIST_USER    your AniList user name → favourite anime in metrics/medias.svg
+#   MUSIC_PLAYLIST  a public playlist URL  → suggested tracks in metrics/medias.svg
 #   MUSIC_PROVIDER  apple (default), spotify or youtube, matching MUSIC_PLAYLIST
 name: Metrics
 on:
@@ -31,51 +33,57 @@ jobs:
         if: env.METRICS_TOKEN == ''
         run: echo "::notice::METRICS_TOKEN secret is not set, so no infographics were built."
 
-      - name: Profile
+      - name: General
         if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
           token: ${{ env.METRICS_TOKEN }}
           user: chase5ws
-          filename: metrics/profile.svg
-          template: classic
-          base: header, activity, repositories
+          filename: metrics/general.svg
+          base: header
           config_timezone: Asia/Taipei
+          config_order: base.header, isocalendar, languages, notable
+          plugin_isocalendar: yes
           plugin_languages: yes
           plugin_languages_ignored: html, css, scss
           plugin_languages_details: percentage
-          plugin_languages_limit: 6
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_limit: 4
+          plugin_notable: yes
 
-      - name: Favourite anime (AniList)
-        if: env.METRICS_TOKEN != '' && vars.ANILIST_USER != ''
+      - name: Achievements
+        if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
           token: ${{ env.METRICS_TOKEN }}
           user: chase5ws
-          filename: metrics/anilist.svg
+          filename: metrics/achievements.svg
           base: ""
           config_timezone: Asia/Taipei
-          plugin_anilist: yes
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: B
+
+      - name: Medias (AniList + playlist)
+        if: env.METRICS_TOKEN != '' && (vars.ANILIST_USER != '' || vars.MUSIC_PLAYLIST != '')
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ env.METRICS_TOKEN }}
+          user: chase5ws
+          filename: metrics/medias.svg
+          base: ""
+          config_timezone: Asia/Taipei
+          config_order: anilist, music
+          plugin_anilist: ${{ vars.ANILIST_USER != '' && 'yes' || 'no' }}
           plugin_anilist_user: ${{ vars.ANILIST_USER }}
           plugin_anilist_medias: anime
           plugin_anilist_sections: favorites
           plugin_anilist_limit: 13
-          plugin_anilist_limit_characters: 0
           plugin_anilist_shuffle: no
-
-      - name: Suggested tracks (playlist)
-        if: env.METRICS_TOKEN != '' && vars.MUSIC_PLAYLIST != ''
-        continue-on-error: true
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ env.METRICS_TOKEN }}
-          user: chase5ws
-          filename: metrics/music.svg
-          base: ""
-          config_timezone: Asia/Taipei
-          plugin_music: yes
+          plugin_music: ${{ vars.MUSIC_PLAYLIST != '' && 'yes' || 'no' }}
           plugin_music_provider: ${{ vars.MUSIC_PROVIDER || 'apple' }}
           plugin_music_mode: playlist
           plugin_music_playlist: ${{ vars.MUSIC_PLAYLIST }}
