@@ -3,9 +3,12 @@
 # Needs a repository secret METRICS_TOKEN: a personal access token (classic) with the
 # read:user and repo scopes.
 #
-# Media cards at the bottom of the README, two columns floated side by side:
-#   metrics/media-left.svg   suggested tracks (YouTube playlist PLefoBv28U_vI) + AniList favourite manga
-#   metrics/media-right.svg  AniList favourite anime + characters (anilist.co/user/chase5ws)
+# Media cards at the bottom of the README, four separate images (each with its own link),
+# floated into two columns: left = music, manga; right = characters, anime.
+#   metrics/media-music.svg       suggested tracks (YouTube playlist PLefoBv28U_vI)
+#   metrics/media-manga.svg       AniList favourite manga
+#   metrics/media-characters.svg  AniList favourite characters
+#   metrics/media-anime.svg       AniList favourite anime
 # Optional repository variables MUSIC_PLAYLIST / MUSIC_PROVIDER (apple, spotify, youtube) switch the playlist.
 # general.svg and achievements.svg are used by the website's "Languages & activity" window.
 name: Metrics
@@ -66,26 +69,34 @@ jobs:
           plugin_achievements_display: compact
           plugin_achievements_threshold: B
 
-      # The README shows two columns of cards, floated side by side so they line up at the top:
-      #   left  = suggested tracks + favourite manga, right = favourite characters + anime (balanced heights).
-      # The right card's extras_css moves characters above anime, so they sit beside the tracks.
-      # extras_css hides the AniList header (genres, minutes watched) that would repeat on each card.
-      - name: Left column (tracks + manga)
+      # Four media cards for the README (see the header comment). extras_css hides the
+      # AniList header (genres, minutes watched) so each card shows only its own list.
+      - name: Music card
         if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
+          filename: metrics/media-music.svg
           token: ${{ env.METRICS_TOKEN }}
           user: chase5ws
-          filename: metrics/media-left.svg
           base: ""
           config_timezone: Asia/Taipei
-          config_order: music, anilist
           plugin_music: yes
           plugin_music_provider: ${{ vars.MUSIC_PROVIDER || 'youtube' }}
           plugin_music_mode: playlist
           plugin_music_playlist: ${{ vars.MUSIC_PLAYLIST || 'https://music.youtube.com/playlist?list=PLefoBv28U_vI' }}
           plugin_music_limit: 6
+
+      - name: Manga card
+        if: env.METRICS_TOKEN != ''
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/media-manga.svg
+          token: ${{ env.METRICS_TOKEN }}
+          user: chase5ws
+          base: ""
+          config_timezone: Asia/Taipei
           plugin_anilist: yes
           plugin_anilist_user: chase5ws
           plugin_anilist_medias: manga
@@ -95,24 +106,41 @@ jobs:
           extras_css: |
             .items-wrapper section:has(> .row + .row) > h2.field, .items-wrapper section:has(> .row + .row) > .row:not(:last-of-type) { display: none !important; }
 
-      - name: Right column (anime + characters)
+      - name: Characters card
         if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
+          filename: metrics/media-characters.svg
           token: ${{ env.METRICS_TOKEN }}
           user: chase5ws
-          filename: metrics/media-right.svg
           base: ""
           config_timezone: Asia/Taipei
           plugin_anilist: yes
           plugin_anilist_user: chase5ws
           plugin_anilist_medias: anime
-          plugin_anilist_sections: favorites, characters
+          plugin_anilist_sections: characters
           plugin_anilist_limit: 13
           plugin_anilist_limit_characters: 24
           plugin_anilist_shuffle: no
           extras_css: |
             .items-wrapper section:has(> .row + .row) > h2.field, .items-wrapper section:has(> .row + .row) > .row:not(:last-of-type) { display: none !important; }
-            .items-wrapper section:has(> .anilist) { display: flex; flex-direction: column; }
-            .items-wrapper .anilist:has(> .characters) { order: -1; }
+
+      - name: Anime card
+        if: env.METRICS_TOKEN != ''
+        continue-on-error: true
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/media-anime.svg
+          token: ${{ env.METRICS_TOKEN }}
+          user: chase5ws
+          base: ""
+          config_timezone: Asia/Taipei
+          plugin_anilist: yes
+          plugin_anilist_user: chase5ws
+          plugin_anilist_medias: anime
+          plugin_anilist_sections: favorites
+          plugin_anilist_limit: 13
+          plugin_anilist_shuffle: no
+          extras_css: |
+            .items-wrapper section:has(> .row + .row) > h2.field, .items-wrapper section:has(> .row + .row) > .row:not(:last-of-type) { display: none !important; }
