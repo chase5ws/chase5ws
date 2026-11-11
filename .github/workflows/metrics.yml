@@ -4,8 +4,8 @@
 # read:user and repo scopes.
 #
 # Media cards at the bottom of the README, two columns floated side by side:
-#   metrics/media-left.svg   suggested tracks (YouTube playlist PLefoBv28U_vI) + AniList favourite characters
-#   metrics/media-right.svg  AniList favourite anime + manga (anilist.co/user/chase5ws)
+#   metrics/media-left.svg   suggested tracks (YouTube playlist PLefoBv28U_vI) + AniList favourite manga
+#   metrics/media-right.svg  AniList favourite anime + characters (anilist.co/user/chase5ws)
 # Optional repository variables MUSIC_PLAYLIST / MUSIC_PROVIDER (apple, spotify, youtube) switch the playlist.
 # general.svg and achievements.svg are used by the website's "Languages & activity" window.
 name: Metrics
@@ -67,9 +67,9 @@ jobs:
           plugin_achievements_threshold: B
 
       # The README shows two columns of cards, floated side by side so they line up at the top:
-      #   left  = suggested tracks + favourite characters, right = favourite anime + manga.
+      #   left  = suggested tracks + favourite manga, right = favourite anime + characters (balanced heights).
       # extras_css hides the AniList header (genres, minutes watched) that would repeat on each card.
-      - name: Left column (tracks + characters)
+      - name: Left column (tracks + manga)
         if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
@@ -87,13 +87,14 @@ jobs:
           plugin_music_limit: 6
           plugin_anilist: yes
           plugin_anilist_user: chase5ws
-          plugin_anilist_sections: characters
-          plugin_anilist_limit_characters: 24
+          plugin_anilist_medias: manga
+          plugin_anilist_sections: favorites
+          plugin_anilist_limit: 13
           plugin_anilist_shuffle: no
           extras_css: |
             .items-wrapper section:has(> .row + .row) > h2.field, .items-wrapper section:has(> .row + .row) > .row:not(:last-of-type) { display: none !important; }
 
-      - name: Right column (anime + manga)
+      - name: Right column (anime + characters)
         if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
@@ -105,9 +106,10 @@ jobs:
           config_timezone: Asia/Taipei
           plugin_anilist: yes
           plugin_anilist_user: chase5ws
-          plugin_anilist_medias: anime, manga
-          plugin_anilist_sections: favorites
+          plugin_anilist_medias: anime
+          plugin_anilist_sections: favorites, characters
           plugin_anilist_limit: 13
+          plugin_anilist_limit_characters: 24
           plugin_anilist_shuffle: no
           extras_css: |
             .items-wrapper section:has(> .row + .row) > h2.field, .items-wrapper section:has(> .row + .row) > .row:not(:last-of-type) { display: none !important; }
