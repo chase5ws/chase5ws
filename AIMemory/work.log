@@ -74,3 +74,12 @@ Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics wit
 
 ### 2026-11-11 01:16 | claude-opus-5-5 | WORK_END
 no trail, no start menu, game launch screens with controls + Doom mouse speed
+
+### 2026-11-11 01:37 | claude-opus-5-5 | PROMPT
+> readme anilist 動畫 漫畫 角色 3個都出現在最下方 / anilist可以直接讀取到嗎 https://anilist.co/user/chase5ws/
+
+### 2026-11-11 01:37 | claude-opus-5-5 | FILES_MODIFIED
+README.md (AniList card at the bottom), .github/workflows/metrics.yml (AniList step for chase5ws: anime+manga favourites+characters; music split to its own step)
+
+### 2026-11-11 01:37 | claude-opus-5-5 | WORK_END
+AniList card wired to chase5ws

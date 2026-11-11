@@ -24,3 +24,7 @@
 Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; before that, automation and IT for Micron and TSMC suppliers. Open to cloud, DevOps and AI automation roles: [LinkedIn](https://www.linkedin.com/in/chase5ws/) or [email](mailto:chase5ws@gmail.com).
 
 Thanks for stopping by.
+
+<p align="center">
+  <a href="https://anilist.co/user/chase5ws/"><img src="./metrics/anilist.svg" alt="Favourite anime, manga and characters on AniList"></a>
+</p>
