@@ -134,6 +134,8 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .task.is-active { background: rgba(255, 255, 255, 0.12); }
 .task.is-active::after { opacity: 1; }
 .clock { display: grid; align-content: center; padding: 0 14px; font-size: 12px; }
+/* pixel zoo walking along the taskbar (os/zoo.js) */
+.zoo { position: absolute; top: 0; pointer-events: none; image-rendering: pixelated; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 720px) {

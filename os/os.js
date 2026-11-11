@@ -281,7 +281,13 @@
   }));
 
   // The taskbar stays minimal (start + clock); a minimised window comes back from its desktop icon.
-  function renderTasks() {}
+  // It does tell the pixel zoo (zoo.js) which window is in front, so the animals can change.
+  function renderTasks() {
+    const id = active && !active.min ? active.id : null;
+    if (id === window.CHASEOS_ACTIVE) return;
+    window.CHASEOS_ACTIVE = id;
+    document.dispatchEvent(new CustomEvent("chaseos:active", { detail: id }));
+  }
 
   const tick = () => {
     const d = new Date();
