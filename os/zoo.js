@@ -258,7 +258,8 @@
   const standY = (a) => (a.s.fly ? ground - a.h - a.flyY : ground - a.h);
 
   function setCast(id) {
-    const names = castOf(id);
+    // About one animal per 45px of bar, so a phone gets a smaller crowd.
+    const names = castOf(id).slice(0, Math.max(2, Math.floor((right - left) / 45)));
     if (reduceMotion || !W) {
       animals = names.map((n, i) => { const a = make(n); a.x = left + ((i + 0.5) / names.length) * (right - left) - a.w / 2; a.y = standY(a); a.state = "walk"; return a; });
       draw();
@@ -342,15 +343,20 @@
   }
 
   // ---------- mouse: click to make one jump, drag to carry and throw ----------
+  const coarse = matchMedia("(pointer: coarse)");
   const hitAt = (e) => {
+    const pad = coarse.matches ? 16 : 4; // fingers need a bigger target
     const r = canvas.getBoundingClientRect();
     const x = e.clientX - r.left, y = e.clientY - r.top;
-    for (let i = animals.length - 1; i >= 0; i--) {
-      const a = animals[i];
+    // Of the animals under the pointer, take the one whose middle is closest.
+    let best = null, bestD = Infinity;
+    for (const a of animals) {
       if (a.state === "gone" || a.leaving) continue;
-      if (x >= a.x - 4 && x <= a.x + a.w + 4 && y >= a.y - 4 && y <= a.y + a.h + 4) return { a, x, y };
+      if (x < a.x - pad || x > a.x + a.w + pad || y < a.y - pad || y > a.y + a.h + pad) continue;
+      const d = Math.hypot(x - (a.x + a.w / 2), y - (a.y + a.h / 2));
+      if (d < bestD) { best = a; bestD = d; }
     }
-    return null;
+    return best && { a: best, x, y };
   };
   let swallowClick = false;
   if (!reduceMotion) {
@@ -389,6 +395,10 @@
       }
       drag = null;
     }, true);
+    // On a touch screen a finger drag is a scroll gesture by default: the browser would cancel
+    // the pointer and the animal would drop. Claim touches that start on an animal instead.
+    addEventListener("touchstart", (e) => { if (e.touches.length === 1 && hitAt(e.touches[0])) e.preventDefault(); }, { capture: true, passive: false });
+    addEventListener("touchmove", (e) => { if (drag) e.preventDefault(); }, { capture: true, passive: false });
     // Let go if the pointer is lost (released outside the window, tab switched).
     const drop = () => { drag = null; document.documentElement.classList.remove("zoo-grabbing"); };
     addEventListener("pointercancel", drop, true);
