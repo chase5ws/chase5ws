@@ -299,7 +299,8 @@
         }
         continue;
       }
-      // walking
+      // walking: stay on the bar's top edge even if the window was resized
+      a.y = standY(a);
       if (a.pause > 0) { a.pause -= dt; continue; }
       a.x += a.dir * a.speed * dt;
       if (a.s.fly) {
@@ -417,7 +418,7 @@
   }
 
   resize();
-  addEventListener("resize", () => { resize(); draw(); });
+  addEventListener("resize", () => { resize(); animals.forEach((a) => { if (a.state === "walk") a.y = standY(a); }); draw(); });
   document.addEventListener("chaseos:active", (e) => setCast(e.detail));
   setCast(window.CHASEOS_ACTIVE || null);
   if (!reduceMotion) requestAnimationFrame(loop);

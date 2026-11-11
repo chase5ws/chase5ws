@@ -3,6 +3,8 @@
 > Infrastructure and automation engineer in Hsinchu, Taiwan. I run IT systems and write the Python that automates them.
 > Everything I’m working on lives on my desktop at **[chase5ws.github.io/chase5ws](https://chase5ws.github.io/chase5ws/)**: open the Projects folder, or the Live now panel to try the running sites.
 
+<a href="https://chase5ws.github.io/chase5ws/"><img src="./assets/site-preview.png" width="100%" alt="ChaseOS, my desktop in the browser: click to open chase5ws.github.io/chase5ws"></a>
+
 **What I’m building**
 
 - **[ASC Bot](https://github.com/chase5ws/2026_asc_discord_bot)**, a Discord bot that communities license per server, with plug-in systems and a web admin ([admin console](https://2026ascdiscordbot-production.up.railway.app))
