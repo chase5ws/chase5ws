@@ -85,3 +85,12 @@ README.md two floated columns media-left/right; metrics.yml combined cards + ext
 
 ### 2026-11-11 02:32 | claude-opus-5-5 | WORK_END
 README media columns tightened
+
+### 2026-11-11 | claude-opus-5-5 | PROMPT
+> 點音樂開 YouTube、點漫畫開 AniList 我希望4張圖是分開的
+
+### 2026-11-11 | claude-opus-5-5 | FILES_MODIFIED
+metrics.yml builds media-music/manga/characters/anime.svg; README floats them (47%) with their own links; removed media-left/right.svg
+
+### 2026-11-11 | claude-opus-5-5 | WORK_END
+four separate linked media cards, verified on github.com at 1280px
