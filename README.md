@@ -26,5 +26,10 @@ Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; 
 Thanks for stopping by.
 
 <p align="center">
-  <a href="https://anilist.co/user/chase5ws/"><img src="./metrics/anilist.svg" alt="Favourite anime, manga and characters on AniList"></a>
+  <img width="49%" src="./metrics/music.svg" alt="Suggested tracks">
+  <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/anime.svg" alt="Favourite anime on AniList"></a>
+</p>
+<p align="center">
+  <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/characters.svg" alt="Favourite characters on AniList"></a>
+  <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/manga.svg" alt="Favourite manga on AniList"></a>
 </p>

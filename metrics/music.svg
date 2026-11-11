@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="96" viewBox="0 0 480 96">
+  <!-- Stand-in until the MUSIC_PLAYLIST repository variable is set; the Metrics workflow then overwrites this file. -->
+  <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#777}</style>
+  <text x="14" y="30" font-size="14" font-weight="600" style="fill:#2a76d2">Suggested tracks</text>
+  <text x="14" y="60" font-size="13">Playlist coming soon</text>
+</svg>
