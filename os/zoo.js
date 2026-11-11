@@ -1,6 +1,8 @@
-// Pixel zoo: little animals walk along the taskbar, between the name and the clock.
+// Pixel zoo: little animals stand on top of the taskbar and walk between the name and the clock.
+// Walk past either end (over the buttons) and they fall off the bar, then drop back in from above.
+// Mouse: click one to make it jump, or drag it around and throw it.
 // The cast changes with the focused window (os.js fires "chaseos:active" with its id;
-// null means the bare desktop). Old animals walk off the nearest edge, new ones walk in.
+// null means the bare desktop): the old cast hops off, the new one drops in.
 // With reduced motion they stand still.
 (() => {
   const bar = document.querySelector(".taskbar");
@@ -150,65 +152,112 @@
     });
   }
 
+  const heart = (() => {
+    const rows = [".rr.rr.", "rrrrrrr", "rrrrrrr", ".rrrrr.", "..rrr..", "...r..."];
+    const c = document.createElement("canvas");
+    c.width = 7 * 2; c.height = 6 * 2;
+    const g = c.getContext("2d");
+    g.fillStyle = "#ff5c8a";
+    rows.forEach((row, y) => [...row].forEach((ch, x) => { if (ch === "r") g.fillRect(x * 2, y * 2, 2, 2); }));
+    return c;
+  })();
+
+  // The canvas covers the taskbar plus a strip above it, so animals can stand on the bar's
+  // top edge, jump, be thrown, and fall down past the buttons.
+  const ABOVE = 160;
   const canvas = document.createElement("canvas");
   canvas.className = "zoo";
   canvas.setAttribute("aria-hidden", "true");
-  bar.append(canvas);
+  document.body.append(canvas);
   const ctx = canvas.getContext("2d");
-  let W = 0, H = 0, dpr = 1;
+  let W = 0, H = 0, dpr = 1, ground = 0, left = 0, right = 0;
 
   function resize() {
     const r = bar.getBoundingClientRect();
     const name = bar.querySelector(".tb-name"), clock = bar.querySelector(".clock");
-    const left = name ? name.getBoundingClientRect().right - r.left + 8 : 0;
-    const right = clock ? r.right - clock.getBoundingClientRect().left + 8 : 0;
-    W = Math.max(0, r.width - left - right);
-    H = r.height;
+    W = innerWidth;
+    H = r.height + ABOVE;
+    ground = ABOVE; // the bar's top edge, in canvas pixels
+    left = name ? name.getBoundingClientRect().right + 4 : 0;
+    right = clock ? clock.getBoundingClientRect().left - 4 : W;
     dpr = devicePixelRatio || 1;
-    Object.assign(canvas.style, { left: `${left}px`, width: `${W}px`, height: `${H}px` });
+    Object.assign(canvas.style, { width: `${W}px`, height: `${H}px` });
     canvas.width = Math.round(W * dpr);
     canvas.height = Math.round(H * dpr);
   }
 
-  let animals = [];
+  const GRAVITY = 1100;
   const rand = (a, b) => a + Math.random() * (b - a);
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(v, hi));
+  let animals = [], hearts = [], now = 0;
 
-  function spawn(name, i, n, enter) {
+  function make(name) {
     const s = SPRITES[name], f = art[name][0];
-    const dir = enter ? (i % 2 ? -1 : 1) : (Math.random() < 0.5 ? -1 : 1);
-    const x = enter ? (dir > 0 ? -f.width - i * 30 : W + i * 30) : ((i + 0.5) / n) * W - f.width / 2;
-    return { name, s, x, dir, speed: s.speed * rand(0.8, 1.2), t: rand(0, 1), pause: 0, leaving: false, w: f.width, h: f.height, flyY: rand(0, 6) };
+    return { name, s, w: f.width, h: f.height, x: 0, y: 0, dir: Math.random() < 0.5 ? -1 : 1, speed: s.speed * rand(0.8, 1.2),
+      state: "gone", vx: 0, vy: 0, t: rand(0, 1), pause: 0, spin: 0, vspin: 0, falling: false, leaving: false, back: 0, flyY: rand(30, 90) };
   }
+  // Drop in from above at a random spot over the bar.
+  function dropIn(a) {
+    a.x = rand(left, Math.max(left, right - a.w));
+    a.y = -a.h - rand(0, 40);
+    a.vx = 0; a.vy = 0; a.spin = 0; a.vspin = 0; a.falling = false; a.state = "air";
+  }
+  // Off the bar: tumble down past the taskbar.
+  function fallOff(a, vx, vy) {
+    a.state = "air"; a.falling = true; a.vx = vx; a.vy = vy; a.vspin = (vx >= 0 ? 1 : -1) * rand(5, 9);
+  }
+  const onBar = (a) => a.x + a.w / 2 >= left && a.x + a.w / 2 <= right;
+  const standY = (a) => (a.s.fly ? ground - a.h - a.flyY : ground - a.h);
 
   function setCast(id) {
     const names = castOf(id);
     if (reduceMotion || !W) {
-      animals = names.map((n, i) => spawn(n, i, names.length, false));
+      animals = names.map((n, i) => { const a = make(n); a.x = left + ((i + 0.5) / names.length) * (right - left) - a.w / 2; a.y = standY(a); a.state = "walk"; return a; });
       draw();
       return;
     }
-    // Send the current animals off the nearest edge and bring the new ones in.
-    animals.forEach((a) => { if (!a.leaving) { a.leaving = true; a.pause = 0; a.dir = a.x + a.w / 2 < W / 2 ? -1 : 1; a.speed = Math.max(a.speed, 40); } });
-    animals = animals.concat(names.map((n, i) => spawn(n, i, names.length, true)));
+    // The old cast hops off the bar; the new one drops in, one after another.
+    animals.forEach((a) => { if (!a.leaving) { a.leaving = true; fallOff(a, (a.x + a.w / 2 < (left + right) / 2 ? -1 : 1) * rand(80, 140), -rand(280, 380)); } });
+    names.forEach((n, i) => { const a = make(n); a.back = now + 0.25 + i * 0.45; animals.push(a); });
   }
 
   function step(dt) {
     for (const a of animals) {
       a.t += dt;
-      if (a.pause > 0) { a.pause -= dt; continue; }
-      // Hurry while walking in from outside the strip, so slow animals do not take ages.
-      const outside = a.x < 0 || a.x + a.w > W;
-      a.x += a.dir * a.speed * (outside && !a.leaving ? 4 : 1) * dt;
-      if (a.leaving) continue;
-      // Turn at the edges of the strip once fully inside it.
-      if (a.x < 0 && a.dir < 0) a.dir = 1;
-      if (a.x + a.w > W && a.dir > 0) a.dir = -1;
-      // Now and then stop to look around, or turn back.
-      if (a.x >= 0 && a.x + a.w <= W && Math.random() < dt * 0.25) {
-        if (Math.random() < 0.5) a.pause = rand(0.6, 2.2); else a.dir *= -1;
+      if (a.state === "gone") { if (now >= a.back) dropIn(a); continue; }
+      if (a.state === "held") continue;
+      if (a.state === "air") {
+        a.vy += GRAVITY * dt * (a.s.fly && !a.falling ? 0.35 : 1);
+        a.x += a.vx * dt;
+        a.y += a.vy * dt;
+        a.spin += a.vspin * dt;
+        const land = standY(a);
+        if (!a.falling && a.vy > 0 && a.y >= land) {
+          if (onBar(a) || a.s.fly) {
+            a.y = land; a.state = "walk"; a.vx = 0; a.spin = 0; a.vspin = 0; a.pause = rand(0.2, 0.8);
+            if (a.s.fly) a.x = clamp(a.x, left, right - a.w);
+          } else a.falling = true, a.vspin = (a.vx >= 0 ? 1 : -1) * rand(5, 9);
+        }
+        if (a.y > H + 20 || a.x < -a.w - 80 || a.x > W + 80) {
+          if (a.leaving) a.state = "dead";
+          else { a.state = "gone"; a.back = now + rand(1, 2.5); }
+        }
+        continue;
       }
+      // walking
+      if (a.pause > 0) { a.pause -= dt; continue; }
+      a.x += a.dir * a.speed * dt;
+      if (a.s.fly) {
+        if (a.x < left && a.dir < 0) a.dir = 1;
+        if (a.x + a.w > right && a.dir > 0) a.dir = -1;
+      } else if (!onBar(a)) {
+        fallOff(a, a.dir * Math.max(a.speed, 30), -90); // walked off the end of the bar
+        continue;
+      }
+      if (Math.random() < dt * 0.2) { if (Math.random() < 0.5) a.pause = rand(0.6, 2.2); else a.dir *= -1; }
     }
-    animals = animals.filter((a) => !a.leaving || (a.x > -a.w - 4 && a.x < W + 4));
+    animals = animals.filter((a) => a.state !== "dead");
+    hearts = hearts.filter((h) => (h.t += dt) < 1);
   }
 
   function draw() {
@@ -216,28 +265,84 @@
     ctx.clearRect(0, 0, W, H);
     ctx.imageSmoothingEnabled = false;
     for (const a of animals) {
-      const moving = a.pause <= 0 && !reduceMotion;
-      const rate = a.s.fly ? 8 : a.s.hop ? 4 : 6;
-      const fi = moving ? Math.floor(a.t * rate) % 2 : 0;
-      const img = art[a.name][a.s.fly ? Math.floor(a.t * rate) % 2 : fi];
-      let y = H - a.h - 4;
-      if (a.s.hop && moving) y -= Math.abs(Math.sin(a.t * Math.PI * rate / 2)) * 5;
-      if (a.s.fly) y = 4 + a.flyY + Math.sin(a.t * 3) * 3;
-      const x = Math.round(a.x), yy = Math.round(y);
-      if (a.dir < 0) {
-        ctx.save();
-        ctx.translate(x + a.w, yy);
-        ctx.scale(-1, 1);
-        ctx.drawImage(img, 0, 0);
-        ctx.restore();
-      } else ctx.drawImage(img, x, yy);
+      if (a.state === "gone") continue;
+      const held = a.state === "held", walking = a.state === "walk" && a.pause <= 0 && !reduceMotion;
+      const rate = held ? 14 : a.s.fly ? 8 : a.s.hop ? 4 : 6;
+      const fi = (a.s.fly && !reduceMotion) || walking || held ? Math.floor(a.t * rate) % 2 : 0;
+      const img = art[a.name][fi];
+      let y = a.y;
+      if (a.state === "walk" && a.s.fly && !reduceMotion) y += Math.sin(a.t * 3) * 3;
+      if (a.s.hop && walking) y -= Math.abs(Math.sin(a.t * Math.PI * rate / 2)) * 5;
+      ctx.save();
+      ctx.translate(Math.round(a.x + a.w / 2), Math.round(y + a.h / 2));
+      if (a.spin) ctx.rotate(a.spin);
+      if (a.dir < 0) ctx.scale(-1, 1);
+      ctx.drawImage(img, -a.w / 2, -a.h / 2);
+      ctx.restore();
+    }
+    for (const h of hearts) {
+      ctx.globalAlpha = 1 - h.t;
+      ctx.drawImage(heart, Math.round(h.x - heart.width / 2), Math.round(h.y - h.t * 34));
+      ctx.globalAlpha = 1;
     }
   }
 
+  // ---------- mouse: click to make one jump, drag to carry and throw ----------
+  const hitAt = (e) => {
+    const r = canvas.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    for (let i = animals.length - 1; i >= 0; i--) {
+      const a = animals[i];
+      if (a.state === "gone" || a.leaving) continue;
+      if (x >= a.x - 4 && x <= a.x + a.w + 4 && y >= a.y - 4 && y <= a.y + a.h + 4) return { a, x, y };
+    }
+    return null;
+  };
+  let drag = null, swallowClick = false;
+  if (!reduceMotion) {
+    addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      const hit = hitAt(e);
+      if (!hit) return;
+      e.preventDefault(); e.stopPropagation();
+      drag = { a: hit.a, ox: hit.x - hit.a.x, oy: hit.y - hit.a.y, sx: hit.x, sy: hit.y, lx: hit.x, ly: hit.y, lt: performance.now(), vx: 0, vy: 0, moved: false };
+    }, true);
+    addEventListener("pointermove", (e) => {
+      if (!drag) { document.documentElement.classList.toggle("zoo-hover", !!hitAt(e)); return; }
+      const r = canvas.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, a = drag.a;
+      if (!drag.moved && Math.hypot(x - drag.sx, y - drag.sy) > 4) { drag.moved = true; a.state = "held"; a.spin = 0; a.vspin = 0; a.falling = false; document.documentElement.classList.add("zoo-grabbing"); }
+      if (!drag.moved) return;
+      const t = performance.now(), k = Math.max(1, t - drag.lt) / 1000;
+      drag.vx = drag.vx * 0.5 + ((x - drag.lx) / k) * 0.5;
+      drag.vy = drag.vy * 0.5 + ((y - drag.ly) / k) * 0.5;
+      drag.lx = x; drag.ly = y; drag.lt = t;
+      a.x = x - drag.ox; a.y = y - drag.oy;
+      if (Math.abs(x - drag.sx) > 2) a.dir = x > drag.sx ? 1 : -1;
+    }, true);
+    addEventListener("pointerup", (e) => {
+      if (!drag) return;
+      const a = drag.a;
+      e.preventDefault(); e.stopPropagation();
+      swallowClick = true; setTimeout(() => { swallowClick = false; }, 0);
+      document.documentElement.classList.remove("zoo-grabbing");
+      if (drag.moved) {
+        a.state = "air"; a.falling = false;
+        a.vx = clamp(drag.vx, -900, 900); a.vy = clamp(drag.vy, -900, 900);
+        a.vspin = a.vx / 120;
+      } else if (a.state === "walk") {
+        a.state = "air"; a.vx = 0; a.vy = -340; a.pause = 0; // a happy little jump
+        hearts.push({ x: a.x + a.w / 2, y: a.y - 6, t: 0 });
+      }
+      drag = null;
+    }, true);
+    // A click or double-click that landed on an animal should not also open a desktop icon.
+    for (const type of ["click", "dblclick"]) addEventListener(type, (e) => { if (swallowClick) { e.preventDefault(); e.stopPropagation(); } }, true);
+  }
+
   let last = 0;
-  function loop(now) {
-    const dt = Math.min(0.05, (now - (last || now)) / 1000);
-    last = now;
+  function loop(t) {
+    const dt = Math.min(0.05, (t - (last || t)) / 1000);
+    last = t; now += dt;
     step(dt);
     draw();
     requestAnimationFrame(loop);
