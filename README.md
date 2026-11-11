@@ -27,7 +27,7 @@ Thanks for stopping by.
 
 <a href="https://www.youtube.com/playlist?list=PLefoBv28U_vI"><img align="left" width="47%" src="./metrics/media-music.svg" alt="Suggested tracks from my YouTube playlist"></a>
 <a href="https://anilist.co/user/chase5ws/"><img align="right" width="47%" src="./metrics/media-characters.svg" alt="Favourite characters on AniList"></a>
-<a href="https://anilist.co/user/chase5ws/"><img align="right" width="47%" src="./metrics/media-anime.svg" alt="Favourite anime on AniList"></a>
-<a href="https://anilist.co/user/chase5ws/"><img align="left" width="47%" src="./metrics/media-manga.svg" alt="Favourite manga on AniList"></a>
+<a href="https://anilist.co/user/chase5ws/animelist"><img align="right" width="47%" src="./metrics/media-anime.svg" alt="Favourite anime on AniList"></a>
+<a href="https://anilist.co/user/chase5ws/mangalist"><img align="left" width="47%" src="./metrics/media-manga.svg" alt="Favourite manga on AniList"></a>
 
 <img width="100%" height="1" alt="" src="./metrics/placeholder.svg">
