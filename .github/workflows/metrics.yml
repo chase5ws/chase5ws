@@ -5,9 +5,9 @@
 # Needs a repository secret METRICS_TOKEN: a personal access token (classic) with the
 # read:user and repo scopes. Optional repository variables (Settings → Secrets and
 # variables → Actions → Variables) switch on the extra cards:
-#   MUSIC_PLAYLIST  a public playlist URL  → metrics/music.svg (suggested tracks)
+#   MUSIC_PLAYLIST  another public playlist URL → metrics/music.svg (suggested tracks)
 # AniList favourites come from anilist.co/user/chase5ws → metrics/{anime,manga,characters}.svg.
-# metrics/music.svg is a stand-in until MUSIC_PLAYLIST is set.
+# Suggested tracks come from the YouTube playlist PLefoBv28U_vI (MUSIC_PLAYLIST / MUSIC_PROVIDER override it).
 #   MUSIC_PROVIDER  apple (default), spotify or youtube, matching MUSIC_PLAYLIST
 name: Metrics
 on:
@@ -114,8 +114,8 @@ jobs:
           plugin_anilist_shuffle: no
           plugin_anilist_sections: characters
           plugin_anilist_limit_characters: 22
-      - name: Suggested tracks (playlist)
-        if: env.METRICS_TOKEN != '' && vars.MUSIC_PLAYLIST != ''
+      - name: Suggested tracks (YouTube playlist)
+        if: env.METRICS_TOKEN != ''
         continue-on-error: true
         uses: lowlighter/metrics@latest
         with:
@@ -125,7 +125,7 @@ jobs:
           base: ""
           config_timezone: Asia/Taipei
           plugin_music: yes
-          plugin_music_provider: ${{ vars.MUSIC_PROVIDER || 'apple' }}
+          plugin_music_provider: ${{ vars.MUSIC_PROVIDER || 'youtube' }}
           plugin_music_mode: playlist
-          plugin_music_playlist: ${{ vars.MUSIC_PLAYLIST }}
+          plugin_music_playlist: ${{ vars.MUSIC_PLAYLIST || 'https://music.youtube.com/playlist?list=PLefoBv28U_vI' }}
           plugin_music_limit: 9

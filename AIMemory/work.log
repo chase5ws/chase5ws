@@ -67,3 +67,12 @@ icon order + Chase.Tseng taskbar button
 
 ### 2026-11-11 01:44 | claude-opus-5-5 | NOTE
 Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
+
+### 2026-11-11 02:08 | claude-opus-5-5 | PROMPT
+> YouTube playlist PLefoBv28U_vI / anilist更新了 / 之後這2邊更新 readme也會自動更新?
+
+### 2026-11-11 02:08 | claude-opus-5-5 | FILES_MODIFIED
+.github/workflows/metrics.yml music step uses YouTube Music playlist by default; README music card links to the playlist
+
+### 2026-11-11 02:08 | claude-opus-5-5 | WORK_END
+music card wired to YouTube playlist

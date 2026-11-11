@@ -26,7 +26,7 @@ Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; 
 Thanks for stopping by.
 
 <p align="center">
-  <img width="49%" src="./metrics/music.svg" alt="Suggested tracks">
+  <a href="https://www.youtube.com/playlist?list=PLefoBv28U_vI"><img width="49%" src="./metrics/music.svg" alt="Suggested tracks from my YouTube playlist"></a>
   <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/anime.svg" alt="Favourite anime on AniList"></a>
 </p>
 <p align="center">
