@@ -67,7 +67,8 @@ jobs:
           plugin_achievements_threshold: B
 
       # The README shows two columns of cards, floated side by side so they line up at the top:
-      #   left  = suggested tracks + favourite manga, right = favourite anime + characters (balanced heights).
+      #   left  = suggested tracks + favourite manga, right = favourite characters + anime (balanced heights).
+      # The right card's extras_css moves characters above anime, so they sit beside the tracks.
       # extras_css hides the AniList header (genres, minutes watched) that would repeat on each card.
       - name: Left column (tracks + manga)
         if: env.METRICS_TOKEN != ''
@@ -113,3 +114,5 @@ jobs:
           plugin_anilist_shuffle: no
           extras_css: |
             .items-wrapper section:has(> .row + .row) > h2.field, .items-wrapper section:has(> .row + .row) > .row:not(:last-of-type) { display: none !important; }
+            .items-wrapper section:has(> .anilist) { display: flex; flex-direction: column; }
+            .items-wrapper .anilist:has(> .characters) { order: -1; }
