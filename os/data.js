@@ -62,7 +62,7 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_google_wallpaper_customized",
     },
     {
-      id: "form-limiter", image: "./os/icons/form-limiter.png", icon: "form", name: "Google Form limiter", status: "source", where: "Railway",
+      id: "form-limiter", image: "./os/icons/form-limiter.png", icon: "form", name: "Google Form limiter", status: "live", where: "Railway",
       summary: "A platform that caps sign-ups on Google Forms for many organisations.",
       points: [
         "Opens and closes each form by quota and schedule, checked every minute.",
@@ -70,6 +70,8 @@ window.CHASE = {
         "Each organisation uses its own Google account and mail relay.",
       ],
       stack: "Node.js, built-in SQLite, Google APIs, Apps Script",
+      live: "https://2026googleformlimiter-production.up.railway.app",
+      liveLabel: "Platform sign-in",
       source: "https://github.com/chase5ws/2026_google_form_limiter",
     },
     {
