@@ -107,32 +107,81 @@
       "ddddddddd",
       "d..ddd..d",
     ]] },
+    pig: { pal: { p: "#f7a8b8", d: "#d9778d", e: "#1b1b1b" }, speed: 18, frames: legs([
+      "........d...",
+      "......ppppp.",
+      "......pppep.",
+      "d.....ppppdd",
+      ".pppppppppd.",
+      ".ppppppppp..",
+      ".ppppppppp..",
+    ], [".d.d...d.d..", ".d.d...d.d.."], ["..d.d...d.d.", "..d.d...d.d."]) },
+    sheep: { pal: { w: "#f3f1ea", k: "#3b3b45", e: "#f3f1ea" }, speed: 14, frames: legs([
+      "..wwwwww....",
+      ".wwwwwwwwkk.",
+      "wwwwwwwwkkek",
+      "wwwwwwwwwkkk",
+      ".wwwwwwwww..",
+      "..wwwwwww...",
+    ], ["..k.k..k.k..", "..k.k..k.k.."], ["...k.k..k.k.", "...k.k..k.k."]) },
+    duck: { pal: { w: "#f6f6f6", o: "#ff9a2e", e: "#1b1b1b" }, speed: 16, frames: legs([
+      "......ww..",
+      ".....wwew.",
+      ".....wwwoo",
+      "w....www..",
+      "wwwwwwwww.",
+      ".wwwwwwww.",
+      "..wwwwww..",
+    ], ["...o.o...."], ["....o.o..."]) },
+    mouse: { pal: { g: "#a7adb8", p: "#f4a7b9", e: "#1b1b1b" }, speed: 46, frames: legs([
+      "......gg...",
+      ".....gggg..",
+      ".....ggegg.",
+      "p..ggggggp.",
+      ".pgggggggg.",
+      "..gggggg...",
+    ], ["..p.p.p...."], ["...p.p.p..."]) },
+    hedgehog: { pal: { b: "#7a5a3c", s: "#e2c39a", e: "#1b1b1b", k: "#1b1b1b" }, speed: 12, frames: legs([
+      "..b.b.b.....",
+      ".bbbbbbb....",
+      "bbbbbbbbss..",
+      "bbbbbbbssesk",
+      "bbbbbbbssss.",
+      ".bbbbbbbb...",
+    ], ["..s.s..s.s..", "..s.s..s.s.."], ["...s.s..s.s.", "...s.s..s.s."]) },
+    crab: { pal: { r: "#ff6b4a", k: "#1b1b1b" }, speed: 28, frames: legs([
+      "r.......r",
+      "rr.k.k.rr",
+      ".rrrrrrr.",
+      "rrrrrrrrr",
+      ".rrrrrrr.",
+    ], ["r.r...r.r"], [".r.r.r.r."]) },
   };
 
-  // Which animals live in which window. Anything not listed gets two picked from its id.
+  // Which animals live in which window. Anything not listed gets four picked from its id.
   const CAST = {
-    "": ["cat", "dog", "chick"],
-    me: ["cat", "dog"],
-    contact: ["owl", "chick"],
-    experience: ["turtle", "owl"],
-    roadmap: ["rabbit", "turtle"],
-    stats: ["penguin", "chick"],
-    live: ["fox", "rabbit"],
-    dev: ["turtle", "chick"],
-    "this-pc": ["penguin", "cat"],
-    doom: ["bat", "bat", "bat"],
-    duel: ["fox", "frog"],
-    "asc-bot": ["cat", "owl"],
-    "asc-site": ["fox", "chick"],
-    mbti: ["owl", "dog"],
-    wallpaper: ["penguin", "frog"],
+    "": ["cat", "dog", "chick", "rabbit", "duck", "pig"],
+    me: ["cat", "dog", "mouse", "duck", "sheep"],
+    contact: ["owl", "chick", "duck", "mouse", "rabbit"],
+    experience: ["turtle", "owl", "hedgehog", "sheep", "penguin"],
+    roadmap: ["rabbit", "turtle", "rabbit", "turtle", "chick"],
+    stats: ["penguin", "chick", "penguin", "owl", "mouse"],
+    live: ["fox", "rabbit", "frog", "chick", "pig"],
+    dev: ["turtle", "chick", "hedgehog", "mouse", "sheep"],
+    "this-pc": ["penguin", "cat", "mouse", "duck"],
+    doom: ["bat", "bat", "bat", "bat", "mouse", "mouse"],
+    duel: ["fox", "frog", "crab", "duck", "hedgehog"],
+    "asc-bot": ["cat", "owl", "dog", "mouse"],
+    "asc-site": ["fox", "chick", "cat", "pig"],
+    mbti: ["owl", "dog", "sheep", "fox"],
+    wallpaper: ["penguin", "frog", "duck", "crab"],
   };
   const NAMES = Object.keys(SPRITES);
   const castOf = (id) => {
     if (CAST[id || ""]) return CAST[id || ""];
     let h = 0;
     for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-    return [NAMES[h % NAMES.length], NAMES[(h >>> 8) % NAMES.length]];
+    return [0, 5, 10, 15].map((k) => NAMES[(h >>> k) % NAMES.length]);
   };
 
   // Pre-render every frame to a small canvas.
@@ -162,9 +211,8 @@
     return c;
   })();
 
-  // The canvas covers the taskbar plus a strip above it, so animals can stand on the bar's
-  // top edge, jump, be thrown, and fall down past the buttons.
-  const ABOVE = 160;
+  // The canvas covers the whole screen (it ignores the mouse itself), so an animal stays
+  // visible wherever it is thrown; it stands on the bar's top edge and falls past the buttons.
   const canvas = document.createElement("canvas");
   canvas.className = "zoo";
   canvas.setAttribute("aria-hidden", "true");
@@ -176,8 +224,8 @@
     const r = bar.getBoundingClientRect();
     const name = bar.querySelector(".tb-name"), clock = bar.querySelector(".clock");
     W = innerWidth;
-    H = r.height + ABOVE;
-    ground = ABOVE; // the bar's top edge, in canvas pixels
+    H = innerHeight;
+    ground = r.top; // the bar's top edge, in canvas pixels
     left = name ? name.getBoundingClientRect().right + 4 : 0;
     right = clock ? clock.getBoundingClientRect().left - 4 : W;
     dpr = devicePixelRatio || 1;
@@ -189,7 +237,7 @@
   const GRAVITY = 1100;
   const rand = (a, b) => a + Math.random() * (b - a);
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(v, hi));
-  let animals = [], hearts = [], now = 0;
+  let animals = [], hearts = [], now = 0, drag = null;
 
   function make(name) {
     const s = SPRITES[name], f = art[name][0];
@@ -225,12 +273,18 @@
     for (const a of animals) {
       a.t += dt;
       if (a.state === "gone") { if (now >= a.back) dropIn(a); continue; }
-      if (a.state === "held") continue;
+      if (a.state === "held") { if (!drag || drag.a !== a) { a.state = "air"; a.vx = 0; a.vy = 0; } continue; }
       if (a.state === "air") {
         a.vy += GRAVITY * dt * (a.s.fly && !a.falling ? 0.35 : 1);
         a.x += a.vx * dt;
         a.y += a.vy * dt;
         a.spin += a.vspin * dt;
+        // Bounce off the sides and top of the screen so a thrown animal never leaves the view.
+        if (!a.leaving) {
+          if (a.x < 0 && a.vx < 0) { a.x = 0; a.vx = -a.vx * 0.6; a.vspin = -a.vspin; }
+          if (a.x + a.w > W && a.vx > 0) { a.x = W - a.w; a.vx = -a.vx * 0.6; a.vspin = -a.vspin; }
+          if (a.y < 0 && a.vy < 0) { a.y = 0; a.vy = -a.vy * 0.4; }
+        }
         const land = standY(a);
         if (!a.falling && a.vy > 0 && a.y >= land) {
           if (onBar(a) || a.s.fly) {
@@ -298,7 +352,7 @@
     }
     return null;
   };
-  let drag = null, swallowClick = false;
+  let swallowClick = false;
   if (!reduceMotion) {
     addEventListener("pointerdown", (e) => {
       if (e.button !== 0) return;
@@ -335,6 +389,10 @@
       }
       drag = null;
     }, true);
+    // Let go if the pointer is lost (released outside the window, tab switched).
+    const drop = () => { drag = null; document.documentElement.classList.remove("zoo-grabbing"); };
+    addEventListener("pointercancel", drop, true);
+    addEventListener("blur", drop);
     // A click or double-click that landed on an animal should not also open a desktop icon.
     for (const type of ["click", "dblclick"]) addEventListener(type, (e) => { if (swallowClick) { e.preventDefault(); e.stopPropagation(); } }, true);
   }
