@@ -8,3 +8,4 @@
 - 2026-11-10 (claude-opus-5-5) Owner's palette for the site background: black, grey and blue only (no rainbow). Icons: pixel art for drawn ones; keep the Windows 10 icons he supplied and each project's own image.
 - 2026-11-10 (claude-opus-5-5) Desktop layout: only live projects sit on the desktop; projects that are not live go in the Projects folder. Keep the colours dark (near-black, dim grey, deep blue).
 - 2026-11-10 (cli) README metrics follow lowlighter: separate cards (general/achievements/medias) floated align=left/right width 390, cleared by a 1px full-width placeholder.svg; not one big image
+- 2026-11-11 (cli) README media cards: two floated columns (align=left/right, width 49%) top-align; combine plugins per column and hide the repeated AniList header with extras_css; inline <img> side by side leaves big gaps

@@ -76,3 +76,12 @@ Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics wit
 
 ### 2026-11-11 02:08 | claude-opus-5-5 | WORK_END
 music card wired to YouTube playlist
+
+### 2026-11-11 02:32 | claude-opus-5-5 | PROMPT
+> README 排版還是有點醜 優化一下 不要那麼多空白
+
+### 2026-11-11 02:32 | claude-opus-5-5 | FILES_MODIFIED
+README.md two floated columns media-left/right; metrics.yml combined cards + extras_css hiding repeated AniList header; removed anime/manga/characters/music svgs
+
+### 2026-11-11 02:32 | claude-opus-5-5 | WORK_END
+README media columns tightened

@@ -25,11 +25,7 @@ Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; 
 
 Thanks for stopping by.
 
-<p align="center">
-  <a href="https://www.youtube.com/playlist?list=PLefoBv28U_vI"><img width="49%" src="./metrics/music.svg" alt="Suggested tracks from my YouTube playlist"></a>
-  <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/anime.svg" alt="Favourite anime on AniList"></a>
-</p>
-<p align="center">
-  <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/characters.svg" alt="Favourite characters on AniList"></a>
-  <a href="https://anilist.co/user/chase5ws/"><img width="49%" src="./metrics/manga.svg" alt="Favourite manga on AniList"></a>
-</p>
+<a href="https://www.youtube.com/playlist?list=PLefoBv28U_vI"><img align="left" width="49%" src="./metrics/media-left.svg" alt="Suggested tracks from my YouTube playlist and favourite characters on AniList"></a>
+<a href="https://anilist.co/user/chase5ws/"><img align="right" width="49%" src="./metrics/media-right.svg" alt="Favourite anime and manga on AniList"></a>
+
+<img width="100%" height="1" alt="" src="./metrics/placeholder.svg">
