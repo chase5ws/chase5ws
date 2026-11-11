@@ -5,45 +5,6 @@
 #         PROJECT_BOOTSTRAPPED RE_ENGAGED
 # Rules: AIMemory/PROTOCOL.md. Never edit existing events; append a CORRECTION.
 
-### 2026-11-10 14:39 | claude-opus-5-5 | PROMPT
-> windows-10-icon-set 這個 / 底下不要有icon 要是最小短簡單 只保由右邊時間跟左邊的開始
-
-### 2026-11-10 14:40 | claude-opus-5-5 | FILES_MODIFIED
-- os/icons/win-{user,this-pc,recycle}.png from the user's windows-10-icon-set (Me icon, new This PC and Recycle Bin items)
-- taskbar: only start button (left) and time (right), 40px; open windows no longer listed
-- os/os.js, os/os.css, index.html (?v=20261110g), NOTICE.md
-
-### 2026-11-10 14:40 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: 13 icons, minimal taskbar, no errors, mobile ok.
-
-### 2026-11-10 14:51 | claude-opus-5-5 | PROMPT
-> 背景幫我放這個(3D ASCII Sphere) 然後我希望可以用滑鼠互動 按跟畫的時候 背景都會加快或變化之類的
-
-### 2026-11-10 14:51 | claude-opus-5-5 | FILES_MODIFIED
-- os/sphere-frames.js: frames from the 3D ASCII Sphere wallpaper (Filispeen, CC0)
-- os/wall.js: renders the sphere; hold = faster + glow + colour cycle, drag = spin follows drag direction/speed, move = gentle lean; reduced motion = still frame
-- os/os.css, index.html (?v=20261110h), NOTICE.md
-
-### 2026-11-10 14:51 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: sphere animates, press+drag changes speed and colour, no errors.
-
-### 2026-11-10 14:54 | claude-opus-5-5 | PROMPT
-> 背景我還是喜歡 黑灰藍 這3種 另外就是emoji部分還是幫我換成像素好了 比較好看 其他有給的window照用
-
-### 2026-11-10 14:54 | claude-opus-5-5 | FILES_MODIFIED
-- os/icons/{contact,experience,roadmap,mbti,easy-mcp,it-ops-ai,start}.png: pixel icons (16x16 art, 128px, nearest-neighbour) replace Fluent Emoji; Windows 10 icons kept
-- os/wall.js + os/os.css: sphere grey at rest, blue glow when held; dark navy-to-black backdrop
-- index.html (?v=20261110i), NOTICE.md
-
-### 2026-11-10 14:54 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: pixel icons crisp, sphere grey→blue on hold, no errors.
-
-### 2026-11-10 14:54 | claude-opus-5-5 | NOTE
-Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
-
-### 2026-11-10 14:58 | claude-opus-5-5 | PROMPT
-> 顏色不夠深色 各專案自己的圖也幫我換成像素 然後除了目前在live的以外放在同一個folder 另外放上跟我readme一樣 近期語言跟進度這樣
-
 ### 2026-11-10 14:58 | claude-opus-5-5 | FILES_MODIFIED
 - darker palette: sphere grey #606874 → blue #2a76d2 on hold; near-black backdrop, windows and taskbar
 - os/icons/{asc-bot,asc-site,wallpaper,form-limiter}.png pixelated from the projects' own images; new pixel folder.png and stats.png
@@ -101,3 +62,15 @@ games/fight/fight.js controls screen; os/icons/doom.png (user-supplied logo, 128
 
 ### 2026-11-10 15:44 | claude-opus-5-5 | WORK_END
 controls screen, doom logo icon, play badges, neon trail
+
+### 2026-11-11 01:16 | claude-opus-5-5 | PROMPT
+> 滑鼠軌跡移除 / 開始按鈕跟展開移除 / 遊戲按完之後才開始載入 / doom滑鼠移動慢 一開始可以調整滑鼠並且告知遊玩按鈕
+
+### 2026-11-11 01:16 | claude-opus-5-5 | FILES_MODIFIED
+index.html os/os.js os/os.css os/wall.js; games/doom appInputMouse.js (?mouse=), libBootstrap version bump, CHASEOS-CHANGES.md
+
+### 2026-11-11 01:16 | claude-opus-5-5 | NOTE
+Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
+
+### 2026-11-11 01:16 | claude-opus-5-5 | WORK_END
+no trail, no start menu, game launch screens with controls + Doom mouse speed

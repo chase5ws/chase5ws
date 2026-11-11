@@ -2,7 +2,7 @@
 // sphere-frames.js). It reacts to the mouse on empty desktop space:
 //   hold the button  → spins faster and glows from grey to blue
 //   drag             → spin follows the drag (left/right = direction, speed = drag speed)
-//   move             → the sphere leans gently toward the pointer and the pointer drags a glowing deep-blue streak
+//   move             → the sphere leans gently toward the pointer
 // With reduced motion the sphere shows one still frame.
 (() => {
   const host = document.getElementById("wall");
@@ -44,53 +44,6 @@
   let lean = { x: 0, y: 0 }, leanTarget = { x: 0, y: 0 };
   let down = false, lastX = 0, lastT = 0;
 
-  // Glowing deep-blue streak behind the pointer, on its own canvas under the icons and windows.
-  const trail = document.createElement("canvas");
-  trail.className = "trail";
-  host.append(trail);
-  const tx = trail.getContext("2d");
-  const pts = [];                       // recent pointer positions {x, y, t}
-  const LIFE = 600;                     // ms a point stays in the streak
-  let tw = 0, th = 0, dpr = 1;
-  function sizeTrail() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    tw = innerWidth; th = innerHeight;
-    trail.width = tw * dpr; trail.height = th * dpr;
-    tx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-  sizeTrail();
-  addEventListener("resize", sizeTrail);
-  function addPoint(x, y) {
-    const last = pts[pts.length - 1];
-    if (last && Math.hypot(x - last.x, y - last.y) < 2) return;
-    pts.push({ x, y, t: performance.now() });
-    if (pts.length > 80) pts.shift();
-  }
-  // one pass of the streak: segments get thicker and brighter toward the pointer
-  function stroke(now, width, color, blur) {
-    tx.shadowColor = blur ? "rgba(20, 70, 255, 0.95)" : "transparent";
-    tx.shadowBlur = blur;
-    for (let i = 1; i < pts.length; i++) {
-      const a = 1 - (now - pts[i].t) / LIFE;
-      if (a <= 0) continue;
-      tx.strokeStyle = `rgba(${color}, ${(a * a).toFixed(3)})`;
-      tx.lineWidth = width * (0.25 + 0.75 * a);
-      tx.beginPath(); tx.moveTo(pts[i - 1].x, pts[i - 1].y); tx.lineTo(pts[i].x, pts[i].y); tx.stroke();
-    }
-  }
-  function drawTrail(now) {
-    while (pts.length && now - pts[0].t > LIFE) pts.shift();
-    tx.clearRect(0, 0, tw, th);
-    if (pts.length < 2) return;
-    tx.save();
-    tx.lineCap = "round"; tx.lineJoin = "round";
-    tx.globalCompositeOperation = "lighter";
-    stroke(now, 10, "18, 60, 230", 22);   // wide deep-blue glow
-    stroke(now, 4, "60, 130, 255", 8);    // brighter blue body
-    stroke(now, 1.6, "190, 220, 255", 0); // thin hot core
-    tx.restore();
-  }
-
   const onDesktop = (e) => !e.target.closest(".win, .dicon, .taskbar, .start, a, button");
 
   addEventListener("pointerdown", (e) => {
@@ -99,7 +52,6 @@
     target = 3; glowTarget = 1;
   });
   addEventListener("pointermove", (e) => {
-    addPoint(e.clientX, e.clientY);
     leanTarget.x = (e.clientX / innerWidth - 0.5) * 2;
     leanTarget.y = (e.clientY / innerHeight - 0.5) * 2;
     if (!down) return;
@@ -127,7 +79,6 @@
       const c = GREY.map((g, i) => Math.round(g + (BLUE[i] - g) * glow));
       pre.style.color = `rgb(${c.join(",")})`;
       pre.style.textShadow = glow > 0.02 ? `0 0 ${(4 + glow * 18).toFixed(1)}px rgba(42, 118, 210, ${(glow * 0.85).toFixed(2)})` : "none";
-      drawTrail(now);
       pre.style.transform = `translate(-50%, -50%) translate(${(lean.x * 14).toFixed(1)}px, ${(lean.y * 10).toFixed(1)}px) scale(${(1 + glow * 0.08).toFixed(3)})`;
     }
     requestAnimationFrame(frame);

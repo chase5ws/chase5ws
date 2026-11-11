@@ -43,8 +43,9 @@ class AppInputMouse {
             if (!this._locked) {
                 return;
             }
-            this._dx += e.movementX;
-            this._dy += e.movementY;
+            // ChaseOS: ?mouse=<factor> in the page address scales mouse look (1 = original)
+            this._dx += e.movementX * AppInputMouse.chaseScale;
+            this._dy += e.movementY * AppInputMouse.chaseScale;
         });
     }
 
@@ -156,3 +157,9 @@ class AppInputMouse {
     }
 
 }
+
+// ChaseOS: mouse-look multiplier read once from ?mouse=, clamped to 0.2..6
+AppInputMouse.chaseScale = (() => {
+    const v = parseFloat(new URLSearchParams(window.location.search).get('mouse'));
+    return (v >= 0.2 && v <= 6) ? v : 1;
+})();

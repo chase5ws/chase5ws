@@ -47,8 +47,13 @@
     { id: "dev", title: "In progress", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("dev") },
     { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
     // small JS games anyone can play in a window (games/, credits in NOTICE.md)
-    { id: "doom", title: "Doom", icon: "me", image: "./os/icons/doom.png", frame: "./games/doom/index.html?wad=wad/freedoom1.wad", w: 860, h: 560 },
-    { id: "duel", title: "Samurai Duel", icon: "me", image: "./os/icons/duel.png", frame: "./games/fight/index.html", w: 860, h: 520 },
+    // Nothing of a game loads until its Start button is pressed.
+    { id: "doom", title: "Doom", icon: "me", image: "./os/icons/doom.png", frame: "./games/doom/index.html?wad=wad/freedoom1.wad", mouse: true, w: 860, h: 560,
+      note: "Freedoom levels, about 35 MB the first time, cached after that.",
+      keys: [["W A S D", "Move"], ["Mouse", "Look around (click the game first)"], ["Left click / Q", "Fire"], ["E", "Open doors, press switches"], ["Shift (hold)", "Run"], ["Space", "Jump"], ["F / G", "Previous / next weapon"], ["Tab", "Map"], ["Esc", "Pause and free the mouse"]] },
+    { id: "duel", title: "Samurai Duel", icon: "me", image: "./os/icons/duel.png", frame: "./games/fight/index.html", w: 860, h: 520,
+      note: "Play the computer, or two players on one keyboard.",
+      keys: [["A / D", "Player 1 move"], ["W", "Player 1 jump"], ["Space", "Player 1 attack"], ["← / →", "Player 2 move"], ["↑", "Player 2 jump"], ["↓", "Player 2 attack"]] },
   ];
   const byId = (id) => ITEMS.find((i) => i.id === id);
 
@@ -74,7 +79,7 @@
         <button type="button" class="win__btn" data-act="max" aria-label="Maximise">${UI.max}</button>
         <button type="button" class="win__btn win__btn--close" data-act="close" aria-label="Close">${UI.close}</button>
       </header>
-      <div class="win__body${item.frame ? " win__body--frame" : ""}">${item.frame ? `<iframe class="win__frame" src="${esc(item.frame)}" title="${esc(item.title)}" allow="fullscreen; gamepad; autoplay"></iframe>` : item.body()}</div>`;
+      <div class="win__body${item.frame ? " win__body--frame" : ""}">${item.frame ? launchBody(item) : item.body()}</div>`;
     layer.append(el);
     const w = { id, item, el, min: false, max: false };
     wins.set(id, w);
@@ -149,6 +154,8 @@
       if (e.detail === 0 || matchMedia("(pointer: coarse)").matches) open(b.dataset.open);
     });
     el.addEventListener("keydown", (e) => { if (e.key === "Escape") close(w); });
+    el.addEventListener("click", (e) => { if (e.target.closest("[data-launch]")) launch(w); });
+    el.addEventListener("input", (e) => { const r = e.target.closest("[data-mouse]"); if (r) r.nextElementSibling.textContent = `${Number(r.value).toFixed(2)}×`; });
     bar.addEventListener("dblclick", (e) => { if (!e.target.closest("button")) toggleMax(w); });
     bar.addEventListener("pointerdown", (e) => {
       if (e.button !== 0 || e.target.closest("button") || w.max || isNarrow()) return;
@@ -164,6 +171,30 @@
       bar.addEventListener("pointerup", up, { once: true });
       bar.addEventListener("pointercancel", up, { once: true });
     });
+  }
+
+  // ---------- game launcher: controls, mouse speed, then Start loads the game ----------
+  const MOUSE_KEY = "chaseos.doom.mouse";
+  const savedMouse = () => { try { const v = parseFloat(localStorage.getItem(MOUSE_KEY)); return v >= 0.5 && v <= 4 ? v : 2; } catch { return 2; } };
+  function launchBody(item) {
+    const m = savedMouse();
+    return `<div class="launch">
+      <div class="launch__head"><span class="launch__pic">${iconOf(item)}</span><div><h3>${esc(item.title)}</h3><p class="muted small">${esc(item.note)}</p></div></div>
+      <table class="keys">${item.keys.map(([k, what]) => `<tr><td><kbd>${esc(k)}</kbd></td><td>${esc(what)}</td></tr>`).join("")}</table>
+      ${item.mouse ? `<label class="launch__mouse">Mouse speed <input type="range" min="0.5" max="4" step="0.25" value="${m}" data-mouse> <output>${m.toFixed(2)}×</output></label>` : ""}
+      <button type="button" class="btn btn--accent launch__go" data-launch>▶ Start</button>
+    </div>`;
+  }
+  function launch(w) {
+    const body = $(".win__body", w.el), item = w.item;
+    let src = item.frame;
+    if (item.mouse) {
+      const m = parseFloat($("[data-mouse]", body)?.value) || savedMouse();
+      try { localStorage.setItem(MOUSE_KEY, String(m)); } catch {}
+      src += (src.includes("?") ? "&" : "?") + "mouse=" + m;
+    }
+    body.innerHTML = `<iframe class="win__frame" src="${esc(src)}" title="${esc(item.title)}" allow="fullscreen; gamepad; autoplay"></iframe>`;
+    $("iframe", body).focus();
   }
 
   // ---------- window contents ----------
@@ -236,18 +267,6 @@
     if (e.detail === 0 || matchMedia("(pointer: coarse)").matches) open(b.dataset.id); // Enter key or touch
   });
   $("#desktop").addEventListener("pointerdown", (e) => { if (!e.target.closest(".dicon")) $$(".dicon.is-selected").forEach((x) => x.classList.remove("is-selected")); });
-
-  // ---------- start menu ----------
-  const start = $("#start"), startBtn = $("#start-btn");
-  $("#start-list").innerHTML = ITEMS.map((i) => `<li><button type="button" data-id="${i.id}">${iconOf(i)}<span>${esc(i.title)}</span></button></li>`).join("");
-  const setStart = (on) => {
-    start.hidden = !on; startBtn.setAttribute("aria-expanded", String(on));
-    if (on) { anim(start, [{ opacity: 0, transform: "translateY(16px)" }, { opacity: 1, transform: "none" }], { duration: 180 }); $("button", start).focus(); }
-  };
-  startBtn.addEventListener("click", () => setStart(start.hidden));
-  start.addEventListener("click", (e) => { const id = e.target.closest("[data-id]")?.dataset.id; if (id) { setStart(false); open(id); } });
-  document.addEventListener("pointerdown", (e) => { if (!start.hidden && !e.target.closest("#start, #start-btn")) setStart(false); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !start.hidden) { setStart(false); startBtn.focus(); } });
 
   // A click inside a game window lands in its iframe: bring that window to the front too.
   addEventListener("blur", () => setTimeout(() => {

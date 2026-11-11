@@ -39,7 +39,6 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 
 /* ---------- wallpaper: rotating ASCII sphere (os/wall.js) ---------- */
 .wall { position: fixed; inset: 0; z-index: 0; overflow: hidden; background: radial-gradient(60% 60% at 50% 45%, #060d18 0%, #020408 60%, #000 100%); }
-.trail { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .sphere { position: absolute; left: 50%; top: 47%; margin: 0; transform: translate(-50%, -50%); color: #606874; font: 400 min(3.1vh, 2.3vw)/1.15 "Cascadia Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; white-space: pre; user-select: none; pointer-events: none; will-change: transform; }
 
 /* ---------- desktop ---------- */
@@ -123,23 +122,9 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .links li { display: grid; grid-template-columns: 84px minmax(0, 1fr); }
 .links span { color: var(--muted); }
 
-/* ---------- start menu ---------- */
-.start { position: absolute; left: 0; bottom: var(--taskbar-h); z-index: 100000; display: grid; grid-template-columns: 48px minmax(0, 1fr); width: min(360px, 100vw); max-height: calc(100dvh - var(--taskbar-h)); background: rgba(16, 18, 23, 0.94); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 0; border-bottom: 0; box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); }
-.start__rail { display: grid; align-content: end; justify-items: center; padding: 10px 0; background: rgba(0, 0, 0, 0.25); }
-.start__main { display: flex; flex-direction: column; min-height: 0; padding: 14px 6px 8px; }
-.start__who { margin: 0 10px 10px; display: grid; }
-.start__who span { color: var(--muted); font-size: 12px; }
-.start__list { list-style: none; margin: 0; padding: 0; overflow: auto; }
-.start__list button { width: 100%; display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 10px; border: 0; background: none; text-align: left; }
-.start__list svg { width: 26px; height: 26px; flex: none; }
-.start__list button:hover, .start__list button:focus-visible { background: var(--hover); outline: none; }
 
 /* ---------- taskbar ---------- */
-.taskbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 100001; height: var(--taskbar-h); display: flex; align-items: stretch; justify-content: space-between; background: var(--taskbar); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-top: 1px solid rgba(255, 255, 255, 0.06); }
-.tb-start { width: 48px; border: 0; background: none; display: grid; place-items: center; color: #fff; }
-.tb-start img { width: 24px; height: 24px; display: block; transition: transform .12s; }
-.tb-start:active img { transform: scale(.88); }
-.tb-start:hover, .tb-start[aria-expanded="true"] { background: var(--hover); color: var(--accent); }
+.taskbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 100001; height: var(--taskbar-h); display: flex; align-items: stretch; justify-content: flex-end; background: var(--taskbar); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-top: 1px solid rgba(255, 255, 255, 0.06); }
 .tasks { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; min-width: 0; overflow: hidden; }
 .task { position: relative; height: 100%; display: flex; align-items: center; gap: 8px; width: 170px; padding: 0 10px; border: 0; background: none; font-size: 12px; text-align: left; }
 .task svg { width: 22px; height: 22px; flex: none; }
@@ -162,9 +147,8 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 }
 
 /* project images used as icons */
-.win__icon img, .task img, .start__list img { width: 18px; height: 18px; border-radius: 4px; object-fit: cover; display: block; }
+.win__icon img, .task img { width: 18px; height: 18px; border-radius: 4px; object-fit: cover; display: block; }
 .task img { width: 22px; height: 22px; }
-.start__list img { width: 26px; height: 26px; border-radius: 6px; }
 .who__pic { width: 64px; height: 64px; flex: none; }
 .who__pic svg, .who__pic img { width: 64px; height: 64px; display: block; border-radius: 14px; object-fit: cover; }
 .rows__pic { width: 32px; height: 32px; }
@@ -175,7 +159,7 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 .links li > span:last-child { color: var(--text); }
 .links li > span:first-child { color: var(--muted); }
 /* pixel icons stay crisp at any size */
-img[src*="/contact."], img[src*="/experience."], img[src*="/roadmap."], img[src*="/mbti."], img[src*="/easy-mcp."], img[src*="/it-ops-ai."], img[src*="/start."], img[src*="/asc-"], img[src*="/wallpaper."], img[src*="/form-limiter."], img[src*="/folder."], img[src*="/stats."], img[src*="/duel."] { image-rendering: pixelated; border-radius: 0 !important; object-fit: contain !important; }
+img[src*="/contact."], img[src*="/experience."], img[src*="/roadmap."], img[src*="/mbti."], img[src*="/easy-mcp."], img[src*="/it-ops-ai."], img[src*="/asc-"], img[src*="/wallpaper."], img[src*="/form-limiter."], img[src*="/folder."], img[src*="/stats."], img[src*="/duel."] { image-rendering: pixelated; border-radius: 0 !important; object-fit: contain !important; }
 
 /* Projects folder and stats card */
 .folder { list-style: none; margin: 0; padding: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
@@ -194,3 +178,18 @@ img[src*="/doom."] { object-fit: contain !important; border-radius: 0 !important
 .dicon__play { position: absolute; right: -10px; top: -4px; display: flex; align-items: center; gap: 3px; padding: 0 5px 0 4px; border-radius: 3px; background: #1d5fd0; color: #fff; font: 700 9px/14px var(--font); letter-spacing: .04em; box-shadow: 0 0 8px rgba(42,118,210,.8); white-space: nowrap; }
 .dicon__play::before { content: ""; border-left: 6px solid #fff; border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent; }
 .dicon:hover .dicon__play { background: #2a76d2; box-shadow: 0 0 12px rgba(80,150,255,.95); }
+
+/* game launcher shown before a game loads */
+.launch { height: 100%; overflow: auto; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; background: radial-gradient(ellipse at 50% 0%, #0b1a33 0%, #05070b 70%); }
+.launch__head { display: flex; align-items: center; gap: 14px; }
+.launch__head h3 { margin: 0 0 2px; }
+.launch__head p { margin: 0; }
+.launch__pic img { width: 64px; height: 64px; object-fit: contain; display: block; }
+.keys { border-collapse: collapse; font-size: 13px; }
+.keys td { padding: 4px 12px 4px 0; vertical-align: middle; }
+.keys td:first-child { white-space: nowrap; width: 1%; }
+.keys kbd { display: inline-block; min-width: 22px; padding: 2px 7px; border: 1px solid #2a76d2; border-radius: 4px; background: #101a2a; color: #cfe3ff; font: 600 12px/18px "Cascadia Mono", ui-monospace, Menlo, monospace; text-align: center; }
+.launch__mouse { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.launch__mouse input { flex: 0 1 220px; accent-color: #2a76d2; }
+.launch__mouse output { font: 600 12px "Cascadia Mono", ui-monospace, Menlo, monospace; color: #cfe3ff; min-width: 46px; }
+.launch__go { align-self: flex-start; padding: 8px 22px; font-size: 14px; }
