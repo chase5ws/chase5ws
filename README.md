@@ -24,11 +24,3 @@
 Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; before that, automation and IT for Micron and TSMC suppliers. Open to cloud, DevOps and AI automation roles: [LinkedIn](https://www.linkedin.com/in/chase5ws/) or [email](mailto:chase5ws@gmail.com).
 
 Thanks for stopping by.
-
-[<img align="left" width="390" alt="GitHub overview, calendar and languages for chase5ws" src="./metrics/general.svg">](#)
-[<img align="right" width="390" alt="Achievements" src="./metrics/achievements.svg">](#)
-<!-- Turned on once the ANILIST_USER or MUSIC_PLAYLIST repository variable is set:
-[<img align="right" width="390" alt="Favourite anime and suggested tracks" src="./metrics/medias.svg">](#)
--->
-
-[<img width="100%" height="1" alt="" src="./metrics/placeholder.svg">](#)
