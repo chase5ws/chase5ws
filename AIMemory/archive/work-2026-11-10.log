@@ -157,3 +157,40 @@ Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics wit
 
 ### 2026-11-10 14:58 | claude-opus-5-5 | PROMPT
 > 顏色不夠深色 各專案自己的圖也幫我換成像素 然後除了目前在live的以外放在同一個folder 另外放上跟我readme一樣 近期語言跟進度這樣
+
+### 2026-11-10 14:58 | claude-opus-5-5 | FILES_MODIFIED
+- darker palette: sphere grey #606874 → blue #2a76d2 on hold; near-black backdrop, windows and taskbar
+- os/icons/{asc-bot,asc-site,wallpaper,form-limiter}.png pixelated from the projects' own images; new pixel folder.png and stats.png
+- desktop: live projects stay on the desktop; the rest sit in a Projects folder window
+- new 'Languages & activity' window shows metrics/profile.svg (same card as the README)
+- os/os.js, os/os.css, os/wall.js, index.html (?v=20261110j), NOTICE.md
+
+### 2026-11-10 14:58 | claude-opus-5-5 | WORK_END
+Status: complete. Chromium: folder opens projects, stats card renders, sphere darker, no errors.
+
+### 2026-11-10 15:02 | claude-opus-5-5 | PROMPT
+> 例外背景圖的圓球 運行速度慢50％ 卪後曾加滑鼠移動軌跡 / 另外那些圓球符號數字也改 他太重複了
+
+### 2026-11-10 15:02 | claude-opus-5-5 | FILES_MODIFIED
+os/wall.js os/os.css index.html: sphere 0.5x speed, ASCII pointer trail, varied glyph sets per brightness
+
+### 2026-11-10 15:02 | claude-opus-5-5 | WORK_END
+sphere slower + trail + varied glyphs
+
+### 2026-11-10 15:05 | claude-opus-5-5 | PROMPT
+> 你在研究一下他是怎麼做的 (lowlighter README: 說不定他不是一張圖片)
+
+### 2026-11-10 15:05 | claude-opus-5-5 | FILES_MODIFIED
+README.md, .github/workflows/metrics.yml, metrics/placeholder.svg, os/os.js, index.html: lowlighter layout = separate 390px cards floated left/right
+
+### 2026-11-10 15:05 | claude-opus-5-5 | WORK_END
+README split into lowlighter-style cards
+
+### 2026-11-10 15:10 | claude-opus-5-5 | PROMPT
+> 這邊不要放東西(開始鈕) / asc的2個icon也請自行用適合的像素圖 / The Recycle Bin is empty.幫我移除
+
+### 2026-11-10 15:10 | claude-opus-5-5 | NOTE
+Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
+
+### 2026-11-10 15:10 | claude-opus-5-5 | FILES_MODIFIED
+os/os.js, index.html, NOTICE.md, os/icons/asc-{bot,site}.png redrawn; removed start.png, win-recycle.png

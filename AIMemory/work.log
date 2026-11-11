@@ -5,43 +5,6 @@
 #         PROJECT_BOOTSTRAPPED RE_ENGAGED
 # Rules: AIMemory/PROTOCOL.md. Never edit existing events; append a CORRECTION.
 
-### 2026-11-10 14:58 | claude-opus-5-5 | FILES_MODIFIED
-- darker palette: sphere grey #606874 → blue #2a76d2 on hold; near-black backdrop, windows and taskbar
-- os/icons/{asc-bot,asc-site,wallpaper,form-limiter}.png pixelated from the projects' own images; new pixel folder.png and stats.png
-- desktop: live projects stay on the desktop; the rest sit in a Projects folder window
-- new 'Languages & activity' window shows metrics/profile.svg (same card as the README)
-- os/os.js, os/os.css, os/wall.js, index.html (?v=20261110j), NOTICE.md
-
-### 2026-11-10 14:58 | claude-opus-5-5 | WORK_END
-Status: complete. Chromium: folder opens projects, stats card renders, sphere darker, no errors.
-
-### 2026-11-10 15:02 | claude-opus-5-5 | PROMPT
-> 例外背景圖的圓球 運行速度慢50％ 卪後曾加滑鼠移動軌跡 / 另外那些圓球符號數字也改 他太重複了
-
-### 2026-11-10 15:02 | claude-opus-5-5 | FILES_MODIFIED
-os/wall.js os/os.css index.html: sphere 0.5x speed, ASCII pointer trail, varied glyph sets per brightness
-
-### 2026-11-10 15:02 | claude-opus-5-5 | WORK_END
-sphere slower + trail + varied glyphs
-
-### 2026-11-10 15:05 | claude-opus-5-5 | PROMPT
-> 你在研究一下他是怎麼做的 (lowlighter README: 說不定他不是一張圖片)
-
-### 2026-11-10 15:05 | claude-opus-5-5 | FILES_MODIFIED
-README.md, .github/workflows/metrics.yml, metrics/placeholder.svg, os/os.js, index.html: lowlighter layout = separate 390px cards floated left/right
-
-### 2026-11-10 15:05 | claude-opus-5-5 | WORK_END
-README split into lowlighter-style cards
-
-### 2026-11-10 15:10 | claude-opus-5-5 | PROMPT
-> 這邊不要放東西(開始鈕) / asc的2個icon也請自行用適合的像素圖 / The Recycle Bin is empty.幫我移除
-
-### 2026-11-10 15:10 | claude-opus-5-5 | NOTE
-Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.
-
-### 2026-11-10 15:10 | claude-opus-5-5 | FILES_MODIFIED
-os/os.js, index.html, NOTICE.md, os/icons/asc-{bot,site}.png redrawn; removed start.png, win-recycle.png
-
 ### 2026-11-10 15:10 | claude-opus-5-5 | WORK_END
 empty start button, no recycle bin, new ASC pixel icons
 
@@ -92,3 +55,15 @@ README.md 2x2 grid (music|anime, characters|manga); metrics.yml separate anime/m
 
 ### 2026-11-11 01:41 | claude-opus-5-5 | WORK_END
 README media cards in a 2x2 grid
+
+### 2026-11-11 01:44 | claude-opus-5-5 | PROMPT
+> icon順序 me contact experience langua doom samurai roadmap in progress live project / this pc 做到左下角改成開始 不要icon 用Chase.Tseng
+
+### 2026-11-11 01:44 | claude-opus-5-5 | FILES_MODIFIED
+os/os.js desktop ORDER, This PC off desktop and opened by taskbar name; index.html tb-name button; os/os.css
+
+### 2026-11-11 01:44 | claude-opus-5-5 | WORK_END
+icon order + Chase.Tseng taskbar button
+
+### 2026-11-11 01:44 | claude-opus-5-5 | NOTE
+Rotated 11 events to archive/work-2026-11-10.log. Hot kept at 20. Add topics with memory_tag.

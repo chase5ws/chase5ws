@@ -124,7 +124,7 @@ body.is-dragging, body.is-dragging * { user-select: none; }
 
 
 /* ---------- taskbar ---------- */
-.taskbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 100001; height: var(--taskbar-h); display: flex; align-items: stretch; justify-content: flex-end; background: var(--taskbar); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.taskbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 100001; height: var(--taskbar-h); display: flex; align-items: stretch; justify-content: space-between; background: var(--taskbar); backdrop-filter: blur(24px) saturate(1.4); -webkit-backdrop-filter: blur(24px) saturate(1.4); border-top: 1px solid rgba(255, 255, 255, 0.06); }
 .tasks { list-style: none; margin: 0; padding: 0; display: flex; flex: 1; min-width: 0; overflow: hidden; }
 .task { position: relative; height: 100%; display: flex; align-items: center; gap: 8px; width: 170px; padding: 0 10px; border: 0; background: none; font-size: 12px; text-align: left; }
 .task svg { width: 22px; height: 22px; flex: none; }
@@ -193,3 +193,7 @@ img[src*="/doom."] { object-fit: contain !important; border-radius: 0 !important
 .launch__mouse input { flex: 0 1 220px; accent-color: #2a76d2; }
 .launch__mouse output { font: 600 12px "Cascadia Mono", ui-monospace, Menlo, monospace; color: #cfe3ff; min-width: 46px; }
 .launch__go { align-self: flex-start; padding: 8px 22px; font-size: 14px; }
+
+/* taskbar name: opens This PC */
+.tb-name { border: 0; background: none; padding: 0 16px; color: var(--text); font: 600 13px/1 "Cascadia Mono", ui-monospace, Menlo, Consolas, monospace; letter-spacing: .03em; }
+.tb-name:hover, .tb-name:focus-visible { background: var(--hover); color: #6fb2ff; outline: none; }

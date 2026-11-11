@@ -45,7 +45,7 @@
     ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, folder: p.status === "live" ? "live" : "dev", desktop: false, w: 540, h: 420, body: () => projectBody(p) })),
     { id: "live", title: "Live projects", icon: "me", image: "./os/icons/folder.png", live: true, w: 520, h: 300, body: () => folderBody("live") },
     { id: "dev", title: "In progress", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("dev") },
-    { id: "this-pc", title: "This PC", icon: "me", image: "./os/icons/win-this-pc.png", w: 440, h: 300, body: thisPcBody },
+    { id: "this-pc", title: "Chase.Tseng", icon: "me", image: "./os/icons/win-this-pc.png", desktop: false, w: 440, h: 300, body: thisPcBody }, // opened from the taskbar
     // small JS games anyone can play in a window (games/, credits in NOTICE.md)
     // Nothing of a game loads until its Start button is pressed.
     { id: "doom", title: "Doom", icon: "me", image: "./os/icons/doom.png", frame: "./games/doom/index.html?wad=wad/freedoom1.wad", mouse: true, w: 860, h: 560,
@@ -257,7 +257,10 @@
 
   // ---------- desktop icons ----------
   const icons = $("#icons");
-  icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}${i.frame ? '<span class="dicon__play">PLAY</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
+  // desktop order, top to bottom then the next column
+  const ORDER = ["me", "contact", "experience", "stats", "doom", "duel", "roadmap", "dev", "live"];
+  const rank = (i) => { const n = ORDER.indexOf(i.id); return n < 0 ? ORDER.length : n; };
+  icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).sort((a, b) => rank(a) - rank(b)).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}${i.frame ? '<span class="dicon__play">PLAY</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
   icons.addEventListener("dblclick", (e) => { const b = e.target.closest(".dicon"); if (b) open(b.dataset.id); });
   icons.addEventListener("click", (e) => {
     const b = e.target.closest(".dicon");
@@ -267,6 +270,9 @@
     if (e.detail === 0 || matchMedia("(pointer: coarse)").matches) open(b.dataset.id); // Enter key or touch
   });
   $("#desktop").addEventListener("pointerdown", (e) => { if (!e.target.closest(".dicon")) $$(".dicon.is-selected").forEach((x) => x.classList.remove("is-selected")); });
+
+  // Taskbar: the name on the left opens the "This PC" window
+  $("#tb-name").addEventListener("click", () => open("this-pc"));
 
   // A click inside a game window lands in its iframe: bring that window to the front too.
   addEventListener("blur", () => setTimeout(() => {
