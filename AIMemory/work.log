@@ -98,3 +98,4 @@ four separate linked media cards, verified on github.com at 1280px
 2026-11-12T03:08:41Z WORK_END claude: claude-easy-mcp marked live (Railway, owner sign-in) in README "Already shipped", os/data.js and index.html fallback; cache v=20261112a
 2026-11-12T03:15:16Z WORK_END claude: README project lists get latest-commit tags (hash, Taipei time, Public/Private) between repos markers; refreshed hourly by .github/workflows/repo-commits.yml using METRICS_TOKEN; MCP name links to its private repo
 2026-11-12T03:19:54Z WORK_END claude: repo_commits.py sorts each README list newest commit first; workflow also runs on push of its own files; verified run success with no private-repo 404s
+2026-11-12T07:17:53Z WORK_END claude: projects split into Open (public, repo + live links) and Private (ASC Bot, claude-easy-mcp, IT Ops AI; description only, no links) in README, os/data.js (tools folded into projects), os/os.js folders open/private, index.html fallback; cache v=20261112b

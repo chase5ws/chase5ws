@@ -33,7 +33,7 @@
     close: `<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 2.5l7 7m0-7l-7 7" stroke="currentColor" stroke-width="1.1"/></svg>`,
     external: `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9 3h4v4M13 3L7.5 8.5M12 9.5V13H3V4h3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   };
-  const STATUS = { live: "Live", source: "Source on GitHub", private: "Private repo", building: "Building" };
+  const STATUS = { live: "Live", source: "Source on GitHub", private: "Private", building: "Building" };
 
   // ---------- desktop items: each icon is one thing ----------
   const ITEMS = [
@@ -42,9 +42,9 @@
     { id: "experience", title: "Experience", icon: "experience", image: "./os/icons/experience.png", w: 620, h: 560, body: experienceBody },
     { id: "roadmap", title: "Roadmap", icon: "roadmap", image: "./os/icons/roadmap.png", w: 560, h: 540, body: roadmapBody },
     { id: "stats", title: "Languages & activity", icon: "me", image: "./os/icons/stats.png", w: 540, h: 560, body: statsBody },
-    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, folder: p.status === "live" ? "live" : "dev", desktop: false, w: 540, h: 420, body: () => projectBody(p) })),
-    { id: "live", title: "Live projects", icon: "me", image: "./os/icons/folder.png", live: true, w: 520, h: 300, body: () => folderBody("live") },
-    { id: "dev", title: "In progress", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("dev") },
+    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, folder: p.status === "live" || p.status === "source" ? "open" : "private", desktop: false, w: 540, h: 420, body: () => projectBody(p) })),
+    { id: "open", title: "Open projects", icon: "me", image: "./os/icons/folder.png", live: true, w: 560, h: 380, body: () => folderBody("open") },
+    { id: "private", title: "Private projects", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("private") },
     { id: "this-pc", title: "Chase.Tseng", icon: "me", image: "./os/icons/win-this-pc.png", desktop: false, w: 440, h: 300, body: thisPcBody }, // opened from the taskbar
     // small JS games anyone can play in a window (games/, credits in NOTICE.md)
     // Nothing of a game loads until its Start button is pressed.
@@ -225,10 +225,10 @@
       <h4>Certifications</h4><ul class="points">${D.certs.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>`;
   }
 
-  // Projects sit in two folders, live and in progress; each still opens its own window.
+  // Projects sit in two folders: open (public, with live site or source links) and private (description only).
   function folderBody(kind) {
     const inside = ITEMS.filter((i) => i.folder === kind);
-    return `<ul class="folder" aria-label="${kind === "live" ? "Live projects" : "Projects in progress"}">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
+    return `<ul class="folder" aria-label="${kind === "open" ? "Open projects" : "Private projects"}">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
   }
 
   // The same card as the GitHub profile README, rebuilt daily by the Metrics workflow.
@@ -258,7 +258,7 @@
   // ---------- desktop icons ----------
   const icons = $("#icons");
   // desktop order, top to bottom then the next column
-  const ORDER = ["me", "contact", "experience", "stats", "doom", "duel", "roadmap", "dev", "live"];
+  const ORDER = ["me", "contact", "experience", "stats", "doom", "duel", "roadmap", "private", "open"];
   const rank = (i) => { const n = ORDER.indexOf(i.id); return n < 0 ? ORDER.length : n; };
   icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).sort((a, b) => rank(a) - rank(b)).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}${i.frame ? '<span class="dicon__play">PLAY</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
   icons.addEventListener("dblclick", (e) => { const b = e.target.closest(".dicon"); if (b) open(b.dataset.id); });
