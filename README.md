@@ -8,9 +8,9 @@
 **Public sites**: open them and try the demo
 <!-- repos:start -->
 
+- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Public · [`060fc63`](https://github.com/chase5ws/2026_asc_web3_website/commit/060fc63f8a3467886c63446954770ce3f5f5179c) · 2026-11-12 16:02
+- **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://2026googleformlimiter-production.up.railway.app)) <!--c--> · Public · [`71bb447`](https://github.com/chase5ws/2026_google_form_limiter/commit/71bb4472b45f8f4c5a9f9a769ef57c891554a37d) · 2026-11-12 16:02
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/)) <!--c--> · Public · [`be89ac4`](https://github.com/chase5ws/2026_wow_forever_mbti/commit/be89ac4d4300a8672ab96e1d8ba1003346e13429) · 2026-11-11 12:45
-- **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://2026googleformlimiter-production.up.railway.app)) <!--c--> · Public · [`0d31881`](https://github.com/chase5ws/2026_google_form_limiter/commit/0d3188153fd3fbfa8abe5af75a399848a37f088b) · 2026-11-10 17:23
-- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Public · [`dfdea75`](https://github.com/chase5ws/2026_asc_web3_website/commit/dfdea758d02cd3dd505bebee8378a27c1227a3a2) · 2026-11-05 16:45
 - **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin ([live demo](https://2026ascdiscordbot-production.up.railway.app)) · source is private
 
 **Public projects**
