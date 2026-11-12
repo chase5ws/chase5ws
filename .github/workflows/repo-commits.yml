@@ -1,0 +1,30 @@
+# Keeps the "latest commit" tags in the README project lists current
+# (hash, Taipei time, Public/Private). See .github/scripts/repo_commits.py.
+# Reads private repos with the METRICS_TOKEN secret (classic PAT with the repo scope);
+# without it only public repos refresh.
+name: Repo commits
+on:
+  schedule:
+    - cron: "41 * * * *"   # hourly
+  workflow_dispatch:
+
+concurrency: repo-commits
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh commit tags
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python3 .github/scripts/repo_commits.py README.md
+      - name: Commit if changed
+        run: |
+          git diff --quiet README.md && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update README commit tags - [Skip GitHub Action]"
+          git push
