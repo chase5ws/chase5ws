@@ -10,11 +10,16 @@ window.CHASE = {
     { label: "GitHub", href: "https://github.com/chase5ws?tab=repositories", text: "github.com/chase5ws" },
   ],
 
-  // status: live | source | private | building
-  // Live projects (a demo to open) go in the Live folder; the rest in Projects. Private repos get no source link.
+  // This file is the only place to edit projects. On push, .github/scripts/build_lists.mjs rebuilds
+  // the README project lists and the plain index.html version from it.
+  //   live   (demo URL)   -> Live folder on the desktop, "Public sites" in the README
+  //   source (repo URL)   -> "Public projects" when there is no demo; leave it out for a private repo
+  //   neither             -> "Private projects", description only
+  // status: live | source | private | building. blurb = the one-line README description.
   projects: [
     {
       id: "asc-bot", image: "./os/icons/asc-bot.png", icon: "bot", name: "ASC Bot", status: "live", where: "Railway, source private",
+      blurb: "a Discord bot that communities license per server, with plug-in systems and a web admin",
       summary: "A Discord bot that communities license per server, run from a web admin.",
       points: [
         "Each system is a folder: drop it in, restart, enable it per server.",
@@ -27,6 +32,7 @@ window.CHASE = {
     },
     {
       id: "asc-site", image: "./os/icons/asc-site.png", icon: "coin", name: "ASC community website", status: "live", where: "GitHub Pages",
+      blurb: "NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English",
       summary: "One page for the community’s Cat Samurai NFTs and ASC token, in Chinese and English.",
       points: [
         "Mint, reveal, change outfits, pull parts and trade them in a market.",
@@ -40,6 +46,7 @@ window.CHASE = {
     },
     {
       id: "mbti", image: "./os/icons/mbti.png", icon: "swords", name: "WoW Forever MBTI quiz", status: "live", where: "GitHub Pages",
+      blurb: "twenty story questions that pick a race and class",
       summary: "Twenty story questions that pick a race and class for WoW Forever.",
       points: [
         "An unofficial fan quiz built on MBTI traits.",
@@ -52,6 +59,7 @@ window.CHASE = {
     },
     {
       id: "wallpaper", image: "./os/icons/wallpaper.png", icon: "monitor", name: "Live Wallpaper new tab", status: "source", where: "Chrome extension",
+      blurb: "a Chrome extension for animated wallpapers and draggable widgets",
       summary: "A Chrome extension that turns the new tab into an animated desktop.",
       points: [
         "Wallpapers from uploaded video or GIF, a URL, YouTube or six built-in animations.",
@@ -63,6 +71,7 @@ window.CHASE = {
     },
     {
       id: "form-limiter", image: "./os/icons/form-limiter.png", icon: "form", name: "Google Form limiter", status: "live", where: "Railway",
+      blurb: "caps sign-ups on Google Forms for many organisations and emails the waitlist",
       summary: "A platform that caps sign-ups on Google Forms for many organisations.",
       points: [
         "Opens and closes each form by quota and schedule, checked every minute.",
@@ -76,6 +85,7 @@ window.CHASE = {
     },
     {
       id: "easy-mcp", image: "./os/icons/easy-mcp.png", icon: "chip", name: "claude-easy-mcp", status: "private", where: "MCP server",
+      blurb: "one MCP server that gives Claude, Codex and Cursor shared project memory, handoffs and skills",
       summary: "One MCP server that gives every AI coding agent the same project memory.",
       points: [
         "Claude, Codex and Cursor share a work log, hand tasks to each other and keep lessons.",
@@ -86,10 +96,20 @@ window.CHASE = {
     },
     {
       id: "it-ops-ai", image: "./os/icons/it-ops-ai.png", icon: "chat", name: "IT Ops AI Assistant", status: "building", where: "LINE bot",
+      blurb: "a LINE bot that answers IT questions from internal SOPs",
       summary: "A LINE bot that answers IT questions from internal SOPs, and opens a ticket when it can’t.",
       points: [],
       stack: "Python, FastAPI, Gemini API, vector search, Docker, Cloud Run, GitHub Actions",
     },
+  ],
+
+  // Smaller public repos: listed in the README and the plain index.html, not on the desktop.
+  tools: [
+    { name: "RFID Backend Upload Tool", blurb: "Excel to PHP backend sync for production stations", source: "https://github.com/chase5ws/2026_tool_si_fetch-_api_tool" },
+    { name: "Automated Leave Request System", blurb: "ready-to-sign Excel leave forms", source: "https://github.com/chase5ws/2026_system_python_leave_application_form" },
+    { name: "Timesheet Analytics", blurb: "weighted charts from multi-sheet work logs", source: "https://github.com/chase5ws/2026_system_python_work_report_log" },
+    { name: "NFT Whitelist Smart Contract", blurb: "whitelist minting live on Polygon", source: "https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract" },
+    { name: "Trading Signals to Discord", blurb: "MACD and RSI strategies with webhook alerts", source: "https://github.com/chase5ws/2023_discord_python_auto_api_speaker" },
   ],
 
   jobs: [

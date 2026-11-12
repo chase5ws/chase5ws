@@ -1,5 +1,7 @@
-# Keeps the "latest commit" tags in the README project lists current
-# (hash, Taipei time, Public/Private) and sorts each list newest first. See .github/scripts/repo_commits.py.
+# Rebuilds the README project lists and the plain index.html lists from os/data.js
+# (.github/scripts/build_lists.mjs), then keeps the "latest commit" tags current
+# (hash, Taipei time, Public/Private) and sorts each list newest first (.github/scripts/repo_commits.py).
+# Runs hourly and whenever os/data.js is pushed, so projects are edited in one place only.
 # Reads private repos with the METRICS_TOKEN secret (classic PAT with the repo scope);
 # without it only public repos refresh.
 name: Repo commits
@@ -9,7 +11,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/repo-commits.yml", ".github/scripts/repo_commits.py"]
+    paths: ["os/**", ".github/workflows/repo-commits.yml", ".github/scripts/repo_commits.py", ".github/scripts/build_lists.mjs"]
 
 concurrency: repo-commits
 
@@ -20,14 +22,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v5
+      - name: Rebuild project lists from os/data.js
+        run: node .github/scripts/build_lists.mjs
       - name: Refresh commit tags
         env:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: python3 .github/scripts/repo_commits.py README.md
       - name: Commit if changed
         run: |
-          git diff --quiet README.md && exit 0
+          git diff --quiet README.md index.html && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Update README commit tags - [Skip GitHub Action]"
+          git commit -am "Update project lists - [Skip GitHub Action]"
           git push
