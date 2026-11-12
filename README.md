@@ -11,12 +11,12 @@
 - **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/))
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/))
 - **[Live Wallpaper new tab](https://github.com/chase5ws/2026_google_wallpaper_customized)**, a Chrome extension for animated wallpapers and draggable widgets
-- **claude-easy-mcp**, one MCP server that gives Claude, Codex and Cursor shared project memory, handoffs and skills (private for now)
 - **IT Ops AI Assistant**, a LINE bot that answers IT questions from internal SOPs (building)
 
 **Already shipped**
 
 - [Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter), caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://2026googleformlimiter-production.up.railway.app))
+- **claude-easy-mcp**, one MCP server that gives Claude, Codex and Cursor shared project memory, handoffs and skills ([live](https://2026claudeeasymcp-production.up.railway.app), owner sign-in, private repo)
 - [RFID Backend Upload Tool](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool), Excel to PHP backend sync for production stations
 - [Automated Leave Request System](https://github.com/chase5ws/2026_system_python_leave_application_form), ready-to-sign Excel leave forms
 - [Timesheet Analytics](https://github.com/chase5ws/2026_system_python_work_report_log), weighted charts from multi-sheet work logs

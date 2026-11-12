@@ -94,3 +94,5 @@ metrics.yml builds media-music/manga/characters/anime.svg; README floats them (4
 
 ### 2026-11-11 | claude-opus-5-5 | WORK_END
 four separate linked media cards, verified on github.com at 1280px
+
+2026-11-12T03:08:41Z WORK_END claude: claude-easy-mcp marked live (Railway, owner sign-in) in README "Already shipped", os/data.js and index.html fallback; cache v=20261112a

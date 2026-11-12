@@ -75,14 +75,16 @@ window.CHASE = {
       source: "https://github.com/chase5ws/2026_google_form_limiter",
     },
     {
-      id: "easy-mcp", image: "./os/icons/easy-mcp.png", icon: "chip", name: "claude-easy-mcp", status: "private", where: "MCP server",
+      id: "easy-mcp", image: "./os/icons/easy-mcp.png", icon: "chip", name: "claude-easy-mcp", status: "live", where: "Railway, owner sign-in",
       summary: "One MCP server that gives every AI coding agent the same project memory.",
       points: [
         "Claude, Codex and Cursor share a work log, hand tasks to each other and keep lessons.",
         "Ships skills for design, scraping and software investigation.",
         "Unit tests plus an end-to-end MCP test on every push.",
       ],
-      stack: "Node.js, MCP SDK, node:test",
+      stack: "Node.js, MCP SDK, node:test, Railway",
+      live: "https://2026claudeeasymcp-production.up.railway.app",
+      liveLabel: "Owner sign-in (private)",
     },
     {
       id: "it-ops-ai", image: "./os/icons/it-ops-ai.png", icon: "chat", name: "IT Ops AI Assistant", status: "building", where: "LINE bot",
