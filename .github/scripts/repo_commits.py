@@ -35,7 +35,7 @@ def api(path):
         with urllib.request.urlopen(req, timeout=20) as r:
             return json.load(r)
     except urllib.error.HTTPError as e:
-        print(f"{path}: HTTP {e.code}", file=sys.stderr)
+        print(f"::warning::{path}: HTTP {e.code} (private repo needs GH_TOKEN with repo scope)")
         return None
 
 
