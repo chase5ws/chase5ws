@@ -1,5 +1,5 @@
 # Keeps the "latest commit" tags in the README project lists current
-# (hash, Taipei time, Public/Private). See .github/scripts/repo_commits.py.
+# (hash, Taipei time, Public/Private) and sorts each list newest first. See .github/scripts/repo_commits.py.
 # Reads private repos with the METRICS_TOKEN secret (classic PAT with the repo scope);
 # without it only public repos refresh.
 name: Repo commits
@@ -7,6 +7,9 @@ on:
   schedule:
     - cron: "41 * * * *"   # hourly
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/repo-commits.yml", ".github/scripts/repo_commits.py"]
 
 concurrency: repo-commits
 

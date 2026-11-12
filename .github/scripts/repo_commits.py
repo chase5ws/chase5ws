@@ -5,7 +5,7 @@ github.com/chase5ws/<repo> gets a trailing tag after a <!--c--> marker:
 
     · Public · `abc1234` · 2026-11-12 11:07
 
-The hash links to the commit for public repos. Private repos show the hash as plain
+Each list is sorted newest commit first. The hash links to the commit for public repos. Private repos show the hash as plain
 text, since visitors would only get a 404. Time is Taipei (UTC+8).
 
 GH_TOKEN (a token that can read the private repos) is optional. Without it, public
@@ -66,6 +66,21 @@ for i, line in enumerate(lines):
     new = tag(m.group(1))
     if new:
         lines[i] = f"{base}{MARK} {new}"
+
+# Newest commit first inside each list; lines without a tag (no repo) go last.
+def when(line):
+    m = re.search(r"· (\d{4}-\d{2}-\d{2} \d{2}:\d{2})$", line)
+    return m.group(1) if m else ""
+
+result, block = [], []
+for line in lines + [""]:
+    if line.startswith("- "):
+        block.append(line)
+        continue
+    result += sorted(block, key=when, reverse=True)  # stable, so ties keep their order
+    block = []
+    result.append(line)
+lines = result[:-1]
 
 out = text[:start] + "\n".join(lines) + text[end:]
 if out != text:
