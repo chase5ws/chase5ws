@@ -11,8 +11,20 @@ window.CHASE = {
   ],
 
   // status: live | source | private | building
-  // Public projects (live, source) get their links; private and building ones are a short description only.
+  // Live projects (a demo to open) go in the Live folder; the rest in Projects. Private repos get no source link.
   projects: [
+    {
+      id: "asc-bot", image: "./os/icons/asc-bot.png", icon: "bot", name: "ASC Bot", status: "live", where: "Railway, source private",
+      summary: "A Discord bot that communities license per server, run from a web admin.",
+      points: [
+        "Each system is a folder: drop it in, restart, enable it per server.",
+        "Excel files are the database by design; servers share or keep their own data.",
+        "A web admin, signed in with Discord, runs every server.",
+      ],
+      stack: "Node.js, discord.js, ExcelJS, Railway",
+      live: "https://2026ascdiscordbot-production.up.railway.app",
+      liveLabel: "Admin console demo",
+    },
     {
       id: "asc-site", image: "./os/icons/asc-site.png", icon: "coin", name: "ASC community website", status: "live", where: "GitHub Pages",
       summary: "One page for the community’s Cat Samurai NFTs and ASC token, in Chinese and English.",
@@ -61,51 +73,6 @@ window.CHASE = {
       live: "https://2026googleformlimiter-production.up.railway.app",
       liveLabel: "Platform sign-in",
       source: "https://github.com/chase5ws/2026_google_form_limiter",
-    },
-    {
-      id: "rfid", icon: "chip", name: "RFID Backend Upload Tool", status: "source", where: "Desktop tool",
-      summary: "Excel to PHP backend sync for production stations.",
-      points: ["Configures IPC devices, parses users from Excel and bulk-syncs them to a PHP backend over REST."],
-      stack: "Python, Tkinter, REST APIs",
-      source: "https://github.com/chase5ws/2026_tool_si_fetch-_api_tool",
-    },
-    {
-      id: "leave", icon: "experience", name: "Automated Leave Request System", status: "source", where: "Desktop tool",
-      summary: "Ready-to-sign Excel leave forms.",
-      points: ["Employee lookup, date picking and leave-duration math, exported as ready-to-sign Excel forms."],
-      stack: "Python, Excel automation",
-      source: "https://github.com/chase5ws/2026_system_python_leave_application_form",
-    },
-    {
-      id: "timesheet", icon: "roadmap", name: "Timesheet Analytics", status: "source", where: "Python script",
-      summary: "Weighted charts from multi-sheet work logs.",
-      points: ["Parses multi-sheet Excel work logs, applies weighted stats and exports charts."],
-      stack: "Python, Excel processing",
-      source: "https://github.com/chase5ws/2026_system_python_work_report_log",
-    },
-    {
-      id: "nft-contract", icon: "chip", name: "NFT Whitelist Smart Contract", status: "source", where: "Polygon",
-      summary: "Whitelist minting live on Polygon.",
-      points: ["Gas-optimized whitelist minting for ERC-721 and ERC-1155, live on Polygon for AscCatSamurai."],
-      stack: "Solidity 0.8.20, OpenZeppelin v5, Polygon",
-      source: "https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract",
-    },
-    {
-      id: "signals", icon: "chat", name: "Trading Signals to Discord", status: "source", where: "Python script",
-      summary: "MACD and RSI strategies with Discord webhook alerts.",
-      points: ["MACD and RSI strategies checked by ROI, Sharpe and max drawdown, with Discord webhook alerts."],
-      stack: "Pine Script, Python, Discord API",
-      source: "https://github.com/chase5ws/2023_discord_python_auto_api_speaker",
-    },
-    {
-      id: "asc-bot", image: "./os/icons/asc-bot.png", icon: "bot", name: "ASC Bot", status: "private", where: "Discord bot",
-      summary: "A Discord bot that communities license per server, run from a web admin.",
-      points: [
-        "Each system is a folder: drop it in, restart, enable it per server.",
-        "Excel files are the database by design; servers share or keep their own data.",
-        "A web admin, signed in with Discord, runs every server.",
-      ],
-      stack: "Node.js, discord.js, ExcelJS, Railway",
     },
     {
       id: "easy-mcp", image: "./os/icons/easy-mcp.png", icon: "chip", name: "claude-easy-mcp", status: "private", where: "MCP server",

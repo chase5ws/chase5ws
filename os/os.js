@@ -42,9 +42,9 @@
     { id: "experience", title: "Experience", icon: "experience", image: "./os/icons/experience.png", w: 620, h: 560, body: experienceBody },
     { id: "roadmap", title: "Roadmap", icon: "roadmap", image: "./os/icons/roadmap.png", w: 560, h: 540, body: roadmapBody },
     { id: "stats", title: "Languages & activity", icon: "me", image: "./os/icons/stats.png", w: 540, h: 560, body: statsBody },
-    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, folder: p.status === "live" || p.status === "source" ? "open" : "private", desktop: false, w: 540, h: 420, body: () => projectBody(p) })),
-    { id: "open", title: "Open projects", icon: "me", image: "./os/icons/folder.png", live: true, w: 560, h: 380, body: () => folderBody("open") },
-    { id: "private", title: "Private projects", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("private") },
+    ...D.projects.map((p) => ({ id: p.id, title: p.name, icon: p.icon, image: p.image, folder: p.status === "live" ? "live" : "projects", desktop: false, w: 540, h: 420, body: () => projectBody(p) })),
+    { id: "live", title: "Live", icon: "me", image: "./os/icons/folder.png", live: true, w: 520, h: 300, body: () => folderBody("live") },
+    { id: "projects", title: "Projects", icon: "me", image: "./os/icons/folder.png", w: 520, h: 300, body: () => folderBody("projects") },
     { id: "this-pc", title: "Chase.Tseng", icon: "me", image: "./os/icons/win-this-pc.png", desktop: false, w: 440, h: 300, body: thisPcBody }, // opened from the taskbar
     // small JS games anyone can play in a window (games/, credits in NOTICE.md)
     // Nothing of a game loads until its Start button is pressed.
@@ -225,10 +225,10 @@
       <h4>Certifications</h4><ul class="points">${D.certs.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>`;
   }
 
-  // Projects sit in two folders: open (public, with live site or source links) and private (description only).
+  // Projects sit in two folders: Live (a demo to open) and Projects (the rest); each opens its own window.
   function folderBody(kind) {
     const inside = ITEMS.filter((i) => i.folder === kind);
-    return `<ul class="folder" aria-label="${kind === "open" ? "Open projects" : "Private projects"}">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
+    return `<ul class="folder" aria-label="${kind === "live" ? "Live projects" : "Projects"}">${inside.map((i) => `<li><button type="button" class="dicon dicon--dark" data-open="${i.id}"><span class="dicon__img">${iconOf(i)}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("")}</ul>`;
   }
 
   // The same card as the GitHub profile README, rebuilt daily by the Metrics workflow.
@@ -258,7 +258,7 @@
   // ---------- desktop icons ----------
   const icons = $("#icons");
   // desktop order, top to bottom then the next column
-  const ORDER = ["me", "contact", "experience", "stats", "doom", "duel", "roadmap", "private", "open"];
+  const ORDER = ["me", "contact", "experience", "stats", "doom", "duel", "roadmap", "projects", "live"];
   const rank = (i) => { const n = ORDER.indexOf(i.id); return n < 0 ? ORDER.length : n; };
   icons.innerHTML = ITEMS.filter((i) => i.desktop !== false).sort((a, b) => rank(a) - rank(b)).map((i) => `<li><button type="button" class="dicon" data-id="${i.id}"><span class="dicon__img">${iconOf(i)}${i.live ? '<span class="dicon__live">LIVE</span>' : ""}${i.frame ? '<span class="dicon__play">PLAY</span>' : ""}</span><span class="dicon__label">${esc(i.title)}</span></button></li>`).join("");
   icons.addEventListener("dblclick", (e) => { const b = e.target.closest(".dicon"); if (b) open(b.dataset.id); });

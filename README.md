@@ -1,17 +1,21 @@
 ### Hi, I’m Chase
 
 > Infrastructure and automation engineer in Hsinchu, Taiwan. I run IT systems and write the Python that automates them.
-> Everything I’m working on lives on my desktop at **[chase5ws.github.io/chase5ws](https://chase5ws.github.io/chase5ws/)**: open the **Open projects** folder to try the live demos.
+> Everything I’m working on lives on my desktop at **[chase5ws.github.io/chase5ws](https://chase5ws.github.io/chase5ws/)**: open the **Live** folder to try the running sites.
 
 <a href="https://chase5ws.github.io/chase5ws/"><img src="./assets/site-preview.png" width="100%" alt="ChaseOS, my desktop in the browser: click to open chase5ws.github.io/chase5ws"></a>
 
-**Open projects**: source on GitHub, and a live demo where there is one
+**Public sites**: open them and try the demo
 <!-- repos:start -->
 
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/)) <!--c--> · Public · [`be89ac4`](https://github.com/chase5ws/2026_wow_forever_mbti/commit/be89ac4d4300a8672ab96e1d8ba1003346e13429) · 2026-11-11 12:45
-- **[Live Wallpaper new tab](https://github.com/chase5ws/2026_google_wallpaper_customized)**, a Chrome extension for animated wallpapers and draggable widgets <!--c--> · Public · [`c930c7d`](https://github.com/chase5ws/2026_google_wallpaper_customized/commit/c930c7d4b5a335844fb70c4d1fcfd13fc8d6ae17) · 2026-11-10 17:23
 - **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://2026googleformlimiter-production.up.railway.app)) <!--c--> · Public · [`0d31881`](https://github.com/chase5ws/2026_google_form_limiter/commit/0d3188153fd3fbfa8abe5af75a399848a37f088b) · 2026-11-10 17:23
 - **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Public · [`dfdea75`](https://github.com/chase5ws/2026_asc_web3_website/commit/dfdea758d02cd3dd505bebee8378a27c1227a3a2) · 2026-11-05 16:45
+- **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin ([live demo](https://2026ascdiscordbot-production.up.railway.app)) · source is private
+
+**Public projects**
+
+- **[Live Wallpaper new tab](https://github.com/chase5ws/2026_google_wallpaper_customized)**, a Chrome extension for animated wallpapers and draggable widgets <!--c--> · Public · [`c930c7d`](https://github.com/chase5ws/2026_google_wallpaper_customized/commit/c930c7d4b5a335844fb70c4d1fcfd13fc8d6ae17) · 2026-11-10 17:23
 - **[NFT Whitelist Smart Contract](https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract)**, whitelist minting live on Polygon <!--c--> · Public · [`c3c2243`](https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract/commit/c3c22434e8c27efba7db9b65f2e3f2c8ce61a15b) · 2026-10-25 21:47
 - **[RFID Backend Upload Tool](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool)**, Excel to PHP backend sync for production stations <!--c--> · Public · [`ee5bf4d`](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool/commit/ee5bf4daadc51aa84f9178c50bb34bf6ae09854c) · 2026-03-05 09:59
 - **[Timesheet Analytics](https://github.com/chase5ws/2026_system_python_work_report_log)**, weighted charts from multi-sheet work logs <!--c--> · Public · [`fbd0006`](https://github.com/chase5ws/2026_system_python_work_report_log/commit/fbd0006c8162b3139511f91cc799e5ff423e3ee3) · 2026-02-24 09:21
@@ -20,7 +24,6 @@
 
 **Private projects**
 
-- **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin
 - **claude-easy-mcp**, one MCP server that gives Claude, Codex and Cursor shared project memory, handoffs and skills
 - **IT Ops AI Assistant**, a LINE bot that answers IT questions from internal SOPs (building)
 <!-- repos:end -->
