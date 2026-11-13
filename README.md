@@ -28,7 +28,7 @@
 - **IT Ops AI Assistant**, a LINE bot that answers IT questions from internal SOPs (building)
 <!-- repos:end -->
 
-Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; before that, automation and IT for Micron and TSMC suppliers. Open to cloud, DevOps and AI automation roles: [LinkedIn](https://www.linkedin.com/in/chase5ws/) or [email](mailto:chase5ws@gmail.com).
+Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; before that, automation and IT for Micron and TSMC suppliers. Open to cloud, DevOps and AI automation roles: [LinkedIn](https://www.linkedin.com/in/chase5ws/) or [email](mailto:contact@chase5ws.com).
 
 Thanks for stopping by.
 

@@ -5,7 +5,7 @@ window.CHASE = {
   place: "Hsinchu, Taiwan",
   bio: "I run IT systems (Active Directory, firewalls, networks, endpoints) and write the Python that automates them. Now moving that work onto Google Cloud and LLM tooling.",
   links: [
-    { label: "Email", href: "mailto:chase5ws@gmail.com", text: "chase5ws@gmail.com" },
+    { label: "Email", href: "mailto:contact@chase5ws.com", text: "contact@chase5ws.com" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/chase5ws/", text: "linkedin.com/in/chase5ws" },
     { label: "GitHub", href: "https://github.com/chase5ws?tab=repositories", text: "github.com/chase5ws" },
   ],
