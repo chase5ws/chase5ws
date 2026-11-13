@@ -27,7 +27,7 @@ window.CHASE = {
         "A web admin, signed in with Discord, runs every server.",
       ],
       stack: "Node.js, discord.js, ExcelJS, Railway",
-      live: "https://2026ascdiscordbot-production.up.railway.app",
+      live: "https://ascbot.chase5ws.com",
       liveLabel: "Admin console demo",
     },
     {
@@ -79,7 +79,7 @@ window.CHASE = {
         "Each organisation uses its own Google account and mail relay.",
       ],
       stack: "Node.js, built-in SQLite, Google APIs, Apps Script",
-      live: "https://2026googleformlimiter-production.up.railway.app",
+      live: "https://formlimiter.chase5ws.com",
       liveLabel: "Platform sign-in",
       source: "https://github.com/chase5ws/2026_google_form_limiter",
     },
