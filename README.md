@@ -8,7 +8,7 @@
 **Public sites**: open them and try the demo
 <!-- repos:start -->
 
-- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Public · [`3d8f186`](https://github.com/chase5ws/2026_asc_web3_website/commit/3d8f18699550edf0a8cf42f939c46044696d6c0e) · 2026-11-13 11:19
+- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Public · [`f4b97ce`](https://github.com/chase5ws/2026_asc_web3_website/commit/f4b97ce2211f7c2fbeb887804e01e789caaed50a) · 2026-11-13 16:36
 - **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://formlimiter.chase5ws.com)) <!--c--> · Public · [`71bb447`](https://github.com/chase5ws/2026_google_form_limiter/commit/71bb4472b45f8f4c5a9f9a769ef57c891554a37d) · 2026-11-12 16:02
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/)) <!--c--> · Public · [`be89ac4`](https://github.com/chase5ws/2026_wow_forever_mbti/commit/be89ac4d4300a8672ab96e1d8ba1003346e13429) · 2026-11-11 12:45
 - **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin ([live demo](https://ascbot.chase5ws.com)) · source is private
