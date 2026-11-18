@@ -8,7 +8,7 @@
 **Public sites**: open them and try the demo
 <!-- repos:start -->
 
-- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Private · `93143c5` · 2026-11-18 09:30
+- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Private · `0abc4bb` · 2026-11-18 10:25
 - **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://formlimiter.chase5ws.com)) <!--c--> · Private · `3ba9da2` · 2026-11-18 09:30
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/)) <!--c--> · Private · `fd4df5b` · 2026-11-16 13:49
 - **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin ([live demo](https://ascbot.chase5ws.com)) · source is private
