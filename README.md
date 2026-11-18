@@ -8,14 +8,14 @@
 **Public sites**: open them and try the demo
 <!-- repos:start -->
 
-- **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://formlimiter.chase5ws.com)) <!--c--> · Private · `505f511` · 2026-11-17 10:41
-- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Private · `0c81abc` · 2026-11-16 16:34
+- **[ASC community website](https://github.com/chase5ws/2026_asc_web3_website)**, NFT mint, outfits and market plus a token vault on Polygon, in Chinese and English ([live](https://chase5ws.github.io/2026_asc_web3_website/)) <!--c--> · Private · `93143c5` · 2026-11-18 09:30
+- **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://formlimiter.chase5ws.com)) <!--c--> · Private · `3ba9da2` · 2026-11-18 09:30
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/)) <!--c--> · Private · `fd4df5b` · 2026-11-16 13:49
 - **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin ([live demo](https://ascbot.chase5ws.com)) · source is private
 
 **Public projects**
 
-- **[Live Wallpaper new tab](https://github.com/chase5ws/2026_google_wallpaper_customized)**, a Chrome extension for animated wallpapers and draggable widgets <!--c--> · Private · `3e41c4b` · 2026-11-17 18:00
+- **[Live Wallpaper new tab](https://github.com/chase5ws/2026_google_wallpaper_customized)**, a Chrome extension for animated wallpapers and draggable widgets <!--c--> · Private · `df5be7d` · 2026-11-18 09:30
 - **[NFT Whitelist Smart Contract](https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract)**, whitelist minting live on Polygon <!--c--> · Private · `c3c2243` · 2026-10-25 21:47
 - **[RFID Backend Upload Tool](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool)**, Excel to PHP backend sync for production stations <!--c--> · Private · `ee5bf4d` · 2026-03-05 09:59
 - **[Timesheet Analytics](https://github.com/chase5ws/2026_system_python_work_report_log)**, weighted charts from multi-sheet work logs <!--c--> · Private · `fbd0006` · 2026-02-24 09:21
