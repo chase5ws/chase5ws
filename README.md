@@ -16,11 +16,11 @@
 **Public projects**
 
 - **[Live Wallpaper new tab](https://github.com/chase5ws/2026_google_wallpaper_customized)**, a Chrome extension for animated wallpapers and draggable widgets <!--c--> · Private · `df5be7d` · 2026-11-18 09:30
-- **[NFT Whitelist Smart Contract](https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract)**, whitelist minting live on Polygon <!--c--> · Private · `c3c2243` · 2026-10-25 21:47
-- **[RFID Backend Upload Tool](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool)**, Excel to PHP backend sync for production stations <!--c--> · Private · `ee5bf4d` · 2026-03-05 09:59
-- **[Timesheet Analytics](https://github.com/chase5ws/2026_system_python_work_report_log)**, weighted charts from multi-sheet work logs <!--c--> · Private · `fbd0006` · 2026-02-24 09:21
-- **[Automated Leave Request System](https://github.com/chase5ws/2026_system_python_leave_application_form)**, ready-to-sign Excel leave forms <!--c--> · Private · `f40a717` · 2026-02-11 16:10
-- **[Trading Signals to Discord](https://github.com/chase5ws/2023_discord_python_auto_api_speaker)**, MACD and RSI strategies with webhook alerts <!--c--> · Private · `85f08d5` · 2026-02-11 16:10
+- **[NFT Whitelist Smart Contract](https://github.com/chase5ws/2024_web3_solidity_asc_smart_contract)**, whitelist minting live on Polygon (building) <!--c--> · Private · `c3c2243` · 2026-10-25 21:47
+- **[RFID Backend Upload Tool](https://github.com/chase5ws/2026_tool_si_fetch-_api_tool)**, Excel to PHP backend sync for production stations (building) <!--c--> · Private · `ee5bf4d` · 2026-03-05 09:59
+- **[Timesheet Analytics](https://github.com/chase5ws/2026_system_python_work_report_log)**, weighted charts from multi-sheet work logs (building) <!--c--> · Private · `fbd0006` · 2026-02-24 09:21
+- **[Automated Leave Request System](https://github.com/chase5ws/2026_system_python_leave_application_form)**, ready-to-sign Excel leave forms (building) <!--c--> · Private · `f40a717` · 2026-02-11 16:10
+- **[Trading Signals to Discord](https://github.com/chase5ws/2023_discord_python_auto_api_speaker)**, MACD and RSI strategies with webhook alerts (building) <!--c--> · Private · `85f08d5` · 2026-02-11 16:10
 
 **Private projects**
 
