@@ -12,6 +12,8 @@
 - **[Google Form limiter](https://github.com/chase5ws/2026_google_form_limiter)**, caps sign-ups on Google Forms for many organisations and emails the waitlist ([live](https://formlimiter.chase5ws.com)) <!--c--> · Private · `3ba9da2` · 2026-11-18 09:30
 - **[WoW Forever MBTI quiz](https://github.com/chase5ws/2026_wow_forever_mbti)**, twenty story questions that pick a race and class ([live](https://chase5ws.github.io/2026_wow_forever_mbti/)) <!--c--> · Private · `fd4df5b` · 2026-11-16 13:49
 - **ASC Bot**, a Discord bot that communities license per server, with plug-in systems and a web admin ([live demo](https://ascbot.chase5ws.com)) · source is private
+- **Nlp Keyword Crawler**, GossipKeeper 畢業專題：以 Django 結合網路爬蟲與中文斷詞（jieba）的網路熱門話題論壇，含會員制度、發文留言收藏、關鍵字搜尋與文字雲 ([live demo](https://chase5ws.com/2026-nlp_keyword_crawler/)) · source is private
+- **Hsinchu Policy Hackathon**, 2026 新竹政策黑客松提案 Demo：竹路通（新竹交通路況共治平台）× 新竹通 App 互動展示，及在地口袋嚮導（AI 速配卡、行程安排）。純前端靜態網站 ([live demo](https://policyhackathon.chase5ws.com)) · source is private
 
 **Public projects**
 
@@ -26,6 +28,8 @@
 
 - **claude-easy-mcp**, one MCP server that gives Claude, Codex and Cursor shared project memory, handoffs and skills
 - **IT Ops AI Assistant**, a LINE bot that answers IT questions from internal SOPs (building)
+- **Web3 Solidity Smart Contract**, 點數金庫、NFT、配件道具、配件市場四份合約
+- **Asc Web3 Ipfs**, AscCatSamurai NFT 的 metadata 與圖片，透過 GitHub Pages 提供，取代已失效的 IPFS 存放
 <!-- repos:end -->
 
 Currently IT Infrastructure Engineer at Korrnell Hsinchu International Academy; before that, automation and IT for Micron and TSMC suppliers. Open to cloud, DevOps and AI automation roles: [LinkedIn](https://www.linkedin.com/in/chase5ws/) or [email](mailto:contact@chase5ws.com).
